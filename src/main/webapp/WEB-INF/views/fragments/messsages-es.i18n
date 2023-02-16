@@ -11,7 +11,7 @@
 	
 # master.sign-in ##############################################################
 
-master.sign-in.label.username = Apodo:
+master.sign-in.label.username = Nombre de Usuario:
 master.sign-in.label.password = Contraseña:
 master.sign-in.label.remember-me = Recuérdame
 master.sign-in.button.sign-in = Entrar

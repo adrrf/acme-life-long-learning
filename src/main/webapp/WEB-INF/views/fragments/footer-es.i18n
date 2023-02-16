@@ -8,14 +8,14 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-master.footer.title.about = Nosotros
-master.footer.label.company = La empresa
+master.footer.title.about = Sobre Nosotros
+master.footer.label.company = Acme L3 Inc.
 master.footer.label.license = Licencia
 master.footer.title.social = Social
 master.footer.url.linkedin = http://www.linkedin.com
 master.footer.label.linked-in = Linked-In
 master.footer.url.twitter = http://www.twitter.com
 master.footer.label.twitter = Twitter
-master.footer.title.languages = Lenguajes
+master.footer.title.languages = Idiomas
 master.footer.label.english = Inglés
 master.footer.label.spanish = Español
