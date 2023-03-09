@@ -19,7 +19,7 @@ public class Lecturer extends AbstractRole {
 	protected static final long	serialVersionUID	= 1L;
 
 	@NotBlank
-	@Length(max = 72)
+	@Length(max = 76)
 	protected String			almaMater;
 
 	@NotBlank
