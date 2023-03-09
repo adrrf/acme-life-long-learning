@@ -1,5 +1,5 @@
 key,enabled,identity,password,username
 user-account-anonymous-01,false,"UserIdentity{name: 'John', surname: 'Doe', email: 'john.doe@acme.com'}",HIDDEN-PASSWORD,anonymous
-user-account-company-02,true,"UserIdentity{name: 'Juan' ,surname: 'Perez', email: 'juaan@gmail.com')",company02,company02
-user-account-company-01,true,"UserIdentity{name: 'Jorge' ,surname: 'Limon', email: 'jrlimon02@gmail.com')",company01,company01
+user-account-company-02,true,"UserIdentity{name: 'Juan' ,surname: 'Perez', email: 'juaan@gmail.com')",company2,company2
+user-account-company-01,true,"UserIdentity{name: 'Jorge' ,surname: 'Limon', email: 'jrlimon02@gmail.com')",company1,company1
 user-account-administrator-01,true,"UserIdentity{name: 'Administrator', surname: 'Acme', email: 'administrator@acme.com'}",administrator,administrator
