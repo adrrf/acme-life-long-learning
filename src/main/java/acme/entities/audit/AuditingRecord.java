@@ -59,6 +59,7 @@ public class AuditingRecord extends AbstractEntity {
 
 	@Transient
 	private Period getAvailibilityPeriod() {
+
 		final Period avaliabilityPeriod = Period.between(this.startPeriod.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(), this.finishPeriod.toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
 
 		return avaliabilityPeriod;
