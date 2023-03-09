@@ -16,10 +16,11 @@ package acme.entitites.messages;
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.validation.constraints.Future;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
+import javax.validation.constraints.PastOrPresent;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -40,12 +41,16 @@ public class Banner extends AbstractRole {
 	// Attributes -------------------------------------------------------------
 
 	@NotNull
-	@Past
+	@PastOrPresent
 	protected Date instationUpdateMoment;
 
 	@NotNull
-	@Future
-	protected String displayPeriod;
+	@Temporal(TemporalType.TIMESTAMP)
+	protected Date startTime;
+	
+	@NotNull
+	@Temporal(TemporalType.TIMESTAMP)
+	protected Date finishTime;
 	
 	@NotBlank
 	@Length(max= 76)

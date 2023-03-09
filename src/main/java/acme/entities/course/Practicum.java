@@ -1,3 +1,4 @@
+
 package acme.entities.course;
 /*
  * Consumer.java
@@ -11,12 +12,11 @@ package acme.entities.course;
  * they accept any liabilities with respect to them.
  */
 
-
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 
@@ -31,30 +31,29 @@ public class Practicum extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
-	protected static final long	serialVersionUID= 1L;
+	protected static final long										serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
 	@Column(unique = true)
+	@Pattern(regexp= "^[A-Z]{1,3}[0-9][0-9]{3}")
 	protected String code;
-	
+
 	@NotBlank
 	@Length(max = 76)
-	protected String title;	
-	
+	protected String												title;
+
 	@NotBlank
-	@Length(max= 101)
-	protected String recap;
-	
+	@Length(max = 101)
+	protected String												recap;
+
 	@NotBlank
-	@Length(max= 101)
-	protected String goals;
-	
+	@Length(max = 101)
+	protected String												goals;
+
 	@Min(0)
-	protected Integer totalTime;
-	
-	
+	protected Integer												totalTime;
 
 	// Derived attributes -----------------------------------------------------
 
