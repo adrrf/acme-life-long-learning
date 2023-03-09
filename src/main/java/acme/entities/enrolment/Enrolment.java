@@ -2,6 +2,7 @@
 package acme.entities.enrolment;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -49,12 +50,15 @@ public class Enrolment extends AbstractEntity {
 	@Temporal(TemporalType.TIMESTAMP)
 	protected Date				workTime;
 
+	@NotNull
+	protected Boolean			draftMode;
+
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
 	@OneToOne(optional = false, cascade = CascadeType.ALL)
 	@NotNull
 	@Valid
-	protected WorkBook			workbook;
+	protected List<Activity>	activities;
 
 }

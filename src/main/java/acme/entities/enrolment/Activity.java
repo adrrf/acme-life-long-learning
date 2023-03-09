@@ -2,6 +2,8 @@
 package acme.entities.enrolment;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -43,5 +45,10 @@ public class Activity extends AbstractEntity {
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
+
+	@OneToOne(optional = false)
+	@Valid
+	@NotNull
+	protected Enrolment			enrolment;
 
 }
