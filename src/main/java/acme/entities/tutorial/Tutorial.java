@@ -5,7 +5,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import javax.validation.Valid;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -40,9 +39,6 @@ public class Tutorial extends AbstractEntity {
 	@NotBlank
 	@Length(max = 101)
 	protected String			goals;
-
-	@Min(0)
-	protected Integer			estimatedTime;
 
 	@NotNull
 	protected Boolean			draftMode;
