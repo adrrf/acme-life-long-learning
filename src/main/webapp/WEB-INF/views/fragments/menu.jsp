@@ -19,6 +19,10 @@
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
+			<acme:menu-suboption code="master.menu.adrf" action="https://www.linkedin.com/in/adrrf/"/>
+			<acme:menu-suboption code="master.menu.jorromlim" action="https://www.youtube.com/watch?v=OYf3pSuaqxk&ab_channel=LEITOOOOOOOO"/>
+			<acme:menu-suboption code="master.menu.anonymous.manvazmar3" action="https://www.youtube.com/watch?v=cLGMWX-DSzY&ab_channel=Carlos.mantovani"/>
+			<acme:menu-suboption code="master.menu.anonymous.angmunpri" action="https://www.youtube.com/watch?v=3whkYzD_zgM&ab_channel=Miguel%C3%81vila"/>
 			<acme:menu-suboption code="master.menu.anonymous.alematcap" action="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/980px/public/media/image/2022/03/gato-botas-ultimo-deseo-2649871.jpg?itok=oOezagba"/>
 		</acme:menu-option>
 
