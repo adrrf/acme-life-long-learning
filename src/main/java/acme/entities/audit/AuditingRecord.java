@@ -1,11 +1,14 @@
 
 package acme.entities.audit;
 
+import java.time.Period;
+import java.time.ZoneId;
 import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
@@ -53,8 +56,13 @@ public class AuditingRecord extends AbstractEntity {
 
 	// Derived attributes -----------------------------------------------------
 
-	//	@Transient
-	//	protected Period			avaliabilityPeriod	= Period.between(this.startPeriod.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(), this.finishPeriod.toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+
+	@Transient
+	private Period getAvailibilityPeriod() {
+		final Period avaliabilityPeriod = Period.between(this.startPeriod.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(), this.finishPeriod.toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+
+		return avaliabilityPeriod;
+	}
 
 	// Relationships ----------------------------------------------------------
 }
