@@ -9,11 +9,11 @@ import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;
 
 import acme.framework.data.AbstractEntity;
@@ -25,11 +25,7 @@ import lombok.Setter;
 @Setter
 public class AuditingRecord extends AbstractEntity {
 
-	// Serialisation identifier -----------------------------------------------
-
-	protected static final long	serialVersionUID	= 1L;
-
-	// Attributes -------------------------------------------------------------
+	private static final long	serialVersionUID	= 1L;
 
 	@NotBlank
 	@Length(max = 76)
