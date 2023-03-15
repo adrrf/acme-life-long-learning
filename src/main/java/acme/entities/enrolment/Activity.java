@@ -2,7 +2,7 @@
 package acme.entities.enrolment;
 
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -46,7 +46,7 @@ public class Activity extends AbstractEntity {
 
 	// Relationships ----------------------------------------------------------
 
-	@OneToOne(optional = false)
+	@ManyToOne(optional = false)
 	@Valid
 	@NotNull
 	protected Enrolment			enrolment;

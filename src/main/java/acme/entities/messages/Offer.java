@@ -11,8 +11,7 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.PastOrPresent;
-import javax.validation.constraints.Positive;
+import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -33,8 +32,8 @@ public class Offer extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@PastOrPresent
+	@Temporal(TemporalType.DATE)
+	@Past
 	@NotNull
 	protected Date				instantiationMoment;
 
@@ -47,14 +46,13 @@ public class Offer extends AbstractEntity {
 	protected String			summary;
 
 	@NotNull
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	protected Date				startDate;
 
 	@NotNull
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	protected Date				endDate;
 
-	@Positive
 	protected Money				price;
 
 	@URL

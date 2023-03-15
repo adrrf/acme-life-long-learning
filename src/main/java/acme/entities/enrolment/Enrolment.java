@@ -1,23 +1,18 @@
 
 package acme.entities.enrolment;
 
-import java.util.Date;
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.ManyToOne;
 import javax.validation.Valid;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
-import org.springframework.format.annotation.DateTimeFormat;
 
+import acme.entities.course.Course;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -46,9 +41,8 @@ public class Enrolment extends AbstractEntity {
 	@Length(max = 101)
 	protected String			goals;
 
-	@DateTimeFormat(pattern = "hh:MM:ss")
-	@Temporal(TemporalType.TIMESTAMP)
-	protected Date				workTime;
+	@Min(0)
+	protected Integer			workTime;
 
 	@NotNull
 	protected Boolean			draftMode;
@@ -56,9 +50,9 @@ public class Enrolment extends AbstractEntity {
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
-	@OneToOne(optional = false, cascade = CascadeType.ALL)
+	@ManyToOne
 	@NotNull
 	@Valid
-	protected List<Activity>	activities;
+	protected Course			course;
 
 }
