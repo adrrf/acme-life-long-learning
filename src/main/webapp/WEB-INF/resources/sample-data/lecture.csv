@@ -1,12 +1,12 @@
-key,title,recap,learning-time,is-theory,key:lecturer
-lecture-01,#####))))),Metodos procedimientos y formulas parar recolectar informacion alargamos la descripcion hasta el li,45,false,lecturer-01
-lecture-02,InglesInglesInglesInglesInglesInglesInglesInglesInglesInglesInglesInglesIn,I,1,true,lecturer-02
-lecture-03,@#~€/,Estudio de numeros y sus relaciones ¿podríamos poner interrogaciones?,50,false,lecturer-01
-lecture-04,H,Examen de eventos del pasado,4,true,lecturer-02
-lecture-05,Nyocha nke,Examen de eventos del pasado seguimos aumentado con ?????? ñññññ %%$%& por si acaso,550,false,lecturer-02
-lecture-06,Literatura,Cingales ^^^^^^^[*]#·,35,true,lecturer-01
-lecture-07,ARTEARTEARTEARTEARTEARTEAERTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,Ruso Анализ литературных произведений,300,false,lecturer-02
-lecture-08,<<<<<<<<<<<<<<<<<<,Igbo Nyocha nke ọrụ edemede,30,false,lecturer-01
-lecture-09,Informatica,Punyabi ======'?¿@#~,40,false,lecturer-02
-lecture-10,????????''''''''''||||,Estudio de la produccion y distribuccion de recursos,3500,true,lecturer-01
-lecture-11,Filosofia,Exploracion de preguntas fundamentales sobre la existencia y el conocimiento,35,true,lecturer-02
+key,title,recap,learning-time,body,is-theory,key:lecturer
+lecture-01,#####))))),Metodos procedimientos y formulas parar recolectar informacion alargamos la descripcion hasta el li,45,I,false,lecturer-01
+lecture-02,InglesInglesInglesInglesInglesInglesInglesInglesInglesInglesInglesInglesIn,I,1,##########€€€~¬¬¬¬???==,true,lecturer-02
+lecture-03,@#~€/,Estudio de numeros y sus relaciones ¿podríamos poner interrogaciones?,50,A,false,lecturer-01
+lecture-04,H,Examen de eventos del pasado,4,Curso del lecturer-02Curso del lecturer-02Curso del lecturer-02Curso del lecturer-02Curso del lectur,true,lecturer-02
+lecture-05,Nyocha nke,Examen de eventos del pasado seguimos aumentado con ?????? ñññññ %%$%& por si acaso,550,LA VERDADERA VUERTA,false,lecturer-02
+lecture-06,Literatura,Cingales ^^^^^^^[*]#·,35,%%%%%%%SI %%%%%%%,true,lecturer-01
+lecture-07,ARTEARTEARTEARTEARTEARTEAERTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,Ruso Анализ литературных произведений,300,ASR SON DOS EXAMENES,false,lecturer-02
+lecture-08,<<<<<<<<<<<<<<<<<<,Igbo Nyocha nke ọrụ edemede,30,¿Si es verdad/////?,false,lecturer-01
+lecture-09,Informatica,Punyabi ======'?¿@#~,40,asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf,false,lecturer-02
+lecture-10,????????''''''''''||||,Estudio de la produccion y distribuccion de recursos,3500,o,true,lecturer-01
+lecture-11,Filosofia,Exploracion de preguntas fundamentales sobre la existencia y el conocimiento,35,-,true,lecturer-02

@@ -33,6 +33,10 @@ public class Lecture extends AbstractEntity {
 	@Min(0)
 	protected Integer			learningTime;
 
+	@NotBlank
+	@Length(max = 101)
+	protected String			body;
+
 	protected Boolean			isTheory;
 
 	@Valid
