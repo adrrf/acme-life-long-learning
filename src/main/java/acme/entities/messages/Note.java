@@ -4,6 +4,8 @@ package acme.entities.messages;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -26,6 +28,7 @@ public class Note extends AbstractEntity {
 
 	@NotNull
 	@Past
+	@Temporal(TemporalType.DATE)
 	protected Date				instantionMoment;
 
 	@NotBlank
@@ -34,7 +37,7 @@ public class Note extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 76)
-	@Pattern(regexp = "^[a-zA-Z0-9]+ - [a-zA-Z]+, [a-zA-Z]+$")
+	@Pattern(regexp = "^[a-zA-Z0-9]+ - [a-zA-Z]+; [a-zA-Z]+$")
 	protected String			author;
 
 	@NotBlank

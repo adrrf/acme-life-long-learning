@@ -1,0 +1,10 @@
+key,code,title,recap,retail-price,link,draftMode,key:lecturer
+course-01,A103,Curso primaria,Curso del lecturer-01,"EUR 10.00",https://es.wikipedia.org/wiki/Wikipedia:Portada,0,lecturer-01
+course-02,A113,Curso primaria,Curso del lecturer-02,"EUR 10.00",https://ev.us.es/,0,lecturer-02
+course-03,A123,Curso secundaria,Curso del lecturer-01,"EUR 15.00",https://ev.us.es/,0,lecturer-01
+course-04,A133,Curso secundaria,Curso del lecturer-02,"EUR 15.00",https://ev.us.es/,0,lecturer-02
+course-05,A143,Curso formacion profesional,Curso del lecturer-01,"EUR 13.00",https://ev.us.es/,0,lecturer-01
+course-06,A153,Curso formacion profesional,Curso del lecturer-02,"EUR 13.00",https://ev.us.es/,0,lecturer-02
+course-07,A163,Curso apoyo,Curso del lecturer-01,"EUR 20.00",https://ev.us.es/,0,lecturer-01
+course-08,A173,Curso apoyo,Curso del lecturer-02,"EUR 20.00",https://ev.us.es/,0,lecturer-02
+course-09,A183,Curso primaria,Curso del lecturer-01,"EUR 10.00",https://ev.us.es/,0,lecturer-01
