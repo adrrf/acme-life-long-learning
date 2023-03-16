@@ -1,4 +1,4 @@
-package acme.entitites.messages;
+package acme.entities.messages;
 /*
  * Consumer.java
  *
