@@ -9,6 +9,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.URL;
 
 import acme.framework.data.AbstractEntity;
 import acme.roles.Lecturer;
@@ -38,6 +39,9 @@ public class Lecture extends AbstractEntity {
 	protected String			body;
 
 	protected Boolean			isTheory;
+
+	@URL
+	protected String			link;
 
 	@Valid
 	@ManyToOne(optional = false)
