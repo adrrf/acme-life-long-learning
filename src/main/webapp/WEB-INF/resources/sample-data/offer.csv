@@ -1,4 +1,4 @@
-key,instantiationMoment,heading,summary,startDate,endDate,price,link
+key,instantiation-moment,heading,summary,start-date,end-date,price,link
 offer-01,2020/01/05 00:00,Proteina Descuento,Obten el segundo paquete con un 20% de descuento,2020/01/05 00:00,2020/01/09 00:00,"EUR 10.00",
 offer-02,2020/02/05 00:00,Libretas Descuento,Todas las libretas a 1€,2020/02/05 00:00,2020/02/09 00:00,"EUR 1.00",
 offer-03,2020/03/05 00:00,Mes Gratis,Durante febrero no pagarás matricula y el primer mes,2020/03/05 00:00,2020/03/09 00:00,"EUR 30.00",

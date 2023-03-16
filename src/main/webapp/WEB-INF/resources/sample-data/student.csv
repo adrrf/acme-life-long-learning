@@ -1,3 +1,3 @@
-key,key:userAccount,statement,strong-features,weak-features,link
-student-01,user-account-student-01,statement,estudioso;respetuoso,gandul,
-student-02,user-account-student-02,statement,atento;solidario,inutil;torpe,
+key,key:userAccount,key:enrolment,statement,strong-features,weak-features,link
+student-01,user-account-student-01,enrolment-01,statement,estudioso;respetuoso,gandul,
+student-02,user-account-student-02,enrolment-02,statement,atento;solidario,inutil;torpe,
