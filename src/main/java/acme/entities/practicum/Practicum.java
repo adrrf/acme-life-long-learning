@@ -1,5 +1,5 @@
 
-package acme.entities.course;
+package acme.entities.practicum;
 /*
  * Consumer.java
  *
