@@ -1,7 +1,8 @@
 key,enabled,identity,password,username
 user-account-anonymous-01,false,"UserIdentity{name: 'John', surname: 'Doe', email: 'john.doe@acme.com'}",HIDDEN-PASSWORD,anonymous
-user-account-company02,true,"UserIdentity{name: 'JJuan', surname: 'Perez', email: 'juan.pere2@acme.com'}",company02,company02
+user-account-company02,true,"UserIdentity{name: 'Juan', surname: 'Perez', email: 'juan.pere2@acme.com'}",company02,company02
+user-account-company03,true,"UserIdentity{name: 'Alvaro', surname: 'Lara', email: 'alv@acme.com'}",company03,company03
 user-account-company01,true,"UserIdentity{name: 'Jorge', surname: 'Limon', email: 'jrlimon02@acme.com'}",company01,company01
 user-account-administrator-01,true,"UserIdentity{name: 'Administrator', surname: 'Acme', email: 'administrator@acme.com'}",administrator,administrator
-user-account-assistant-01,true,"UserIdentity{name: 'Adrián', surname: 'Romero', email: 'adrf@acme.com'}",assistant01,assistant01
+user-account-assistant-01,true,"UserIdentity{name: 'Adrian', surname: 'Romero', email: 'adrf@acme.com'}",assistant01,assistant01
 user-account-assistant-02,true,"UserIdentity{name: 'Hasbulla', surname: 'Magovedov', email: 'hasbu@acme.com'}",assistant02,assistant02

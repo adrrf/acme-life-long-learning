@@ -14,7 +14,6 @@ package acme.entities.course;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
@@ -31,7 +30,7 @@ public class Practicum extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
-	protected static final long										serialVersionUID	= 1L;
+	protected static final long	serialVersionUID= 1L;
 
 	// Attributes -------------------------------------------------------------
 
@@ -42,21 +41,20 @@ public class Practicum extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 76)
-	protected String												title;
+	protected String title;
 
 	@NotBlank
 	@Length(max = 101)
-	protected String												recap;
+	protected String recap;
 
 	@NotBlank
 	@Length(max = 101)
-	protected String												goals;
-
-	@Min(0)
-	protected Integer												totalTime;
+	protected String goals;
 
 	// Derived attributes -----------------------------------------------------
-
+	
+	protected Integer totalTime;
+	
 	// Relationships ----------------------------------------------------------
 
 }
