@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
@@ -14,6 +15,7 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.Length;
 
 import acme.framework.data.AbstractEntity;
+import acme.roles.Auditor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -49,4 +51,9 @@ public class Audit extends AbstractEntity {
 	@Valid
 	@NotNull
 	protected List<AuditingRecord>	auditingRecords;
+
+	@ManyToOne
+	@Valid
+	@NotNull
+	protected Auditor				auditor;
 }
