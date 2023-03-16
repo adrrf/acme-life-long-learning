@@ -1,12 +1,12 @@
-key,title,recap,learningTime,is-theory,key:lecturer
-lecture-01,Estadistica,Metodos procedimientos y formulas parar recolectar informacion,45,0,lecturer-01
-lecture-02,Ingles,Idioma secundario obligatorio,60,1,lecturer-02
-lecture-03,Matematicas,Estudio de numeros y sus relaciones,50,0,lecturer-01
-lecture-04,Historia,Examen de eventos del pasado,40,1,lecturer-02
-lecture-05,Ciencias,Estudio de la naturaleza y el universo,55,0,lecturer-02
-lecture-06,Literatura,Analisis de obras literarias,35,1,lecturer-01
-lecture-07,Arte,Expresion creativa visual o auditiva,30,0,lecturer-02
-lecture-08,Educacion Fisica,Actividad fisica y deporte,30,0,lecturer-01
-lecture-09,Informatica,Uso y programacion de sistemas informaticos,40,0,lecturer-02
-lecture-10,Economia,Estudio de la produccion y distribuccion de recursos,35,1,lecturer-01
-lecture-11,Filosofia,Exploracion de preguntas fundamentales sobre la existencia y el conocimiento,35,1,lecturer-02
+key,title,recap,learning-time,is-theory,key:lecturer
+lecture-01,#####))))),Metodos procedimientos y formulas parar recolectar informacion alargamos la descripcion hasta el li,45,false,lecturer-01
+lecture-02,InglesInglesInglesInglesInglesInglesInglesInglesInglesInglesInglesInglesIn,I,1,true,lecturer-02
+lecture-03,@#~€/,Estudio de numeros y sus relaciones ¿podríamos poner interrogaciones?,50,false,lecturer-01
+lecture-04,H,Examen de eventos del pasado,4,true,lecturer-02
+lecture-05,Nyocha nke,Examen de eventos del pasado seguimos aumentado con ?????? ñññññ %%$%& por si acaso,550,false,lecturer-02
+lecture-06,Literatura,Cingales ^^^^^^^[*]#·,35,true,lecturer-01
+lecture-07,ARTEARTEARTEARTEARTEARTEAERTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,Ruso Анализ литературных произведений,300,false,lecturer-02
+lecture-08,<<<<<<<<<<<<<<<<<<,Igbo Nyocha nke ọrụ edemede,30,false,lecturer-01
+lecture-09,Informatica,Punyabi ======'?¿@#~,40,false,lecturer-02
+lecture-10,????????''''''''''||||,Estudio de la produccion y distribuccion de recursos,3500,true,lecturer-01
+lecture-11,Filosofia,Exploracion de preguntas fundamentales sobre la existencia y el conocimiento,35,true,lecturer-02
