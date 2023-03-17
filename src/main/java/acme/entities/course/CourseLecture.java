@@ -24,7 +24,7 @@ public class CourseLecture extends AbstractEntity {
 
 	@NotNull
 	@Valid
-	@ManyToOne(optional = false)
+	@ManyToOne(optional = true)
 	protected Lecture			lecture;
 
 }

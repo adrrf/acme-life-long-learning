@@ -37,7 +37,7 @@ public class Note extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 76)
-	@Pattern(regexp = "^[a-zA-Z0-9]+ - [a-zA-Z]+; [a-zA-Z]+$")
+	@Pattern(regexp = "^[a-zA-Z0-9]+ - [a-zA-Z]+, [a-zA-Z]+$")
 	protected String			author;
 
 	@NotBlank
