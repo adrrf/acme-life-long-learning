@@ -1,3 +1,4 @@
+
 package acme.entities.messages;
 /*
  * Consumer.java
@@ -11,12 +12,11 @@ package acme.entities.messages;
  * they accept any liabilities with respect to them.
  */
 
-
-
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.validation.constraints.Future;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
@@ -35,30 +35,33 @@ public class Banner extends AbstractRole {
 
 	// Serialisation identifier -----------------------------------------------
 
-	protected static final long serialVersionUID = 1L;
+	protected static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
 
 	@NotNull
 	@Past
-	protected Date instationUpdateMoment;
+	protected Date				instationUpdateMoment;
 
 	@NotNull
-	@Future
-	protected String displayPeriod;
-	
+	@Temporal(TemporalType.TIMESTAMP)
+	protected Date				startTime;
+
+	@NotNull
+	@Temporal(TemporalType.TIMESTAMP)
+	protected Date				finishTime;
+
 	@NotBlank
-	@Length(max= 76)
-	protected String slogan;
-	
-	@NotNull
-	@URL
-	protected String linkPicture;
-	
-	@NotNull
-	@URL
-	protected String linkDocument;
+	@Length(max = 76)
+	protected String			slogan;
 
+	@NotNull
+	@URL
+	protected String			linkPicture;
+
+	@NotNull
+	@URL
+	protected String			linkDocument;
 
 	// Derived attributes -----------------------------------------------------
 

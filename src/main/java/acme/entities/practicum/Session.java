@@ -1,4 +1,4 @@
-package acme.entities.course;
+package acme.entities.practicum;
 /*
  * Consumer.java
  *
@@ -14,8 +14,11 @@ package acme.entities.course;
 
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.validation.Valid;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -44,13 +47,18 @@ public class Session extends AbstractEntity {
 	protected String recap;
 	
 	@Min(0)
+	@NotBlank
 	protected Integer timePeriod;
 	
 	@URL
 	protected String link;
-
+	
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
 
+	@Valid
+	@NotNull
+	@ManyToOne
+	protected Practicum practicum;
 }
