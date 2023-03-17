@@ -32,12 +32,14 @@ public class Lecture extends AbstractEntity {
 	protected String			recap;
 
 	@Min(0)
+	@NotNull
 	protected Integer			learningTime;
 
 	@NotBlank
 	@Length(max = 101)
 	protected String			body;
 
+	@NotNull
 	protected Boolean			isTheory;
 
 	@URL
