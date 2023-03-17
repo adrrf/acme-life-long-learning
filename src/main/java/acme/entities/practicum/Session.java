@@ -1,3 +1,4 @@
+
 package acme.entities.practicum;
 /*
  * Consumer.java
@@ -10,8 +11,6 @@ package acme.entities.practicum;
  * purposes. The copyright owner does not offer any warranties or representations, nor do
  * they accept any liabilities with respect to them.
  */
-
-
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -34,25 +33,25 @@ public class Session extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
-	protected static final long	serialVersionUID= 1L;
+	protected static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
 	@Length(max = 76)
-	protected String title;	
-	
+	protected String			title;
+
 	@NotBlank
-	@Length(max= 101)
-	protected String recap;
-	
+	@Length(max = 101)
+	protected String			recap;
+
 	@Min(0)
-	@NotBlank
-	protected Integer timePeriod;
-	
+	@NotNull
+	protected Integer			timePeriod;
+
 	@URL
-	protected String link;
-	
+	protected String			link;
+
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
@@ -60,5 +59,5 @@ public class Session extends AbstractEntity {
 	@Valid
 	@NotNull
 	@ManyToOne
-	protected Practicum practicum;
+	protected Practicum			practicum;
 }
