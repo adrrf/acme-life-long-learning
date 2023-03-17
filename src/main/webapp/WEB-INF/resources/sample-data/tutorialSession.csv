@@ -1,0 +1,19 @@
+key,title,recap,is-theory,start-time,end-time,key:tutorial
+tutorialSession-01,Modelos de Regresión,Sesión avanzado sobre modelos de regresión lineal y no lineal,true,2022/01/01 00:00,2022/01/01 03:00,tutorial-01
+tutorialSession-02,ª,ª,true,2022/01/01 00:00,2022/01/01 03:00,tutorial-01
+tutorialSession-03,Conversación en Inglés,Aprende a conversar informalmente en inglés,false,2022/01/01 00:00,2022/01/01 03:00,tutorial-02
+tutorialSession-04,this has to be a very very big title and now i will type randomly !º\'`*´´{},Que yo sé que la sonrisa Que se dibuja en mi cara Tiene que ver con la brisa Que abanica tu mirada...,false,2022/01/01 00:00,2022/01/01 03:00,tutorial-02
+tutorialSession-05,Cálculo de integrales,Cómo calcular integrales básicas utilizando métodos de sustitución y fracciones parciales,false,2022/01/01 00:00,2022/01/01 03:00,tutorial-03
+tutorialSession-06,- . - .- ... / - . - .. - .- ... / - . - --- .-. .-. .- ...,- . - .- --.. .- ... / -... .- -.- ..- --. .- -. ... / -- .- -- . .-.. ..- -. --. .- ...,true,2022/01/01 01:00,2022/01/01 01:15,tutorial-03
+tutorialSession-07,La Guerra de la Independencia Española,Breve descripción de la guerra de la independencia española,true,2022/01/01 00:00,2022/01/01 03:00,tutorial-04
+tutorialSession-08,v1&5O@aMWgm!RMPCrRNMZIQWz!uuGF7u@ur0uAB^FBZZK7NB5&v1&5O@aMWgm!RMPCrRNMZIQWz!,AtENDRaBIniTuChERdLeTINGEohnashAheLiErAghADMIstINAjhHKXeDK#e5%@STxMh3@D13iFEMxrg@uqu9z%NIuC^b%$XsaLi,true,2022/01/01 00:00,2022/01/01 03:00,tutorial-04
+tutorialSession-09,La teoría de la relatividad,Breve resumen de la teoría de la relatividad,true,2022/01/01 00:00,2022/01/01 03:00,tutorial-05
+tutorialSession-10,.!.!.!.,|.|.|.|.|.|.|.|.|,true,2022/01/01 00:00,2022/01/01 03:00,tutorial-05
+tutorialSession-11,Lorca y su historia,Sesión sobre Federico García Lorca y sus obras,true,2022/01/01 00:00,2022/01/01 03:00,tutorial-06
+tutorialSession-12,<h1>html style title</h1>,<script>const message = fetchMessage()</script>,true,2022/01/01 00:00,2022/01/01 03:00,tutorial-06
+tutorialSession-13,La Gioconda,Pintura al óleo del artista italiano Leonardo da Vinci,true,2022/01/01 00:00,2022/01/01 03:00,tutorial-07
+tutorialSession-14,[general title],[general message,true,2022/01/01 00:00,2022/01/01 03:00,tutorial-07
+tutorialSession-15,Fútbol femenino,Entrenamiento de fútbol solo para mujeres,false,2022/01/01 00:00,2022/01/01 03:00,tutorial-08
+tutorialSession-16,#titulosaburridos,#mensajessinsentido,false,2022/01/01 00:00,2022/01/01 03:00,tutorial-08
+tutorialSession-17,Java para principiantes,Sesión de Java para principiantes,false,2022/01/01 00:00,2022/01/01 03:00,tutorial-09
+tutorialSession-18,1+1=7,¿Quién me lo iba a decir?,false,2022/01/01 00:00,2022/01/01 03:00,tutorial-09
