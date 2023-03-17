@@ -4,6 +4,8 @@ package acme.entities.messages;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
@@ -22,9 +24,10 @@ public class Bulletin extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
+	@Temporal(TemporalType.DATE)
 	@NotNull
 	@Past
-	protected Date				instantionMoment;
+	protected Date				instantationMoment;
 
 	@NotBlank
 	@Length(max = 76)
