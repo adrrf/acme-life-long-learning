@@ -1,5 +1,4 @@
-
-package acme.roles;
+package acme.entities.course;
 /*
  * Consumer.java
  *
@@ -12,52 +11,46 @@ package acme.roles;
  * they accept any liabilities with respect to them.
  */
 
+
+
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.validation.Valid;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.entities.practicum.Practicum;
-import acme.framework.data.AbstractRole;
+import acme.framework.data.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Company extends AbstractRole {
+public class Session extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
-	protected static final long	serialVersionUID	= 1L;
+	protected static final long	serialVersionUID= 1L;
 
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
 	@Length(max = 76)
-	protected String			name;
-
+	protected String title;	
+	
 	@NotBlank
-	@Length(max = 26)
-	protected String			VATnumber;
-
-	@NotBlank
-	@Length(max = 101)
-	protected String			sumary;
-
+	@Length(max= 101)
+	protected String recap;
+	
+	@Min(0)
+	protected Integer timePeriod;
+	
 	@URL
-	protected String			link;
+	protected String link;
 
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
 
-	@NotNull
-	@Valid
-	@ManyToOne
-	protected Practicum			practicum;
 }
