@@ -22,8 +22,8 @@
 	<description>This is the group project for the Design &amp; Testing subject.</description>
 
 	<groupId>Acme</groupId>	
-	<artifactId>Acme-L3-D01</artifactId>
-	<version>23.1.0</version>
+	<artifactId>Acme-L3-D03</artifactId>
+	<version>23.2.0</version>
 	<packaging>war</packaging>
 
 	<parent>
