@@ -56,3 +56,6 @@ master.menu.user-account.become-consumer = Become a consumer
 # master.menu.configuration ####################################################
 master.menu.administrator.configuration = Configuration
 
+# master.menu.asisstant.tutorial ####################################################
+master.menu.asisstant.tutorial = List my tutorials
+

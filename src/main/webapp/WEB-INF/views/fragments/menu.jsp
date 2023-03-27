@@ -36,6 +36,10 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.administrator" access="hasRole('Assistant')">
+			<acme:menu-suboption code="master.menu.asisstant.tutorial" action="/assistant/tutorial/list"/>
+		</acme:menu-option>
 
 	</acme:menu-left>
 
