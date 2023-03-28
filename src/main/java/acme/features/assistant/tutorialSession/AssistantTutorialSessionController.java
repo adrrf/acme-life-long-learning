@@ -1,28 +1,24 @@
 
-package acme.features.assistant.tutorial;
+package acme.features.assistant.tutorialSession;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import acme.entities.tutorial.Tutorial;
+import acme.entities.tutorial.TutorialSession;
 import acme.framework.controllers.AbstractController;
 import acme.roles.Assistant;
 
 @Controller
-public class AssistantTutorialController extends AbstractController<Assistant, Tutorial> {
+public class AssistantTutorialSessionController extends AbstractController<Assistant, TutorialSession> {
 
 	@Autowired
-	protected AssistantTutorialListService	listService;
-
-	@Autowired
-	protected AssistantTutorialShowService	showService;
+	protected AssistantTutorialSessionListService listService;
 
 
 	@PostConstruct
 	protected void initialise() {
 		super.addBasicCommand("list", this.listService);
-		super.addBasicCommand("show", this.showService);
 	}
 }
