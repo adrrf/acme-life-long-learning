@@ -64,7 +64,7 @@ public class AssistantTutorialSessionListService extends AbstractService<Assista
 		duration = MomentHelper.computeDuration(object.getStartTime(), object.getEndTime());
 
 		tuple = super.unbind(object, "title", "recap", "isTheory");
-		tuple.put("duration", duration.toHours());
+		tuple.put("duration", duration.toMinutes());
 
 		super.getResponse().setData(tuple);
 	}
