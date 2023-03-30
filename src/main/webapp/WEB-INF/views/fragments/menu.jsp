@@ -25,6 +25,11 @@
 			<acme:menu-suboption code="master.menu.anonymous.angmunpri" action="https://www.youtube.com/watch?v=3whkYzD_zgM&ab_channel=Miguel%C3%81vila"/>
 			<acme:menu-suboption code="master.menu.anonymous.alematcap" action="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/980px/public/media/image/2022/03/gato-botas-ultimo-deseo-2649871.jpg?itok=oOezagba"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.peep">
+			<acme:menu-suboption code="master.menu.peep.list" action="/any/peep/list"/>
+			<acme:menu-separator/>
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.configuration" action="/administrator/configuration/show"/>
