@@ -17,7 +17,7 @@
 
 <acme:form>
 	<acme:input-textbox code="authenticated.assistant.form.label.supervisor" path="supervisor"/>
-	<acme:input-textbox code="authenticated.assistant.form.label.fields" path="fields"/>
+	<acme:input-textbox code="authenticated.assistant.form.label.fields" placeholder="field1;field2;field3..." path="fields"/>
 	<acme:input-textarea code="authenticated.assistant.form.label.resume" path="resume"/>
 	<acme:input-url code="authenticated.assistant.form.label.link" path="link"/>
 	
