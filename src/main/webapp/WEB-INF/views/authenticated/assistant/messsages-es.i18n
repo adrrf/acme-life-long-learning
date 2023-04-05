@@ -1,0 +1,6 @@
+authenticated.assistant.form.label.supervisor = Supervisor
+authenticated.assistant.form.label.fields = Campos
+authenticated.assistant.form.label.resume = Curriculum
+authenticated.assistant.form.label.link = Enlace
+
+authenticated.assistant.form.button.create = Crear
