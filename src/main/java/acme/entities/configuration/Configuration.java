@@ -3,6 +3,7 @@ package acme.entities.configuration;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
@@ -18,6 +19,7 @@ public class Configuration extends AbstractEntity {
 	@NotBlank
 	protected String			currency;
 
+	@Pattern(regexp = "^(\\w+)(;\\w+)*;?$")
 	@NotBlank
 	protected String			acceptedCurrencies;
 
