@@ -1,0 +1,12 @@
+authenticated.course.list.label.code = Codigo
+authenticated.course.list.label.title = Titulo
+authenticated.course.list.label.recap = Resumen
+authenticated.course.list.retailPrice = Precio
+authenticated.course.list.label.link = Link
+authenticated.course.list.button.create = Crear
+
+authenticated.course.form.label.code = Codigo
+authenticated.course.form.label.title = Titulo
+authenticated.course.form.label.recap = Resumen
+authenticated.course.form.label.retailPrice = Precio
+authenticated.course.form.label.link = Link
