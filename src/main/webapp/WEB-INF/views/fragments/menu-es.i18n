@@ -25,6 +25,10 @@ master.menu.anonymous.manvazmar3 = 80103831Y: Vazquez Martin, Manuel
 master.menu.anonymous.angmunpri = 78135554T: Muñoz Prieto, Ángel
 master.menu.anonymous.alematcap = 77863310K: Mateo Capilla, Alejandro
 
+# master.menu.messages #######################################################
+master.menu.messages = Mensajes
+master.menu.messages.peep.list = Listar peeps
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
@@ -48,7 +52,19 @@ master.menu.consumer.favourite-link = Enlace favorito
 
 master.menu.user-account = Cuenta
 master.menu.user-account.general-data = Datos generales
-master.menu.user-account.provider = Datos de proveedor
-master.menu.user-account.become-provider = Hazte proveedor
+master.menu.user-account.assistant = Datos de asistente
+master.menu.user-account.become-assistant = Hazte asistente
 master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
+
+# master.menu.configuration ####################################################
+
+master.menu.administrator.configuration = Configuración
+
+# master.menu.assistant ####################################################
+
+master.menu.assistant = Asistente
+
+# master.menu.asisstant.tutorial ####################################################
+
+master.menu.asisstant.tutorial = Lista mis tutoriales
