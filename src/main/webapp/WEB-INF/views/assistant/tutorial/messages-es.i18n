@@ -1,5 +1,15 @@
-any.peep.list.label.instantiationMoment = Fecha
-any.peep.list.label.title = Título
-any.peep.list.label.nick = Apodo
+assistant.tutorial.list.label.code = Código
+assistant.tutorial.list.label.title = Título
+assistant.tutorial.list.label.course.code = Código del curso
+assistant.tutorial.list.label.course.title = Título del curso
+assistant.tutorial.list.button.create = Crear
 
-any.peep.list.button.create = Crear
+assistant.tutorial.form.label.code = Código
+assistant.tutorial.form.label.title = Título
+assistant.tutorial.form.label.recap = Resumen
+assistant.tutorial.form.label.goals = Metas
+assistant.tutorial.form.button.sessions = Sesiones
+assistant.tutorial.form.button.update = Actualizar
+assistant.tutorial.form.button.delete = Eliminar
+assistant.tutorial.form.button.publish = Publicar
+assistant.tutorial.form.button.create = Crear
