@@ -10,4 +10,4 @@
 	<acme:list-column code="assistant.tutorial.list.label.course.code" path="course.title" width="40%"/>	
 </acme:list>
 
-<acme:button code="assistant.tutorial.list.button.create" action="/administrator/announcement/create"/>
+<acme:button code="assistant.tutorial.list.button.create" action="/assistant/tutorial/create"/>
