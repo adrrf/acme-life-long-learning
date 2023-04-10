@@ -9,4 +9,7 @@
 	<acme:input-textarea code="authenticated.course.form.label.recap" path="recap"/>
 	<acme:input-money code="authenticated.course.form.label.retailPrice" path="retailPrice"/>
 	<acme:input-url code="authenticated.course.form.label.link" path="link"/>
+	
 </acme:form>
+
+<acme:button code="assistant.course.tutorial.button.create" action="/assistant/tutorial/create?courseId=${id}"/>

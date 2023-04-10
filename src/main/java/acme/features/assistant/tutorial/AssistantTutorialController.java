@@ -14,15 +14,20 @@ import acme.roles.Assistant;
 public class AssistantTutorialController extends AbstractController<Assistant, Tutorial> {
 
 	@Autowired
-	protected AssistantTutorialListService	listService;
+	protected AssistantTutorialListService		listService;
 
 	@Autowired
-	protected AssistantTutorialShowService	showService;
+	protected AssistantTutorialShowService		showService;
+
+	@Autowired
+	protected AssistantTutorialCreateService	createService;
 
 
 	@PostConstruct
 	protected void initialise() {
 		super.addBasicCommand("list", this.listService);
 		super.addBasicCommand("show", this.showService);
+		super.addBasicCommand("create", this.createService);
+
 	}
 }
