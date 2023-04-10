@@ -61,11 +61,11 @@ public class Practicum extends AbstractEntity {
 	protected Integer			totalTime;
 
 	// Relationships ----------------------------------------------------------
-	
+
 	@NotNull
 	@Valid
 	@ManyToOne
-	protected Company company;
+	protected Company			company;
 
 	@NotNull
 	@ManyToOne(optional = false)
