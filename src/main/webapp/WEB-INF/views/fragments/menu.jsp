@@ -31,6 +31,10 @@
 			<acme:menu-separator/>
 		</acme:menu-option>
 
+		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
+			<acme:menu-suboption code="master.menu.authenticated.courses" action="/authenticated/course/list"/>
+		</acme:menu-option>
+
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.configuration" action="/administrator/configuration/show"/>
 			<acme:menu-separator/>
@@ -44,6 +48,10 @@
 		
 		<acme:menu-option code="master.menu.assistant" access="hasRole('Assistant')">
 			<acme:menu-suboption code="master.menu.asisstant.tutorial" action="/assistant/tutorial/list"/>
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.lecturer" access="hasRole('Lecturer')">
+			<acme:menu-suboption code="master.menu.lecturer.courses" action="/lecturer/course/list"/>
 		</acme:menu-option>
 
 	</acme:menu-left>

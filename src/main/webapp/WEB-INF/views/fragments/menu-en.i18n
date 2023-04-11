@@ -69,3 +69,12 @@ master.menu.assistant = Assistant
 
 master.menu.asisstant.tutorial = List my tutorials
 
+# master.menu.autheticated ####################################################
+
+master.menu.authenticated = Courses
+master.menu.authenticated.courses = List all available courses
+
+# master.menu.lecturer ####################################################
+
+master.menu.lecturer = Lecturer
+master.menu.lecturer.courses = List my courses
