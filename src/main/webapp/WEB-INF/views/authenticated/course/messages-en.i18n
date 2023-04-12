@@ -10,5 +10,7 @@ authenticated.course.form.label.title = Title
 authenticated.course.form.label.recap = Abstract
 authenticated.course.form.label.retailPrice = Retail Price
 authenticated.course.form.label.link = Link
+lecturer.course.form.button.lectures = Lectures
+lecturer.course.form.button.update = Update
 
 assistant.course.tutorial.button.create = Create tutorial
