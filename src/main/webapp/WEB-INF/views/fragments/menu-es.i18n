@@ -56,6 +56,8 @@ master.menu.user-account.assistant = Datos de asistente
 master.menu.user-account.become-assistant = Hazte asistente
 master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
+master.menu.user-account.lecturer = Datos de profesor
+master.menu.user-account.become-lecturer = Hazte profesor
 
 # master.menu.configuration ####################################################
 
@@ -68,3 +70,13 @@ master.menu.assistant = Asistente
 # master.menu.asisstant.tutorial ####################################################
 
 master.menu.asisstant.tutorial = Lista mis tutoriales
+
+# master.menu.autheticated ####################################################
+
+master.menu.authenticated = Cursos
+master.menu.authenticated.courses = Lista todos los cursos disponibles
+
+# master.menu.lecturer ####################################################
+
+master.menu.lecturer = Profesor
+master.menu.lecturer.courses = Lista mis cursos
