@@ -1,0 +1,14 @@
+authenticated.course.list.label.code = Code
+authenticated.course.list.label.title = Title
+authenticated.course.list.label.recap = Abstract
+authenticated.course.list.retailPrice = Retail Price
+authenticated.course.list.label.link = Link
+authenticated.course.list.button.create = Create
+
+authenticated.course.form.label.code = Code
+authenticated.course.form.label.title = Title
+authenticated.course.form.label.recap = Abstract
+authenticated.course.form.label.retailPrice = Retail Price
+authenticated.course.form.label.link = Link
+
+assistant.course.tutorial.button.create = Create tutorial

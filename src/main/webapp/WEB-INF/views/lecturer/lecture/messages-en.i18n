@@ -1,0 +1,17 @@
+lecturer.lecture.list.label.title = Title
+lecturer.lecture.list.label.recap = Recap
+lecturer.lecture.list.label.learningTime = Learning Time
+lecturer.lecture.list.label.body = Body
+lecturer.lecture.list.label.isThoery = Theory
+lecturer.lecture.list.label.link = Link
+
+lecturer.lecture.form.label.title = Title
+lecturer.lecture.form.label.recap = Recap
+lecturer.lecture.form.label.learningTime = Learning Time
+lecturer.lecture.form.label.body = Body
+lecturer.lecture.form.label.isTheory = Theory
+lecturer.lecture.form.label.link = Link
+lecturer.lecture.form.button.update = Update
+lecturer.lecture.form.button.delete = Delete
+lecturer.lecture.form.button.publish = Publish
+lecturer.lecture.form.button.create = Create

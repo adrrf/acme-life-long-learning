@@ -1,0 +1,13 @@
+any.peep.list.label.instantiationMoment = Fecha
+any.peep.list.label.title = Título
+any.peep.list.label.nick = Apodo
+
+any.peep.form.label.instantiationMoment = Fecha
+any.peep.form.label.title = Título
+any.peep.form.label.nick = Apodo
+any.peep.form.label.message = Mensaje
+any.peep.form.label.email = E-mail
+any.peep.form.label.link = Link
+
+any.peep.list.button.create = Crear
+any.peep.form.button.create = Crear

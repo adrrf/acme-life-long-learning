@@ -1,4 +1,5 @@
-package acme.entities.course;
+
+package acme.entities.practicum;
 /*
  * Consumer.java
  *
@@ -11,11 +12,12 @@ package acme.entities.course;
  * they accept any liabilities with respect to them.
  */
 
-
-
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.validation.Valid;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -31,26 +33,31 @@ public class Session extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
-	protected static final long	serialVersionUID= 1L;
+	protected static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
 	@Length(max = 76)
-	protected String title;	
-	
+	protected String			title;
+
 	@NotBlank
-	@Length(max= 101)
-	protected String recap;
-	
+	@Length(max = 101)
+	protected String			recap;
+
 	@Min(0)
-	protected Integer timePeriod;
-	
+	@NotNull
+	protected Integer			timePeriod;
+
 	@URL
-	protected String link;
+	protected String			link;
 
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
 
+	@Valid
+	@NotNull
+	@ManyToOne
+	protected Practicum			practicum;
 }

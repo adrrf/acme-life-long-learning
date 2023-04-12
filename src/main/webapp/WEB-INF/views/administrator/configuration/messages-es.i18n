@@ -1,0 +1,6 @@
+administrator.configuration.form.label.currency = Divisa:
+administrator.configuration.form.label.acceptedCurrencies = Divisas aceptadas:
+
+administrator.configuration.form.button.update = Actualizar
+
+administrator.configuration.form.error.not-accepted = Divica no aceptada
