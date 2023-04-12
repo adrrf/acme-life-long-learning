@@ -10,7 +10,6 @@ import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.PastOrPresent;
 
 import org.hibernate.validator.constraints.Length;
 
@@ -37,12 +36,10 @@ public class TutorialSession extends AbstractEntity {
 	protected Boolean			isTheory;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@PastOrPresent
 	@NotNull
 	protected Date				startTime;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@PastOrPresent
 	@NotNull
 	protected Date				endTime;
 
