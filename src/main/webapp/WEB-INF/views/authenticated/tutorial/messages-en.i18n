@@ -1,0 +1,17 @@
+authenticated.tutorial.list.label.code = Code
+authenticated.tutorial.list.label.title = Title
+authenticated.tutorial.list.label.course.code = Course code
+authenticated.tutorial.list.label.course.title = Course title
+authenticated.tutorial.list.button.create = Create
+
+authenticated.tutorial.form.label.code = Code
+authenticated.tutorial.form.label.title = Title
+authenticated.tutorial.form.label.recap = Abstract
+authenticated.tutorial.form.label.goals = Goals
+authenticated.tutorial.form.label.time = Estimated time (in hours)
+authenticated.tutorial.form.button.sessions = Sessions
+authenticated.tutorial.form.button.assistant = Assistant Data
+authenticated.tutorial.form.button.create.session = Create session
+authenticated.tutorial.form.button.update = Update
+authenticated.tutorial.form.button.delete = Delete
+authenticated.tutorial.form.button.publish = Publish

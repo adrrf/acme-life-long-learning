@@ -13,5 +13,5 @@ authenticated.course.form.label.link = Link
 lecturer.course.form.button.lectures = Asignaturas
 lecturer.course.form.button.update = Actualizar
 
-
 assistant.course.tutorial.button.create = Crear tutorial
+authenticated.course.tutorial.button.list = Tutoriales
