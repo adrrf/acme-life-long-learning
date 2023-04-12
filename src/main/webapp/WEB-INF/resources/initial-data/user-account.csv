@@ -9,6 +9,7 @@ user-account-auditor-02,true,"UserIdentity{name: 'Mar', surname: 'Lucas', email:
 user-account-auditor-01,true,"UserIdentity{name: 'Alejandro', surname: 'Mateo', email: 'alematcap@acme.com'}",auditor01,auditor01
 user-account-student-02,true,"UserIdentity{name: 'Andrea', surname: 'Domínguez', email: 'andrea@acme.com'}",student02,student02
 user-account-student-01,true,"UserIdentity{name: 'Ángel', surname: 'Muñoz', email: 'angmunpri@acme.com'}",student01,student01
-user-account-administrator-01,true,"UserIdentity{name: 'Administrator', surname: 'Acme', email: 'administrator@acme.com'}",administrator,administrator
+user-account-administrator-01,true,"UserIdentity{name: 'Administrator', surname: 'Acme', email: 'administrator@acme.com'}",administrator01,administrator01
+user-account-administrator-02,true,"UserIdentity{name: 'Administrator2', surname: 'Acme2', email: 'administrator2@acme.com'}",administrator02,administrator02
 user-account-assistant-01,true,"UserIdentity{name: 'Adrian', surname: 'Romero', email: 'adrf@acme.com'}",assistant01,assistant01
 user-account-assistant-02,true,"UserIdentity{name: 'Hasbulla', surname: 'Magovedov', email: 'hasbu@acme.com'}",assistant02,assistant02
