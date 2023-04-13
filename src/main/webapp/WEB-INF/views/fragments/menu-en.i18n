@@ -80,3 +80,9 @@ master.menu.authenticated.courses = List all available courses
 
 master.menu.lecturer = Lecturer
 master.menu.lecturer.courses = List my courses
+
+# master.menu.student ####################################################
+
+master.menu.student = Students
+
+master.menu.student.enrolment = List my enrolments
