@@ -1,0 +1,14 @@
+student.enrolment.list.label.code = Codigo
+student.enrolment.list.label.motivation = Motivacion
+student.enrolment.list.label.goals = Metas
+student.enrolment.list.button.create = Crear
+
+student.enrolment.form.label.code = Codigo
+student.enrolment.form.label.motivation = Motivacion
+student.enrolment.form.label.goals = Metas
+
+student.enrolment.form.buttton.activities = Actividades
+student.enrolment.form.button.update = Actualizar
+student.enrolment.form.button.delete = Borrar
+student.enrolment.form.button.publish = Publicar
+student.enrolment.form.button.create = Crear
