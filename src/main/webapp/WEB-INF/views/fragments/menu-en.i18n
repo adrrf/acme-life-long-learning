@@ -56,6 +56,8 @@ master.menu.user-account.assistant = Assistant data
 master.menu.user-account.become-assistant = Become a assistant
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
+master.menu.user-account.lecturer = Lecturer data
+master.menu.user-account.become-lecturer = Become a lecturer
 
 # master.menu.configuration ####################################################
 
@@ -76,3 +78,13 @@ master.menu.company = Practicums
 # master.menu.company.practicum ####################################################
 
 master.menu.company.practicum = List my practicums
+
+# master.menu.autheticated ####################################################
+
+master.menu.authenticated = Courses
+master.menu.authenticated.courses = List all available courses
+
+# master.menu.lecturer ####################################################
+
+master.menu.lecturer = Lecturer
+master.menu.lecturer.courses = List my courses

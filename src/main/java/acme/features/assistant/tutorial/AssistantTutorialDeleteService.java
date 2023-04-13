@@ -9,12 +9,11 @@ import org.springframework.stereotype.Service;
 import acme.entities.tutorial.Tutorial;
 import acme.entities.tutorial.TutorialSession;
 import acme.framework.components.models.Tuple;
-import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Assistant;
 
 @Service
-public class AssistantTutorialShowService extends AbstractService<Assistant, Tutorial> {
+public class AssistantTutorialDeleteService extends AbstractService<Assistant, Tutorial> {
 
 	@Autowired
 	protected AssistantTutorialRepository repository;
@@ -37,7 +36,7 @@ public class AssistantTutorialShowService extends AbstractService<Assistant, Tut
 
 		tutorialId = super.getRequest().getData("id", int.class);
 		tutorial = this.repository.findOneTutorialById(tutorialId);
-		status = tutorial != null && super.getRequest().getPrincipal().hasRole(tutorial.getAssistant());
+		status = tutorial != null && tutorial.getDraftMode() && super.getRequest().getPrincipal().hasRole(tutorial.getAssistant());
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -54,22 +53,36 @@ public class AssistantTutorialShowService extends AbstractService<Assistant, Tut
 	}
 
 	@Override
+	public void bind(final Tutorial object) {
+		assert object != null;
+
+		super.bind(object, "code", "title", "recap", "goals", "draftMode");
+		object.setDraftMode(true);
+	}
+
+	@Override
+	public void validate(final Tutorial object) {
+		assert object != null;
+	}
+
+	@Override
+	public void perform(final Tutorial object) {
+		assert object != null;
+
+		Collection<TutorialSession> sessions;
+
+		sessions = this.repository.findManyTutorialSessionsByTutorialId(object.getId());
+		this.repository.deleteAll(sessions);
+		this.repository.delete(object);
+	}
+
+	@Override
 	public void unbind(final Tutorial object) {
 		assert object != null;
 
 		Tuple tuple;
-		int id;
-		Collection<TutorialSession> sessions;
-		int nHours;
-
-		id = super.getRequest().getData("id", int.class);
-
-		sessions = this.repository.findManyTutorialSessionsByTutorialId(id);
-
-		nHours = sessions.stream().mapToInt(s -> (int) MomentHelper.computeDuration(s.getStartTime(), s.getEndTime()).toHours()).sum();
 
 		tuple = super.unbind(object, "code", "title", "recap", "goals", "draftMode");
-		tuple.put("estimatedTime", nHours);
 
 		super.getResponse().setData(tuple);
 	}
