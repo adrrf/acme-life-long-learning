@@ -71,6 +71,14 @@ master.menu.assistant = Assistant
 
 master.menu.asisstant.tutorial = List my tutorials
 
+# master.menu.company ####################################################
+
+master.menu.company = Practicums
+
+# master.menu.company.practicum ####################################################
+
+master.menu.company.practicum = List my practicums
+
 # master.menu.autheticated ####################################################
 
 master.menu.authenticated = Courses
