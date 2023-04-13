@@ -1,6 +1,8 @@
 
 package acme.features.any.peep;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ import acme.framework.components.accounts.Principal;
 import acme.framework.components.models.Tuple;
 import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
+import watchdog.Watchdog;
 
 @Service
 public class AnyPeepCreateService extends AbstractService<Any, Peep> {
@@ -62,6 +65,19 @@ public class AnyPeepCreateService extends AbstractService<Any, Peep> {
 	@Override
 	public void validate(final Peep object) {
 		assert object != null;
+		if (!super.getBuffer().getErrors().hasErrors("message")) {
+			boolean status;
+			String message;
+			final Collection<String> spam = new ArrayList<String>();
+			double threshold;
+
+			message = object.getMessage();
+			spam.add("hola");
+			threshold = 0.1;
+			status = Watchdog.hasSpam(message, spam, threshold);
+
+			super.state(!status, "message", "any.peep.error.spam");
+		}
 	}
 
 	@Override

@@ -40,5 +40,10 @@
 			<type>2</type>
 			<locationURI>WORKSPACE_LOC/Frameworks/Acme-Framework-23.3.1/target/classes</locationURI>
 		</link>
+		<link>
+			<name>watchdog</name>
+			<type>2</type>
+			<location>C:/Users/adrián romero/Escritorio/3 isw/2do cuatrimestre/dp2/Workspace-23/Projects/adrf-watchdog/target/classes</location>
+		</link>
 	</linkedResources>
 </projectDescription>
