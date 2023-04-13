@@ -1,5 +1,5 @@
 
-package acme.features.lecturers.course;
+package acme.features.lecturer.course;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,7 +23,11 @@ public class LecturerCourseCreateService extends AbstractService<Lecturer, Cours
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+
+		status = super.getRequest().getPrincipal().hasRole(Lecturer.class);
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -63,7 +67,7 @@ public class LecturerCourseCreateService extends AbstractService<Lecturer, Cours
 			super.state(existing == null, "code", "lecturer.course.form.error.duplicated");
 		}
 
-		if (super.getBuffer().getErrors().hasErrors("retailPrice"))
+		if (!super.getBuffer().getErrors().hasErrors("retailPrice"))
 			super.state(object.getRetailPrice().getAmount() > 0, "retailPrice", "lecturer.course.form.error.negative-retailprice");
 	}
 

@@ -1,5 +1,5 @@
 
-package acme.features.lecturers.lectures;
+package acme.features.lecturer.lectures;
 
 import javax.annotation.PostConstruct;
 
@@ -19,11 +19,16 @@ public class LecturerLectureController extends AbstractController<Lecturer, Lect
 	@Autowired
 	protected LecturerLectureShowService	showService;
 
+	@Autowired
+	protected LecturerLectureCreateService	createService;
+
 
 	@PostConstruct
 	protected void initialise() {
 		super.addBasicCommand("list", this.listService);
 		super.addBasicCommand("show", this.showService);
+		super.addBasicCommand("create", this.createService);
+
 	}
 
 }

@@ -1,5 +1,5 @@
 
-package acme.features.lecturers.lectures;
+package acme.features.lecturer.lectures;
 
 import java.util.Collection;
 
@@ -32,6 +32,9 @@ public interface LecturerLectureRepository extends AbstractRepository {
 
 	@Query("select cl from CourseLecture cl where cl.id =  :id")
 	CourseLecture findOneCourseLectureById(int id);
+
+	@Query("select cl from CourseLecture cl where cl.lecture.id = :id")
+	CourseLecture findOneCourseLectureByLectureId(int id);
 
 	@Query("select l from Lecture l where l.id in (select cl.lecture.id from CourseLecture cl where cl.course.id = :courseId)")
 	Collection<Lecture> findManyLecturesByCourseId(int courseId);
