@@ -13,6 +13,9 @@
 </acme:form>
 
 <acme:button code="authenticated.course.tutorial.button.list" action="/authenticated/tutorial/list?masterId=${id}"/>
-<acme:button code="assistant.course.tutorial.button.create" action="/assistant/tutorial/create?courseId=${id}"/>
+
+<jstl:if test="hasRole('Assistant')">
+	<acme:button code="assistant.course.tutorial.button.create" action="/assistant/tutorial/create?courseId=${id}"/>
+</jstl:if>
 
 <acme:button code="student.course.enrolment.button.create" action="/student/enrolment/create?courseId=${id}"/>
