@@ -113,6 +113,7 @@ public class AssistantTutorialCreateService extends AbstractService<Assistant, T
 		courseId = super.getRequest().getData("courseId", int.class);
 		course = this.repository.findOneCourseById(courseId);
 		tuple = super.unbind(object, "code", "title", "recap", "goals", "draftMode");
+		tuple.put("estimatedTime", 0);
 		tuple.put("courseId", super.getRequest().getData("courseId", int.class));
 		tuple.put("assistant", assistant);
 		tuple.put("course", course);

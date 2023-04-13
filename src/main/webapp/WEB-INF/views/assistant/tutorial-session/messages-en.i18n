@@ -1,6 +1,6 @@
 assistant.tutorial-session.list.label.title: Title
 assistant.tutorial-session.list.label.recap: Abstract
-assistant.tutorial-session.list.label.duration: Duration (in minutes)
+assistant.tutorial-session.list.label.duration: Duration (in hours)
 assistant.tutorial-session.list.label.theory: Theoretical
 assistant.tutorial-session.list.button.create: Create
 
