@@ -97,3 +97,10 @@ master.menu.student = Students
 
 master.menu.student.enrolment = List my enrolments
 
+# master.menu.student ####################################################
+
+master.menu.auditor = Auditor
+
+master.menu.auditor.audit = List my audits
+
+

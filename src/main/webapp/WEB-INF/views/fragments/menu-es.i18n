@@ -95,3 +95,11 @@ master.menu.lecturer.lectures = Crear asignatura
 master.menu.student = Estudiantes
 
 master.menu.student.enrolment = Lista mis inscripciones
+
+# master.menu.student ####################################################
+
+master.menu.auditor = Auditor
+
+master.menu.auditor.audit = Listar mis auditorias
+
+

@@ -15,3 +15,5 @@
 <acme:button code="assistant.course.tutorial.button.create" action="/assistant/tutorial/create?courseId=${id}"/>
 
 <acme:button code="student.course.enrolment.button.create" action="/student/enrolment/create?courseId=${id}"/>
+
+<acme:button code="auditor.course.audit.button.create" action="/auditor/audit/create?courseId=${id}"/>
