@@ -1,5 +1,5 @@
 
-package acme.features.lecturers.course;
+package acme.features.lecturer.course;
 
 import java.util.Collection;
 
@@ -25,7 +25,11 @@ public class LecturerCourseListService extends AbstractService<Lecturer, Course>
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+
+		status = super.getRequest().getPrincipal().hasRole(Lecturer.class);
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override

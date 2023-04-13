@@ -14,4 +14,6 @@ lecturer.lecture.form.label.link = Link
 lecturer.lecture.form.button.update = Actualizar
 lecturer.lecture.form.button.delete = Borrar
 lecturer.lecture.form.button.publish = Publicar
-lecturer.lecture.form.button.create = Crear
+lecturer.lecture.form.button.create = Añadir asignatura
+
+lecturer.lecture.form.error.negative-learningTime = El valor tiene que ser mayor que cero
