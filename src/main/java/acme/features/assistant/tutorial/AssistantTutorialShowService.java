@@ -1,11 +1,15 @@
 
 package acme.features.assistant.tutorial;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.tutorial.Tutorial;
+import acme.entities.tutorial.TutorialSession;
 import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Assistant;
 
@@ -54,8 +58,18 @@ public class AssistantTutorialShowService extends AbstractService<Assistant, Tut
 		assert object != null;
 
 		Tuple tuple;
+		int id;
+		Collection<TutorialSession> sessions;
+		int nHours;
+
+		id = super.getRequest().getData("id", int.class);
+
+		sessions = this.repository.findManyTutorialSessionsByTutorialId(id);
+
+		nHours = sessions.stream().mapToInt(s -> (int) MomentHelper.computeDuration(s.getStartTime(), s.getEndTime()).toHours()).sum();
 
 		tuple = super.unbind(object, "code", "title", "recap", "goals", "draftMode");
+		tuple.put("estimatedTime", nHours);
 
 		super.getResponse().setData(tuple);
 	}

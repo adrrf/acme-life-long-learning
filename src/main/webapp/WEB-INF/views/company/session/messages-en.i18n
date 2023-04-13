@@ -1,0 +1,14 @@
+company.session.list.label.title = Title
+company.session.list.label.recap = Abstract
+company.session.list.duration = Duration (in hours)
+company.session.list.label.link = Link
+company.session.list.button.create = Create
+
+company.session.form.label.title = Title
+company.session.form.label.recap = Abstract
+company.session.form.label.startTime: Start time
+company.session.form.label.endTime: End time
+company.session.form.label.link = Link
+company.session.form.button.update = Update
+company.session.form.button.delete = Delete
+company.session.form.button.create = Create
