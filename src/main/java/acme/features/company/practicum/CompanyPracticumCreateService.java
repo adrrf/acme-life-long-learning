@@ -113,10 +113,12 @@ public class CompanyPracticumCreateService extends AbstractService<Company, Prac
 		courseId = super.getRequest().getData("courseId", int.class);
 		course = this.repository.findOneCourseById(courseId);
 		tuple = super.unbind(object, "code", "title", "recap", "goals", "draftMode");
+		tuple.put("totalTime", 0);
 		tuple.put("courseId", super.getRequest().getData("courseId", int.class));
 		tuple.put("company", company);
 		tuple.put("course", course);
 
 		super.getResponse().setData(tuple);
 	}
+
 }
