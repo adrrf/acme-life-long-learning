@@ -19,14 +19,10 @@ public class CompanySessionController extends AbstractController<Company, Sessio
 	@Autowired
 	protected CompanySessionShowService	showService;
 
-	//	@Autowired
-	//	protected CompanySessionCreateService	createService;
-
 
 	@PostConstruct
 	protected void initialise() {
 		super.addBasicCommand("list", this.listService);
 		super.addBasicCommand("show", this.showService);
-		//		super.addBasicCommand("create", this.createService);
 	}
 }

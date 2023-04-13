@@ -12,12 +12,16 @@ package acme.entities.practicum;
  * they accept any liabilities with respect to them.
  */
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.Valid;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.PastOrPresent;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -45,9 +49,15 @@ public class Session extends AbstractEntity {
 	@Length(max = 101)
 	protected String			recap;
 
-	@Min(0)
+	@Temporal(TemporalType.TIMESTAMP)
+	@PastOrPresent
 	@NotNull
-	protected Integer			timePeriod;
+	protected Date				startTime;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@PastOrPresent
+	@NotNull
+	protected Date				endTime;
 
 	@URL
 	protected String			link;
@@ -58,6 +68,6 @@ public class Session extends AbstractEntity {
 
 	@Valid
 	@NotNull
-	@ManyToOne
+	@ManyToOne(optional = false)
 	protected Practicum			practicum;
 }

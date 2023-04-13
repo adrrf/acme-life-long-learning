@@ -2,12 +2,15 @@
 package acme.features.company.session;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import acme.entities.practicum.Practicum;
 import acme.entities.practicum.Session;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Company;
 
+@Service
 public class CompanySessionShowService extends AbstractService<Company, Session> {
 
 	@Autowired
@@ -26,12 +29,12 @@ public class CompanySessionShowService extends AbstractService<Company, Session>
 	@Override
 	public void authorise() {
 		boolean status;
-		int id;
-		Session session;
+		int practicumId;
+		Practicum practicum;
 
-		id = super.getRequest().getData("id", int.class);
-		session = this.repository.findOneSessionById(id);
-		status = session != null && super.getRequest().getPrincipal().hasRole(session.getPracticum().getCompany());
+		practicumId = super.getRequest().getData("id", int.class);
+		practicum = this.repository.findOneSessionByPracticumId(practicumId);
+		status = practicum != null && super.getRequest().getPrincipal().hasRole(practicum.getCompany()) && super.getRequest().getPrincipal().getUsername().equals(practicum.getCompany().getUserAccount().getUsername());
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -53,8 +56,9 @@ public class CompanySessionShowService extends AbstractService<Company, Session>
 
 		Tuple tuple;
 
-		tuple = super.unbind(object, "title", "recap", "timePeriod", "link");
-		tuple.put("sessionId", object.getId());
+		tuple = super.unbind(object, "title", "recap", "startTime", "endTime", "link");
+		tuple.put("masterId", object.getPracticum().getId());
+		tuple.put("draftMode", object.getPracticum().getDraftMode());
 
 		super.getResponse().setData(tuple);
 	}

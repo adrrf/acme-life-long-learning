@@ -1,13 +1,16 @@
 
 package acme.features.company.session;
 
+import java.time.Duration;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.practicum.Practicum;
 import acme.entities.practicum.Session;
 import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Company;
 
@@ -20,29 +23,33 @@ public class CompanySessionListService extends AbstractService<Company, Session>
 
 	@Override
 	public void check() {
-		super.getResponse().setChecked(true);
+		boolean status;
+
+		status = super.getRequest().hasData("id", int.class);
+
+		super.getResponse().setChecked(status);
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
 		int practicumId;
-		Company object;
+		Practicum object;
 
 		practicumId = super.getRequest().getData("masterId", int.class);
-		object = this.repository.findOneCompanyByPracticumId(practicumId);
-		status = super.getRequest().getPrincipal().getUsername().equals(object.getUserAccount().getUsername());
+		object = this.repository.findOneSessionByPracticumId(practicumId);
+		status = object != null && super.getRequest().getPrincipal().hasRole(object.getCompany()) && super.getRequest().getPrincipal().getUsername().equals(object.getCompany().getUserAccount().getUsername());
 
 		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		int id;
 		Collection<Session> objects;
+		int masterId;
 
-		id = super.getRequest().getData("masterId", int.class);
-		objects = this.repository.findManySessionsByPracticumId(id);
+		masterId = super.getRequest().getData("masterId", int.class);
+		objects = this.repository.findManySessionsByPracticumId(masterId);
 
 		super.getBuffer().setData(objects);
 	}
@@ -52,10 +59,29 @@ public class CompanySessionListService extends AbstractService<Company, Session>
 		assert object != null;
 
 		Tuple tuple;
+		Duration duration;
 
-		tuple = super.unbind(object, "title", "recap", "timePeriod", "link");
-		tuple.put("sessionId", object.getId());
+		duration = MomentHelper.computeDuration(object.getStartTime(), object.getEndTime());
+
+		tuple = super.unbind(object, "title", "recap", "link");
+		tuple.put("duration", duration.toMinutes());
 
 		super.getResponse().setData(tuple);
+	}
+
+	@Override
+	public void unbind(final Collection<Session> objects) {
+		assert objects != null;
+
+		int masterId;
+		Practicum practicum;
+		final boolean showCreate;
+
+		masterId = super.getRequest().getData("masterId", int.class);
+		practicum = this.repository.findOnePracticumById(masterId);
+		showCreate = practicum.getDraftMode() && super.getRequest().getPrincipal().hasRole(practicum.getCompany());
+
+		super.getResponse().setGlobal("masterId", masterId);
+		super.getResponse().setGlobal("showCreate", showCreate);
 	}
 }

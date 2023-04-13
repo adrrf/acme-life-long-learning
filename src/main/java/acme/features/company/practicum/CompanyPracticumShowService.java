@@ -2,12 +2,14 @@
 package acme.features.company.practicum;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import acme.entities.practicum.Practicum;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Company;
 
+@Service
 public class CompanyPracticumShowService extends AbstractService<Company, Practicum> {
 
 	@Autowired
@@ -51,7 +53,7 @@ public class CompanyPracticumShowService extends AbstractService<Company, Practi
 		assert object != null;
 		Tuple tuple;
 
-		tuple = super.unbind(object, "code", "title", "recap", "goals");
+		tuple = super.unbind(object, "code", "title", "recap", "goals", "draftMode", "totalTime");
 
 		super.getResponse().setData(tuple);
 	}

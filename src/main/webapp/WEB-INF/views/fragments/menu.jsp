@@ -45,6 +45,10 @@
 		<acme:menu-option code="master.menu.assistant" access="hasRole('Assistant')">
 			<acme:menu-suboption code="master.menu.asisstant.tutorial" action="/assistant/tutorial/list"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.company" access="hasRole('Company')">
+			<acme:menu-suboption code="master.menu.company.practicum" action="/company/practicum/list"/>
+		</acme:menu-option>
 
 	</acme:menu-left>
 
