@@ -418,7 +418,7 @@ m2=1</panel_attributes>
       <h>112</h>
     </coordinates>
     <panel_attributes>&lt;&lt;AbstractEntity&gt;&gt;
-Enrolment
+Activity
 --
 + title: String {NotBlank, Lenght(max=76)}
 + recap: String {NotBlank, Lenght(max=101)}
