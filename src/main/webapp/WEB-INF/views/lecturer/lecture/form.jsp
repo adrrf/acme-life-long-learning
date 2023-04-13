@@ -7,7 +7,7 @@
 	<acme:input-textbox code="lecturer.lecture.form.label.title" path="title"/>
 	<acme:input-textarea code="lecturer.lecture.form.label.recap" path="recap"/>
 	<acme:input-integer code="lecturer.lecture.form.label.learningTime" path="learningTime"/>
-	<acme:input-textbox code="lecturer.lecture.form.label.body" path="body"/>
+	<acme:input-textarea code="lecturer.lecture.form.label.body" path="body"/>
 	<acme:input-checkbox code="lecturer.lecture.form.label.isTheory" path="isTheory"/>
 	<acme:input-url code="lecturer.course.form.label.link" path="link"/>
 	
