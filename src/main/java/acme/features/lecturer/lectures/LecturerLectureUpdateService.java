@@ -10,7 +10,7 @@ import acme.framework.services.AbstractService;
 import acme.roles.Lecturer;
 
 @Service
-public class LecturerLectureShowService extends AbstractService<Lecturer, Lecture> {
+public class LecturerLectureUpdateService extends AbstractService<Lecturer, Lecture> {
 
 	@Autowired
 	protected LecturerLectureRepository repository;
@@ -28,12 +28,12 @@ public class LecturerLectureShowService extends AbstractService<Lecturer, Lectur
 	@Override
 	public void authorise() {
 		boolean status;
-		int id;
+		int lectureId;
 		Lecture lecture;
 
-		id = super.getRequest().getData("id", int.class);
-		lecture = this.repository.findOneLectureById(id);
-		status = lecture != null && super.getRequest().getPrincipal().hasRole(lecture.getLecturer());
+		lectureId = super.getRequest().getData("id", int.class);
+		lecture = this.repository.findOneLectureById(lectureId);
+		status = lecture != null && lecture.getDraftMode() && super.getRequest().getPrincipal().hasRole(lecture.getLecturer());
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -50,13 +50,36 @@ public class LecturerLectureShowService extends AbstractService<Lecturer, Lectur
 	}
 
 	@Override
+	public void bind(final Lecture object) {
+		assert object != null;
+
+		super.bind(object, "title", "recap", "learningTime", "body", "isTheory", "link", "draftMode");
+		object.setDraftMode(true);
+
+	}
+
+	@Override
+	public void validate(final Lecture object) {
+		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("learningTime"))
+			super.state(object.getLearningTime() > 0, "learningTime", "lecturer.lecture.form.error.negative-learningTime");
+	}
+
+	@Override
+	public void perform(final Lecture object) {
+		assert object != null;
+
+		this.repository.save(object);
+	}
+
+	@Override
 	public void unbind(final Lecture object) {
 		assert object != null;
 
 		Tuple tuple;
 
 		tuple = super.unbind(object, "title", "recap", "learningTime", "body", "isTheory", "link", "draftMode");
-		tuple.put("lectureId", object.getId());
 
 		super.getResponse().setData(tuple);
 	}

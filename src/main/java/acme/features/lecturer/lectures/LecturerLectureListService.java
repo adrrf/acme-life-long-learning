@@ -63,7 +63,7 @@ public class LecturerLectureListService extends AbstractService<Lecturer, Lectur
 		id = super.getRequest().getData("masterId", int.class);
 		course = this.repository.findOneCourseById(id);
 
-		tuple = super.unbind(object, "title", "recap", "learningTime", "body", "isTheory", "link");
+		tuple = super.unbind(object, "title", "recap", "learningTime", "body", "isTheory", "link", "draftMode");
 		tuple.put("lectureId", object.getId());
 		tuple.put("course", course);
 		tuple.put("courseDraftMode", true);

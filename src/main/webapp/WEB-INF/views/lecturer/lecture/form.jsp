@@ -12,11 +12,7 @@
 	<acme:input-url code="lecturer.course.form.label.link" path="link"/>
 	
 	<jstl:choose>
-		<jstl:when test="${_command == 'show' && draftMode == false}">
-			<acme:button code="lecturer.course.form.buttton.lectures" action="/lecturer/lecture/list?masterId=${id}"/>			
-		</jstl:when>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
-			<acme:button code="lecturer.lecture.form.buttton.lectures" action="/lecturer/lecture/list?masterId=${id}"/>
 			<acme:submit code="lecturer.lecture.form.button.update" action="/lecturer/lecture/update"/>
 			<acme:submit code="lecturer.lecture.form.button.delete" action="/lecturer/lecture/delete"/>
 			<acme:submit code="lecturer.lecture.form.button.publish" action="/lecturer/lecture/publish"/>
