@@ -1,26 +1,27 @@
 
 package acme.features.any.peep;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.ConfigurationRepository;
 import acme.entities.messages.Peep;
 import acme.framework.components.accounts.Any;
 import acme.framework.components.accounts.Principal;
 import acme.framework.components.models.Tuple;
 import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
-import watchdog.Watchdog;
 
 @Service
 public class AnyPeepCreateService extends AbstractService<Any, Peep> {
 
 	@Autowired
-	protected AnyPeepRepository repository;
+	protected AnyPeepRepository			repository;
+
+	@Autowired
+	protected ConfigurationRepository	configuration;
 
 	// AbstractService interface ----------------------------------------------
 
@@ -65,16 +66,33 @@ public class AnyPeepCreateService extends AbstractService<Any, Peep> {
 	@Override
 	public void validate(final Peep object) {
 		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("nick")) {
+			boolean status;
+			String message;
+
+			message = object.getNick();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "nick", "any.peep.error.spam");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("title")) {
+			boolean status;
+			String message;
+
+			message = object.getTitle();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "title", "any.peep.error.spam");
+		}
+
 		if (!super.getBuffer().getErrors().hasErrors("message")) {
 			boolean status;
 			String message;
-			final Collection<String> spam = new ArrayList<String>();
-			double threshold;
 
 			message = object.getMessage();
-			spam.add("hola");
-			threshold = 0.1;
-			status = Watchdog.hasSpam(message, spam, threshold);
+			status = this.configuration.hasSpam(message);
 
 			super.state(!status, "message", "any.peep.error.spam");
 		}

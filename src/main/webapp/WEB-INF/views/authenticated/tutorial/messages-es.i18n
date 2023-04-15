@@ -1,6 +1,6 @@
 authenticated.tutorial.list.label.code = Código
 authenticated.tutorial.list.label.title = Título
-authenticated.tutorial.list.label.course.code = Código del curso
+authenticated.tutorial.list.label.goals = Metas
 authenticated.tutorial.list.label.course.title = Título del curso
 authenticated.tutorial.list.button.create = Crear
 

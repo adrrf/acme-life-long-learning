@@ -1,6 +1,7 @@
 administrator.configuration.form.label.currency = Divisa:
 administrator.configuration.form.label.acceptedCurrencies = Divisas aceptadas:
-
+administrator.configuration.form.label.spamwordsen = Lista de palabras spam (en inglés):
+administrator.configuration.form.label.spamwordses = Lista de palabras spam (en español):
 administrator.configuration.form.button.update = Actualizar
 
 administrator.configuration.form.error.not-accepted = Divica no aceptada

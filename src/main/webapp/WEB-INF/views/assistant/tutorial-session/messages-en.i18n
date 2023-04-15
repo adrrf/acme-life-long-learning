@@ -13,3 +13,5 @@ assistant.tutorial-session.form.label.endTime: End time
 assistant.tutorial-session.form.button.update: Update
 assistant.tutorial-session.form.button.delete: Delete
 assistant.tutorial-session.form.button.create: Create
+
+assistant.tutorial-session.error.spam = Contains spam
