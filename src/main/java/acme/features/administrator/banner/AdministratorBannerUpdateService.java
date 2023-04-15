@@ -52,13 +52,15 @@ public class AdministratorBannerUpdateService extends AbstractService<Administra
 		if (!super.getBuffer().getErrors().hasErrors("startTime") && !super.getBuffer().getErrors().hasErrors("finishTime"))
 			if (!MomentHelper.isBefore(object.getStartTime(), object.getFinishTime()))
 				super.state(false, "finishTime", "administrator.banner.form.error.end-before-start");
+			else if (!MomentHelper.isBefore(object.getInstationUpdateMoment(), object.getStartTime()))
+				super.state(false, "startTime", "administrator.banner.form.error.start-before-instation");
 			else {
 				final int days = (int) MomentHelper.computeDuration(MomentHelper.getCurrentMoment(), object.getStartTime()).toDays();
 				if (days < 1)
 					super.state(false, "startTime", "administrator.banner.form.error.day-ahead");
 				else {
-					final int hours = (int) MomentHelper.computeDuration(object.getStartTime(), object.getFinishTime()).toHours();
-					if (!(1 <= hours && hours <= 5))
+					final int duration = (int) MomentHelper.computeDuration(object.getStartTime(), object.getFinishTime()).toDays();
+					if (!(7 <= duration))
 						super.state(false, "finishTime", "administrator.banner.form.error.duration");
 				}
 			}
