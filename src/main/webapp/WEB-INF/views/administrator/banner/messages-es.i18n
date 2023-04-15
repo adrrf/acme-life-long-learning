@@ -16,3 +16,8 @@ administrator.banner.list.button.create = Crear
 administrator.banner.form.button.create = Crear
 administrator.banner.form.button.update = Actualizar
 administrator.banner.form.button.delete = Borrar
+
+administrator.banner.form.error.end-before-start = No puede finalizar antes de haber empezado
+administrator.banner.form.error.start-before-instation = Debe comenzar después del instante de actualización
+administrator.banner.form.error.day-ahead = No puede haber empezado más tarde del día actual
+administrator.banner.form.error.duration = Debe durar al menos una semana
