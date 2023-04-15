@@ -1,19 +1,19 @@
 
-package acme.features.lecturer.lectures;
+package acme.features.administrator.banner;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.course.Lecture;
+import acme.entities.messages.Banner;
+import acme.framework.components.accounts.Administrator;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
-import acme.roles.Lecturer;
 
 @Service
-public class LecturerLectureShowService extends AbstractService<Lecturer, Lecture> {
+public class AdministratorBannerShowService extends AbstractService<Administrator, Banner> {
 
 	@Autowired
-	protected LecturerLectureRepository repository;
+	protected AdministratorBannerRepository repository;
 
 
 	@Override
@@ -28,35 +28,34 @@ public class LecturerLectureShowService extends AbstractService<Lecturer, Lectur
 	@Override
 	public void authorise() {
 		boolean status;
-		int id;
-		Lecture lecture;
+		int bannerId;
+		Banner banner;
 
-		id = super.getRequest().getData("id", int.class);
-		lecture = this.repository.findOneLectureById(id);
-		status = lecture != null && super.getRequest().getPrincipal().hasRole(lecture.getLecturer());
+		bannerId = super.getRequest().getData("id", int.class);
+		banner = this.repository.findBannerById(bannerId);
+		status = banner != null;
 
 		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		Lecture object;
+		Banner object;
 		int id;
 
 		id = super.getRequest().getData("id", int.class);
-		object = this.repository.findOneLectureById(id);
+		object = this.repository.findBannerById(id);
 
 		super.getBuffer().setData(object);
 	}
 
 	@Override
-	public void unbind(final Lecture object) {
+	public void unbind(final Banner object) {
 		assert object != null;
 
 		Tuple tuple;
 
-		tuple = super.unbind(object, "title", "recap", "learningTime", "body", "isTheory", "link", "draftMode");
-		tuple.put("lectureId", object.getId());
+		tuple = super.unbind(object, "instationUpdateMoment", "startTime", "finishTime", "slogan", "linkPicture", "linkDocument");
 
 		super.getResponse().setData(tuple);
 	}

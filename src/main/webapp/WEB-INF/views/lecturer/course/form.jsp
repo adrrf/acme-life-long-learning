@@ -4,7 +4,14 @@
 <%@taglib prefix="acme" uri="http://www.the-acme-framework.org/"%>
 
 <acme:form> 
-	<acme:input-textbox code="lecturer.course.form.label.code" path="code"/>
+	<jstl:choose>
+		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish')}">
+			<acme:input-textbox readonly="true" code="lecturer.course.form.label.code" path="code"/>
+		</jstl:when>
+		<jstl:when test="${_command == 'create'}">
+			<acme:input-textbox code="lecturer.course.form.label.code" path="code"/>
+		</jstl:when>
+	</jstl:choose>
 	<acme:input-textbox code="lecturer.course.form.label.title" path="title"/>
 	<acme:input-textarea code="lecturer.course.form.label.recap" path="recap"/>
 	<acme:input-money code="lecturer.course.form.label.retailPrice" path="retailPrice"/>
