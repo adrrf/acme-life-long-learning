@@ -1,32 +1,32 @@
 
-package acme.features.company.session;
+package acme.features.administrator.banner;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import acme.entities.practicum.Session;
+import acme.entities.messages.Banner;
+import acme.framework.components.accounts.Administrator;
 import acme.framework.controllers.AbstractController;
-import acme.roles.Company;
 
 @Controller
-public class CompanySessionController extends AbstractController<Company, Session> {
+public class AdministratorBannerController extends AbstractController<Administrator, Banner> {
 
 	@Autowired
-	protected CompanySessionListService		listService;
+	protected AdministratorBannerListService	listService;
 
 	@Autowired
-	protected CompanySessionShowService		showService;
+	protected AdministratorBannerShowService	showService;
 
 	@Autowired
-	protected CompanySessionCreateService	createService;
+	protected AdministratorBannerCreateService	createService;
 
 	@Autowired
-	protected CompanySessionUpdateService	updateService;
+	protected AdministratorBannerUpdateService	updateService;
 
 	@Autowired
-	protected CompanySessionDeleteService	deleteService;
+	protected AdministratorBannerDeleteService	deleteService;
 
 
 	@PostConstruct
@@ -36,6 +36,5 @@ public class CompanySessionController extends AbstractController<Company, Sessio
 		super.addBasicCommand("create", this.createService);
 		super.addBasicCommand("update", this.updateService);
 		super.addBasicCommand("delete", this.deleteService);
-
 	}
 }
