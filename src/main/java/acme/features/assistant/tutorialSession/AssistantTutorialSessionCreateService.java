@@ -4,6 +4,7 @@ package acme.features.assistant.tutorialSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.ConfigurationRepository;
 import acme.entities.tutorial.Tutorial;
 import acme.entities.tutorial.TutorialSession;
 import acme.framework.components.models.Tuple;
@@ -15,7 +16,10 @@ import acme.roles.Assistant;
 public class AssistantTutorialSessionCreateService extends AbstractService<Assistant, TutorialSession> {
 
 	@Autowired
-	protected AssistantTutorialSessionRepository repository;
+	protected AssistantTutorialSessionRepository	repository;
+
+	@Autowired
+	protected ConfigurationRepository				configuration;
 
 
 	@Override
@@ -72,6 +76,26 @@ public class AssistantTutorialSessionCreateService extends AbstractService<Assis
 	@Override
 	public void validate(final TutorialSession object) {
 		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("title")) {
+			boolean status;
+			String message;
+
+			message = object.getTitle();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "title", "assistant.tutorial-session.error.spam");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("recap")) {
+			boolean status;
+			String message;
+
+			message = object.getRecap();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "recap", "assistant.tutorial-session.error.spam");
+		}
 
 		if (!super.getBuffer().getErrors().hasErrors("startTime") && !super.getBuffer().getErrors().hasErrors("endTime"))
 			if (!MomentHelper.isBefore(object.getStartTime(), object.getEndTime()))

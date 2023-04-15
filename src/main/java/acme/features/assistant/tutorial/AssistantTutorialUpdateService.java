@@ -4,6 +4,7 @@ package acme.features.assistant.tutorial;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.ConfigurationRepository;
 import acme.entities.tutorial.Tutorial;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
@@ -13,7 +14,10 @@ import acme.roles.Assistant;
 public class AssistantTutorialUpdateService extends AbstractService<Assistant, Tutorial> {
 
 	@Autowired
-	protected AssistantTutorialRepository repository;
+	protected AssistantTutorialRepository	repository;
+
+	@Autowired
+	protected ConfigurationRepository		configuration;
 
 
 	@Override
@@ -60,6 +64,36 @@ public class AssistantTutorialUpdateService extends AbstractService<Assistant, T
 	@Override
 	public void validate(final Tutorial object) {
 		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("title")) {
+			boolean status;
+			String message;
+
+			message = object.getTitle();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "title", "assistant.tutorial.error.spam");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("recap")) {
+			boolean status;
+			String message;
+
+			message = object.getRecap();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "recap", "assistant.tutorial.error.spam");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("goals")) {
+			boolean status;
+			String message;
+
+			message = object.getGoals();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "goals", "assistant.tutorial.error.spam");
+		}
 
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			Tutorial tutorial;

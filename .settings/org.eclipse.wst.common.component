@@ -257,8 +257,12 @@
         
         
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/acme-framework"/>
+<<<<<<< HEAD
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/watchdog"/>
+=======
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/resources"/>
+>>>>>>> origin/develop
                                                                                                                                                                                                                                                                                                                                                                 
         
         

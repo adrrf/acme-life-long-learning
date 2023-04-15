@@ -5,3 +5,5 @@ authenticated.assistant.form.label.link = Link
 
 authenticated.assistant.form.button.create = Create
 authenticated.assistant.form.button.update = Update
+
+authenticated.assistant.error.spam = Contains spam
