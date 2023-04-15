@@ -43,7 +43,7 @@
 		<link>
 			<name>watchdog</name>
 			<type>2</type>
-			<location>C:/Users/adrián romero/Escritorio/3 isw/2do cuatrimestre/dp2/Workspace-23/Projects/adrf-watchdog/target/classes</location>
+			<locationURI>WORKSPACE_LOC/Projects/adrf-watchdog/target/classes</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>
