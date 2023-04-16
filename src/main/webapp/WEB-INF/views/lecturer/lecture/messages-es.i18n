@@ -2,7 +2,7 @@ lecturer.lecture.list.label.title = Titulo
 lecturer.lecture.list.label.recap = Resumen
 lecturer.lecture.list.label.learningTime = Tiempo de enseñanza
 lecturer.lecture.list.label.body = Cuerpo
-lecturer.lecture.list.label.isThoery = Teoria
+lecturer.lecture.list.label.isTheory = Teoria
 lecturer.lecture.list.label.link = Link
 
 lecturer.lecture.form.label.title = Titulo

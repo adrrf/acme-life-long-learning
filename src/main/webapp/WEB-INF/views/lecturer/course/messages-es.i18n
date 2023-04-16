@@ -2,6 +2,7 @@ lecturer.course.list.label.code = Codigo
 lecturer.course.list.label.title = Titulo
 lecturer.course.list.label.recap = Resumen
 lecturer.course.list.retailPrice = Precio
+lecturer.course.list.label.isTheory = Teoria
 lecturer.course.list.label.link = Link
 lecturer.course.list.button.create = Crear
 
@@ -18,3 +19,4 @@ lecturer.course.form.button.create = Crear
 
 lecturer.course.form.error.duplicated = Codigo duplicado
 lecturer.course.form.error.negative-retailprice = Cantidad negativa
+lecturer.course.form.error.currency-retailprice = Moneda no aceptada 

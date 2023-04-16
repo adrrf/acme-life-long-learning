@@ -88,13 +88,16 @@ public class LecturerCourseLectureCreateService extends AbstractService<Lecturer
 		assert object != null;
 
 		int lecturerId;
-		Collection<Lecture> lectures;
+		Collection<Lecture> allLectures;
+		Collection<Lecture> courseLectures;
 		final SelectChoices choices;
 		final Tuple tuple;
 
 		lecturerId = super.getRequest().getPrincipal().getActiveRoleId();
-		lectures = this.repository.findAllLecturesOfLecturerId(lecturerId);
-		choices = SelectChoices.from(lectures, "title", object.getLecture());
+		allLectures = this.repository.findAllLecturesOfLecturerId(lecturerId);
+		courseLectures = this.repository.findLecturesOfCourseId(object.getCourse().getId());
+		allLectures.removeAll(courseLectures);
+		choices = SelectChoices.from(allLectures, "title", object.getLecture());
 
 		tuple = super.unbind(object, "course");
 		tuple.put("masterId", object.getCourse().getId());

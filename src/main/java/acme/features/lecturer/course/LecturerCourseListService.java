@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.course.Course;
+import acme.entities.course.Lecture;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Lecturer;
@@ -48,8 +49,19 @@ public class LecturerCourseListService extends AbstractService<Lecturer, Course>
 		assert object != null;
 
 		Tuple tuple;
+		Collection<Lecture> lectures;
+		boolean isTheory = true;
+		int theoryLectures;
+		int handsOnLectures;
+
+		lectures = this.repository.findManyLecturesByCourseId(object.getId());
+		theoryLectures = (int) lectures.stream().filter(l -> l.getIsTheory()).count();
+		handsOnLectures = lectures.size() - theoryLectures;
+		if (handsOnLectures >= theoryLectures)
+			isTheory = false;
 
 		tuple = super.unbind(object, "code", "title", "recap", "retailPrice", "link", "draftMode");
+		tuple.put("isTheory", isTheory);
 
 		super.getResponse().setData(tuple);
 	}

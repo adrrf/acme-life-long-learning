@@ -8,7 +8,7 @@
 	<acme:list-column code="lecturer.lecture.list.label.recap" path="recap" width="40%"/>
 	<acme:list-column code="lecturer.lecture.list.label.learningTime" path="learningTime" width="40%"/>
 	<acme:list-column code="lecturer.lecture.list.label.body" path="body" width="40%"/>
-	<acme:list-column code="lecturer.lecture.list.label.isTheory" path="theory" width="40%"/>
+	<acme:list-column code="lecturer.lecture.list.label.isTheory" path="isTheory" width="40%"/>
 	<acme:list-column code="lecturer.lecture.list.label.link" path="link" width="40%"/>
 </acme:list>
 

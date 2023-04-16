@@ -4,6 +4,7 @@ package acme.features.lecturer.course;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.configuration.Configuration;
 import acme.entities.course.Course;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
@@ -65,6 +66,14 @@ public class LecturerCourseCreateService extends AbstractService<Lecturer, Cours
 
 			existing = this.repository.findeOneCourseByCode(object.getCode());
 			super.state(existing == null, "code", "lecturer.course.form.error.duplicated");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("retailPrice")) {
+			Configuration configuration;
+
+			configuration = this.repository.findConfiguration();
+
+			super.state(configuration.getAcceptedCurrencies().contains(object.getRetailPrice().getCurrency()), "retailPrice", "lecturer.course.form.error.currency-retailprice" + configuration.getAcceptedCurrencies());
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("retailPrice"))
