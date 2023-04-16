@@ -1,21 +1,21 @@
 
-package acme.features.lecturers.course;
+package acme.features.students.enrolment;
 
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.course.Course;
+import acme.entities.enrolment.Enrolment;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
-import acme.roles.Lecturer;
+import acme.roles.Student;
 
 @Service
-public class LecturerCourseListService extends AbstractService<Lecturer, Course> {
+public class StudentEnrolmentListService extends AbstractService<Student, Enrolment> {
 
 	@Autowired
-	protected LecturerCourseRepository repository;
+	protected StudentEnrolmentRepository repository;
 
 
 	@Override
@@ -30,22 +30,22 @@ public class LecturerCourseListService extends AbstractService<Lecturer, Course>
 
 	@Override
 	public void load() {
-		Collection<Course> objects;
-		int lecturerId;
+		Collection<Enrolment> objects;
+		int studentId;
 
-		lecturerId = super.getRequest().getPrincipal().getActiveRoleId();
-		objects = this.repository.findManyCoursesByLecturerId(lecturerId);
+		studentId = super.getRequest().getPrincipal().getActiveRoleId();
+		objects = this.repository.findManyEnrolmentsByStudentId(studentId);
 
 		super.getBuffer().setData(objects);
 	}
 
 	@Override
-	public void unbind(final Course object) {
+	public void unbind(final Enrolment object) {
 		assert object != null;
 
 		Tuple tuple;
 
-		tuple = super.unbind(object, "code", "title", "recap", "retailPrice", "link", "draftMode");
+		tuple = super.unbind(object, "code", "motivation", "goals", "draftMode");
 
 		super.getResponse().setData(tuple);
 	}

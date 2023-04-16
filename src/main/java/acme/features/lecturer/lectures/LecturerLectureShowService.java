@@ -1,19 +1,19 @@
 
-package acme.features.lecturers.course;
+package acme.features.lecturer.lectures;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.course.Course;
+import acme.entities.course.Lecture;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Lecturer;
 
 @Service
-public class LecturerCourseShowService extends AbstractService<Lecturer, Course> {
+public class LecturerLectureShowService extends AbstractService<Lecturer, Lecture> {
 
 	@Autowired
-	protected LecturerCourseRepository repository;
+	protected LecturerLectureRepository repository;
 
 
 	@Override
@@ -28,33 +28,35 @@ public class LecturerCourseShowService extends AbstractService<Lecturer, Course>
 	@Override
 	public void authorise() {
 		boolean status;
-		int courseId;
-		Course course;
+		int id;
+		Lecture lecture;
 
-		courseId = super.getRequest().getData("id", int.class);
-		course = this.repository.findOneCourseById(courseId);
-		status = course != null && super.getRequest().getPrincipal().hasRole(course.getLecturer());
+		id = super.getRequest().getData("id", int.class);
+		lecture = this.repository.findOneLectureById(id);
+		status = lecture != null && super.getRequest().getPrincipal().hasRole(lecture.getLecturer());
 
 		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		Course object;
+		Lecture object;
 		int id;
+
 		id = super.getRequest().getData("id", int.class);
-		object = this.repository.findOneCourseById(id);
+		object = this.repository.findOneLectureById(id);
 
 		super.getBuffer().setData(object);
 	}
 
 	@Override
-	public void unbind(final Course object) {
+	public void unbind(final Lecture object) {
 		assert object != null;
+
 		Tuple tuple;
 
-		tuple = super.unbind(object, "code", "title", "recap", "retailPrice", "link", "draftMode");
-		tuple.put("id", object.getId());
+		tuple = super.unbind(object, "title", "recap", "learningTime", "body", "isTheory", "link", "draftMode");
+		tuple.put("lectureId", object.getId());
 
 		super.getResponse().setData(tuple);
 	}

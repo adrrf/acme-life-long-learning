@@ -4,6 +4,7 @@ package acme.features.authenticated.assistant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.ConfigurationRepository;
 import acme.framework.components.accounts.Authenticated;
 import acme.framework.components.accounts.Principal;
 import acme.framework.components.models.Tuple;
@@ -17,7 +18,10 @@ import acme.roles.Assistant;
 public class AuthenticatedAssistantUpdateService extends AbstractService<Authenticated, Assistant> {
 
 	@Autowired
-	protected AuthenticatedAssistantRepository repository;
+	protected AuthenticatedAssistantRepository	repository;
+
+	@Autowired
+	protected ConfigurationRepository			configuration;
 
 
 	@Override
@@ -57,6 +61,36 @@ public class AuthenticatedAssistantUpdateService extends AbstractService<Authent
 	@Override
 	public void validate(final Assistant object) {
 		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("supervisor")) {
+			boolean status;
+			String message;
+
+			message = object.getSupervisor();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "supervisor", "authenticated.assistant.error.spam");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("fields")) {
+			boolean status;
+			String message;
+
+			message = object.getSupervisor();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "fields", "authenticated.assistant.error.spam");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("resume")) {
+			boolean status;
+			String message;
+
+			message = object.getSupervisor();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "resume", "authenticated.assistant.error.spam");
+		}
 	}
 
 	@Override
