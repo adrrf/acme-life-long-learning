@@ -21,3 +21,4 @@ administrator.banner.form.error.end-before-start = No puede finalizar antes de h
 administrator.banner.form.error.start-before-instation = Debe comenzar después del instante de actualización
 administrator.banner.form.error.day-ahead = No puede haber empezado más tarde del día actual
 administrator.banner.form.error.duration = Debe durar al menos una semana
+administrator.banner.error.spam = Contiene spam

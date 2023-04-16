@@ -17,3 +17,4 @@ company.practicum.form.button.publish = Publish
 company.practicum.form.button.create = Create
 
 company.practicum.form.error.duplicated-code = Duplicated Code
+company.practicum.error.spam = It does contain spam 

@@ -21,3 +21,4 @@ administrator.banner.form.error.end-before-start = It cannot have finished befor
 administrator.banner.form.error.start-before-instation = It must start after the instation moment
 administrator.banner.form.error.day-ahead = It cannot have started in the future
 administrator.banner.form.error.duration = It must last for at least one week
+administrator.banner.error.spam = It does contain spam

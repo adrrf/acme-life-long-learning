@@ -4,6 +4,7 @@ package acme.features.administrator.banner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.ConfigurationRepository;
 import acme.entities.messages.Banner;
 import acme.framework.components.accounts.Administrator;
 import acme.framework.components.models.Tuple;
@@ -14,7 +15,10 @@ import acme.framework.services.AbstractService;
 public class AdministratorBannerUpdateService extends AbstractService<Administrator, Banner> {
 
 	@Autowired
-	protected AdministratorBannerRepository repository;
+	protected AdministratorBannerRepository	repository;
+
+	@Autowired
+	protected ConfigurationRepository		configuration;
 
 
 	@Override
@@ -48,6 +52,16 @@ public class AdministratorBannerUpdateService extends AbstractService<Administra
 	@Override
 	public void validate(final Banner object) {
 		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("slogan")) {
+			boolean status;
+			String message;
+
+			message = object.getSlogan();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "slogan", "administrator.banner.error.spam");
+		}
 
 		if (!super.getBuffer().getErrors().hasErrors("startTime") && !super.getBuffer().getErrors().hasErrors("finishTime"))
 			if (!MomentHelper.isBefore(object.getStartTime(), object.getFinishTime()))
