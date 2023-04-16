@@ -10,4 +10,4 @@
 	<acme:list-column code="company.session.list.label.link" path="link" width="40%"/>
 </acme:list>
 
-<acme:button code="company.session.list.button.create" action="/company/session/create?masterId=${masterId}"/>
+<acme:button test="${showCreate}" code="company.session.list.button.create" action="/company/session/create?masterId=${masterId}"/>

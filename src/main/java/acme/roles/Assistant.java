@@ -23,7 +23,7 @@ public class Assistant extends AbstractRole {
 	@Length(max = 76)
 	protected String			supervisor;
 
-	@Pattern(regexp = "^(\\w+)(;\\w+)*;?$")
+	@Pattern(regexp = ".+(;.+)*")
 	@NotBlank
 	@Length(max = 101)
 	protected String			fields;

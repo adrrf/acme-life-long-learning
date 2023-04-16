@@ -6,7 +6,8 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="whatchdog"/>
+
+	<classpathentry kind="src" path="watchdog"/>
 	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/webapp">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
