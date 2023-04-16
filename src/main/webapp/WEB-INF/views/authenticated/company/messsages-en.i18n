@@ -1,0 +1,9 @@
+authenticated.company.form.label.name = Company Name
+authenticated.company.form.label.VATnumber = VAT Number
+authenticated.company.form.label.sumary = Sumary
+authenticated.company.form.label.link = Link
+
+authenticated.company.form.button.create = Create
+authenticated.company.form.button.update = Update
+
+authenticated.company.error.spam = Contains spam
