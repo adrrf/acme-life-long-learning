@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.practicum.Session;
 import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Company;
 
@@ -61,6 +62,19 @@ public class CompanySessionUpdateService extends AbstractService<Company, Sessio
 	public void validate(final Session object) {
 		assert object != null;
 
+		if (!super.getBuffer().getErrors().hasErrors("startTime") && !super.getBuffer().getErrors().hasErrors("endTime"))
+			if (!MomentHelper.isBefore(object.getStartTime(), object.getEndTime()))
+				super.state(false, "endTime", "company.session.form.error.end-before-start");
+			else {
+				final int days = (int) MomentHelper.computeDuration(object.getStartTime(), MomentHelper.getCurrentMoment()).toDays();
+				if (days < 7)
+					super.state(false, "startTime", "company.session.form.error.day-ahead");
+				else {
+					final int dias = (int) MomentHelper.computeDuration(object.getStartTime(), object.getEndTime()).toDays();
+					if (!(7 <= dias))
+						super.state(false, "endTime", "company.session.form.error.duration");
+				}
+			}
 	}
 
 	@Override

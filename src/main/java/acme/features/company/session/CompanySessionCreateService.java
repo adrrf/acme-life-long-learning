@@ -77,12 +77,12 @@ public class CompanySessionCreateService extends AbstractService<Company, Sessio
 			if (!MomentHelper.isBefore(object.getStartTime(), object.getEndTime()))
 				super.state(false, "endTime", "company.session.form.error.end-before-start");
 			else {
-				final int days = (int) MomentHelper.computeDuration(MomentHelper.getCurrentMoment(), object.getStartTime()).toDays();
-				if (days < 1)
+				final int days = (int) MomentHelper.computeDuration(object.getStartTime(), MomentHelper.getCurrentMoment()).toDays();
+				if (days < 7)
 					super.state(false, "startTime", "company.session.form.error.day-ahead");
 				else {
-					final int hours = (int) MomentHelper.computeDuration(object.getStartTime(), object.getEndTime()).toHours();
-					if (!(1 <= hours && hours <= 5))
+					final int dias = (int) MomentHelper.computeDuration(object.getStartTime(), object.getEndTime()).toDays();
+					if (!(7 <= dias))
 						super.state(false, "endTime", "company.session.form.error.duration");
 				}
 			}

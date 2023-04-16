@@ -12,3 +12,7 @@ company.session.form.label.link = Link
 company.session.form.button.update = Update
 company.session.form.button.delete = Delete
 company.session.form.button.create = Create
+
+company.session.form.error.end-before-start = It cannot have finished before having started
+company.session.form.error.day-ahead = It must have started at least one week before today
+company.session.form.error.duration = It must last at least one week
