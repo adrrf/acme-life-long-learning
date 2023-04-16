@@ -8,5 +8,7 @@
 	<acme:list-column code="auditor.audit.list.label.conclusion" path="conclusion" width="40%"/>
 	<acme:list-column code="auditor.audit.list.label.strongPoints" path="strongPoints" width="40%"/>
 	<acme:list-column code="auditor.audit.list.weakPoints" path="weakPoints" width="40%"/>
+	<acme:list-column code="auditor.audit.list.mark" path="mark" width="40%"/>
+	
 </acme:list>
 

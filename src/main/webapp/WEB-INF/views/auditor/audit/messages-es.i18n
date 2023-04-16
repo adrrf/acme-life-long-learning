@@ -2,16 +2,18 @@ auditor.audit.list.label.code = Codigo
 auditor.audit.list.label.conclusion = Conclusion
 auditor.audit.list.label.strongPoints = Puntos Fuertes
 auditor.audit.list.weakPoints = Puntos Debiles
+auditor.audit.list.mark = Nota
 auditor.audit.list.button.create = Crear
 
 auditor.audit.form.label.code = Codigo
 auditor.audit.form.label.conclusion = Conclusion
 auditor.audit.form.label.strongPoints = Puntos Fuertes
 auditor.audit.form.label.weakPoints = Puntos Debiles
-auditor.audit.form.buttton.auditingRecord = Registro de Auditorias
+auditor.audit.form.label.mark = Nota
+auditor.audit.form.button.auditing-record = Registro de Auditorias
 auditor.audit.form.button.update = Actualizar
 auditor.audit.form.button.delete = Borrar
 auditor.audit.form.button.publish = Publicar
-auditor.audit.form.button.create = Crear
+auditor.audit.form.button.create.auditing-record = Crear registro de auditorias
 
 auditor.audit.form.error.duplicated = Codigo duplicado
