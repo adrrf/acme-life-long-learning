@@ -1,19 +1,19 @@
 
-package acme.features.lecturers.lectures;
+package acme.features.students.enrolment;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.course.Lecture;
+import acme.entities.enrolment.Enrolment;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
-import acme.roles.Lecturer;
+import acme.roles.Student;
 
 @Service
-public class LecturerLectureShowService extends AbstractService<Lecturer, Lecture> {
+public class StudentEnrolmentShowService extends AbstractService<Student, Enrolment> {
 
 	@Autowired
-	protected LecturerLectureRepository repository;
+	protected StudentEnrolmentRepository repository;
 
 
 	@Override
@@ -28,35 +28,32 @@ public class LecturerLectureShowService extends AbstractService<Lecturer, Lectur
 	@Override
 	public void authorise() {
 		boolean status;
-		int id;
-		Lecture lecture;
+		int enrolmentId;
+		Enrolment enrolment;
 
-		id = super.getRequest().getData("id", int.class);
-		lecture = this.repository.findOneLectureById(id);
-		status = lecture != null && super.getRequest().getPrincipal().hasRole(lecture.getLecturer());
+		enrolmentId = super.getRequest().getData("id", int.class);
+		enrolment = this.repository.findOneEnrolmentById(enrolmentId);
+		status = enrolment != null && super.getRequest().getPrincipal().hasRole(enrolment.getStudent());
 
 		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		Lecture object;
+		Enrolment object;
 		int id;
-
 		id = super.getRequest().getData("id", int.class);
-		object = this.repository.findOneLectureById(id);
+		object = this.repository.findOneEnrolmentById(id);
 
 		super.getBuffer().setData(object);
 	}
 
 	@Override
-	public void unbind(final Lecture object) {
+	public void unbind(final Enrolment object) {
 		assert object != null;
-
 		Tuple tuple;
 
-		tuple = super.unbind(object, "title", "recap", "learningTime", "body", "isTheory", "link");
-		tuple.put("lectureId", object.getId());
+		tuple = super.unbind(object, "code", "motivation", "goals", "draftMode");
 
 		super.getResponse().setData(tuple);
 	}

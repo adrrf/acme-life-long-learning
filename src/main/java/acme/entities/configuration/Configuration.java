@@ -2,7 +2,9 @@
 package acme.entities.configuration;
 
 import javax.persistence.Entity;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import acme.framework.data.AbstractEntity;
@@ -19,8 +21,19 @@ public class Configuration extends AbstractEntity {
 	@NotBlank
 	protected String			currency;
 
-	@Pattern(regexp = "^(\\w+)(;\\w+)*;?$")
+	@Pattern(regexp = ".+(;.+)*")
 	@NotBlank
 	protected String			acceptedCurrencies;
 
+	@Pattern(regexp = ".+(;.+)*")
+	@NotBlank
+	protected String			spamWordsEn;
+
+	@Pattern(regexp = ".+(;.+)*")
+	@NotBlank
+	protected String			spamWordsEs;
+
+	@Min(0)
+	@NotNull
+	protected double			threshold;
 }

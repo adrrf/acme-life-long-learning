@@ -19,9 +19,13 @@ public class AuthenticatedAssistantController extends AbstractController<Authent
 	@Autowired
 	protected AuthenticatedAssistantUpdateService	updateService;
 
+	@Autowired
+	protected AuthenticatedAssistantShowService		showService;
+
 
 	@PostConstruct
 	protected void initialise() {
+		super.addBasicCommand("show", this.showService);
 		super.addBasicCommand("create", this.createService);
 		super.addBasicCommand("update", this.updateService);
 	}

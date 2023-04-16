@@ -1,2 +1,2 @@
-key,currency,accepted-currencies
-system-01,EUR,EUR;USD;GBP
+key,currency,accepted-currencies,spam-words-en,spam-words-es,threshold
+system-01,EUR,EUR;USD;GBP,sex;viagra;cialis;one million;you've won;nigeria,sexo;viagra;cialis;un millon;has ganado;nigeria,0.1
