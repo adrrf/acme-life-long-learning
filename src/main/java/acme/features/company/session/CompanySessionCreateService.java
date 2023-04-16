@@ -17,6 +17,9 @@ public class CompanySessionCreateService extends AbstractService<Company, Sessio
 	@Autowired
 	protected CompanySessionRepository repository;
 
+	//	@Autowired
+	//	protected ConfigurationRepository	configuration;
+
 
 	@Override
 	public void check() {
