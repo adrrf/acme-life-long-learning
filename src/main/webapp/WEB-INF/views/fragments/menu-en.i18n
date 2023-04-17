@@ -73,6 +73,14 @@ master.menu.assistant = Assistant
 
 master.menu.asisstant.tutorial = List my tutorials
 
+# master.menu.company ####################################################
+
+master.menu.company = Practicums
+
+# master.menu.company.practicum ####################################################
+
+master.menu.company.practicum = List my practicums
+
 # master.menu.autheticated ####################################################
 
 master.menu.authenticated = Courses
@@ -86,5 +94,7 @@ master.menu.lecturer.courses = List my courses
 # master.menu.student ####################################################
 
 master.menu.student = Students
+
 master.menu.student.enrolment = List my enrolments
 master.menu.student.course = List all available courses
+
