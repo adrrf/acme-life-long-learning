@@ -14,7 +14,8 @@ lecturer.course.form.button.lectures = Lectures
 lecturer.course.form.button.update = Update
 
 assistant.course.tutorial.button.create = Create tutorial
+authenticated.course.tutorial.button.list = Tutorials
 
 student.course.enrolment.button.create = Create enrolment
 
-auditor.course.audir.button.create = Create audit
+auditor.course.audit.button.create = Create audit

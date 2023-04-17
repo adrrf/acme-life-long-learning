@@ -13,15 +13,16 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface CompanySessionRepository extends AbstractRepository {
 
-	@Query("select s from Session s where s.practicum.id = :id")
+	@Query("select ts from Session ts where ts.practicum.id = :id")
 	Collection<Session> findManySessionsByPracticumId(int id);
 
-	@Query("select p from Practicum p where p.id = :id")
+	@Query("select t from Practicum t where t.id = :id")
 	Practicum findOnePracticumById(int id);
 
-	@Query("select s from Session s where s.id = :id")
+	@Query("select ts from Session ts where ts.id = :id")
 	Session findOneSessionById(int id);
 
-	@Query("select s.practicum from Session s where s.id = :id")
+	@Query("select ts.practicum from Session ts where ts.id = :id")
 	Practicum findOneSessionByPracticumId(int id);
+
 }

@@ -6,8 +6,8 @@
 <acme:form> 
 	<acme:input-textbox code="company.session.form.label.title" path="title"/>
 	<acme:input-textarea code="company.session.form.label.recap" path="recap"/>
-	<acme:input-moment code="assistant.tutorial-session.form.label.startTime" path="startTime"/>
-	<acme:input-moment code="assistant.tutorial-session.form.label.endTime" path="endTime"/>
+	<acme:input-moment code="company.session.form.label.startTime" path="startTime"/>
+	<acme:input-moment code="company.session.form.label.endTime" path="endTime"/>
 	<acme:input-url code="company.session.form.label.link" path="link"/>
 	
 	<jstl:choose>

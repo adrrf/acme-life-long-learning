@@ -38,6 +38,7 @@ public class Course extends AbstractEntity {
 	@NotBlank
 	protected String			recap;
 
+	@NotNull
 	protected Money				retailPrice;
 
 	@URL
