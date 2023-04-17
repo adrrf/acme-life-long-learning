@@ -44,6 +44,8 @@
 			<acme:menu-suboption code="master.menu.administrator.populate-sample" action="/administrator/populate-sample"/>			
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.banner" action="/administrator/banner/list"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.assistant" access="hasRole('Assistant')">
@@ -61,7 +63,7 @@
 
 		<acme:menu-option code="master.menu.lecturer" access="hasRole('Lecturer')">
 			<acme:menu-suboption code="master.menu.lecturer.courses" action="/lecturer/course/list"/>
-
+			<acme:menu-suboption code="master.menu.lecturer.lectures" action="/lecturer/lecture/create"/>
 		</acme:menu-option>
 
 	</acme:menu-left>

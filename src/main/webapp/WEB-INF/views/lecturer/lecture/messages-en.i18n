@@ -14,4 +14,6 @@ lecturer.lecture.form.label.link = Link
 lecturer.lecture.form.button.update = Update
 lecturer.lecture.form.button.delete = Delete
 lecturer.lecture.form.button.publish = Publish
-lecturer.lecture.form.button.create = Create
+lecturer.lecture.form.button.create = Add lecture
+
+lecturer.lecture.form.error.negative-learningTime = Value must be greater than zero

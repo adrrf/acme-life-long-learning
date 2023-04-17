@@ -12,4 +12,9 @@
 	<acme:list-column code="lecturer.lecture.list.label.link" path="link" width="40%"/>
 </acme:list>
 
-<acme:button code="lecturer.course.list.button.create" action="administrator/announcement/create"/>
+
+<jstl:if test="${courseDraftMode == true }">
+	<acme:button code="lecturer.course.list.button.create" action="/lecturer/course-lecture/create?masterId=${masterId}"/>
+</jstl:if>
+
+

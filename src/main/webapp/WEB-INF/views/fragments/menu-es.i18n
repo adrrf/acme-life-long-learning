@@ -37,6 +37,7 @@ master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
+master.menu.administrator.banner = Listado de Banners
 
 # master.menu.provider ########################################################
 
@@ -90,6 +91,7 @@ master.menu.authenticated.courses = Lista todos los cursos disponibles
 
 master.menu.lecturer = Profesor
 master.menu.lecturer.courses = Lista mis cursos
+master.menu.lecturer.lectures = Crear asignatura
 
 # master.menu.student ####################################################
 

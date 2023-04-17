@@ -14,15 +14,28 @@ import acme.roles.Company;
 public class CompanySessionController extends AbstractController<Company, Session> {
 
 	@Autowired
-	protected CompanySessionListService	listService;
+	protected CompanySessionListService		listService;
 
 	@Autowired
-	protected CompanySessionShowService	showService;
+	protected CompanySessionShowService		showService;
+
+	@Autowired
+	protected CompanySessionCreateService	createService;
+
+	@Autowired
+	protected CompanySessionUpdateService	updateService;
+
+	@Autowired
+	protected CompanySessionDeleteService	deleteService;
 
 
 	@PostConstruct
 	protected void initialise() {
 		super.addBasicCommand("list", this.listService);
 		super.addBasicCommand("show", this.showService);
+		super.addBasicCommand("create", this.createService);
+		super.addBasicCommand("update", this.updateService);
+		super.addBasicCommand("delete", this.deleteService);
+
 	}
 }

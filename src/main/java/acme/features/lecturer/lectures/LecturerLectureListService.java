@@ -1,11 +1,12 @@
 
-package acme.features.lecturers.lectures;
+package acme.features.lecturer.lectures;
 
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.course.Course;
 import acme.entities.course.Lecture;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
@@ -20,7 +21,11 @@ public class LecturerLectureListService extends AbstractService<Lecturer, Lectur
 
 	@Override
 	public void check() {
-		super.getResponse().setChecked(true);
+		boolean status;
+
+		status = super.getRequest().hasData("masterId", int.class);
+
+		super.getResponse().setChecked(status);
 	}
 
 	@Override
@@ -53,11 +58,19 @@ public class LecturerLectureListService extends AbstractService<Lecturer, Lectur
 
 		int id;
 		Tuple tuple;
+		Course course;
 
 		id = super.getRequest().getData("masterId", int.class);
-		tuple = super.unbind(object, "title", "recap", "learningTime", "body", "isTheory", "link");
-		tuple.put("lectureId", object.getId());
+		course = this.repository.findOneCourseById(id);
 
+		tuple = super.unbind(object, "title", "recap", "learningTime", "body", "isTheory", "link", "draftMode");
+		tuple.put("lectureId", object.getId());
+		tuple.put("course", course);
+		tuple.put("courseDraftMode", true);
+		tuple.put("masterId", id);
+
+		super.getResponse().setGlobal("courseDraftMode", course.getDraftMode());
+		super.getResponse().setGlobal("masterId", id);
 		super.getResponse().setData(tuple);
 	}
 

@@ -1,23 +1,23 @@
 
-package acme.features.lecturers.lectures;
+package acme.features.authenticated.tutorial;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import acme.entities.course.Lecture;
+import acme.entities.tutorial.Tutorial;
+import acme.framework.components.accounts.Authenticated;
 import acme.framework.controllers.AbstractController;
-import acme.roles.Lecturer;
 
 @Controller
-public class LecturerLectureController extends AbstractController<Lecturer, Lecture> {
+public class AuthenticatedTutorialController extends AbstractController<Authenticated, Tutorial> {
 
 	@Autowired
-	protected LecturerLectureListService	listService;
+	protected AuthenticatedTutorialListService	listService;
 
 	@Autowired
-	protected LecturerLectureShowService	showService;
+	protected AuthenticatedTutorialShowService	showService;
 
 
 	@PostConstruct
@@ -25,5 +25,4 @@ public class LecturerLectureController extends AbstractController<Lecturer, Lect
 		super.addBasicCommand("list", this.listService);
 		super.addBasicCommand("show", this.showService);
 	}
-
 }

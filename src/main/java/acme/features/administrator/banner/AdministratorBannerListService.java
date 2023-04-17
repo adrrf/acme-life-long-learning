@@ -1,21 +1,21 @@
 
-package acme.features.lecturers.course;
+package acme.features.administrator.banner;
 
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.course.Course;
+import acme.entities.messages.Banner;
+import acme.framework.components.accounts.Administrator;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
-import acme.roles.Lecturer;
 
 @Service
-public class LecturerCourseListService extends AbstractService<Lecturer, Course> {
+public class AdministratorBannerListService extends AbstractService<Administrator, Banner> {
 
 	@Autowired
-	protected LecturerCourseRepository repository;
+	protected AdministratorBannerRepository repository;
 
 
 	@Override
@@ -30,22 +30,20 @@ public class LecturerCourseListService extends AbstractService<Lecturer, Course>
 
 	@Override
 	public void load() {
-		Collection<Course> objects;
-		int lecturerId;
+		Collection<Banner> objects;
 
-		lecturerId = super.getRequest().getPrincipal().getActiveRoleId();
-		objects = this.repository.findManyCoursesByLecturerId(lecturerId);
+		objects = this.repository.findBanners();
 
 		super.getBuffer().setData(objects);
 	}
 
 	@Override
-	public void unbind(final Course object) {
+	public void unbind(final Banner object) {
 		assert object != null;
 
 		Tuple tuple;
 
-		tuple = super.unbind(object, "code", "title", "recap", "retailPrice", "link", "draftMode");
+		tuple = super.unbind(object, "instationUpdateMoment", "startTime", "finishTime", "slogan", "linkPicture", "linkDocument");
 
 		super.getResponse().setData(tuple);
 	}
