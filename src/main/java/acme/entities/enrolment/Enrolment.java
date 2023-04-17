@@ -44,6 +44,11 @@ public class Enrolment extends AbstractEntity {
 	@NotNull
 	protected Boolean			draftMode;
 
+	protected String			nibble;
+
+	@Length(max = 75)
+	protected String			holder;
+
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------

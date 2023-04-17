@@ -1,0 +1,7 @@
+authenticated.student.form.label.statement = Declaración
+authenticated.student.form.label.strongFeatures = Cualidades
+authenticated.student.form.label.weakFeatures = Debilidades
+authenticated.student.form.label.link = Link
+
+authenticated.student.form.button.create = Crear
+authenticated.student.form.button.update = Actualizar

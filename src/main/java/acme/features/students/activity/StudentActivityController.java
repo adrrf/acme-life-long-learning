@@ -1,35 +1,32 @@
 
-package acme.features.students.enrolment;
+package acme.features.students.activity;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import acme.entities.enrolment.Enrolment;
+import acme.entities.enrolment.Activity;
 import acme.framework.controllers.AbstractController;
 import acme.roles.Student;
 
 @Controller
-public class StudentEnrolmentController extends AbstractController<Student, Enrolment> {
+public class StudentActivityController extends AbstractController<Student, Activity> {
 
 	@Autowired
-	protected StudentEnrolmentListService		listService;
+	protected StudentActivityListService	listService;
 
 	@Autowired
-	protected StudentEnrolmentShowService		showService;
+	protected StudentActivityShowService	showService;
 
 	@Autowired
-	protected StudentEnrolmentCreateService		createService;
+	protected StudentActivityCreateService	createService;
 
 	@Autowired
-	protected StudentEnrolmentUpdateService		updateService;
+	protected StudentActivityUpdateService	updateService;
 
 	@Autowired
-	protected StudentEnrolmentDeleteService		deleteService;
-
-	@Autowired
-	protected StudentEnrolmentFinaliseService	finaliseService;
+	protected StudentActivityDeleteService	deleteService;
 
 
 	@PostConstruct
@@ -40,7 +37,6 @@ public class StudentEnrolmentController extends AbstractController<Student, Enro
 		super.addBasicCommand("update", this.updateService);
 		super.addBasicCommand("delete", this.deleteService);
 
-		super.addCustomCommand("finalise", "update", this.finaliseService);
-
 	}
+
 }

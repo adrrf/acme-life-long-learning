@@ -1,0 +1,19 @@
+student.activity.list.label.title: Title
+student.activity.list.label.recap: Abstract
+student.activity.list.label.duration: Duration (in hours)
+student.activity.list.label.theory: Theoretical
+student.activity.list.label.link: Link
+
+student.activity.list.button.create: Create
+
+student.activity.form.label.title: Title
+student.activity.form.label.recap: Abstract
+student.activity.form.label.isTheory: Theoretical
+student.activity.form.label.startDate: Start date
+student.activity.form.label.endDate: End date
+student.activity.form.label.link: Link
+
+
+student.activity.form.button.update: Update
+student.activity.form.button.delete: Delete
+student.activity.form.button.create: Create

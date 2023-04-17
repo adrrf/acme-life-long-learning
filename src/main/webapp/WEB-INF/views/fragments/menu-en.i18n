@@ -58,6 +58,8 @@ master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
 master.menu.user-account.lecturer = Lecturer data
 master.menu.user-account.become-lecturer = Become a lecturer
+master.menu.user-account.student = Student data
+master.menu.user-account.become-student = Become a student
 
 # master.menu.configuration ####################################################
 
@@ -84,5 +86,5 @@ master.menu.lecturer.courses = List my courses
 # master.menu.student ####################################################
 
 master.menu.student = Students
-
 master.menu.student.enrolment = List my enrolments
+master.menu.student.course = List all available courses
