@@ -1,8 +1,8 @@
 key,instantation-moment,title,message,flag,link
-bulletin-01,2023/01/23 16:45,Ejercicios Aprendizaje Automático,Ejercicios para mejorar el rendimiento en el tema de Aprendizaje Automático,true,https://www.billboard.com/
-bulletin-02,2022/12/18 17:56,Ejercicios Resueltos Tema 5,Boletín de con la solución de los ejercicios del Tema 4,false,https://www.nationalgeographic.com/
-bulletin_03,2023/03/27 12:54,Reunión de padres y maestros,Los padres y tutores están invitados a reunirse con los maestros para discutir el progreso académico,true,https://www.bbc.com/
-bulletin-04,2022/08/15 11:34,Día de la ciencia,¡Prepárate para una tarde llena de diversión y experimentos científicos emocionantes!,false,https://www.netflix.com/
-bulletin-05,2022/11/01 19:18,Actualización de la biblioteca,La biblioteca escolar acaba de agregar nuevos libros para los estudiantes de todas las edades,true,https://www.nytimes.com/
-bulletin-06,2022/10/13 14:28,Asamblea escolar,Los estudiantes están invitados a la asamblea escolar para conocer las últimas noticias y eventos,true,null
-bulletin-07,2023/02/12 21:51,Excursión de campo,Los estudiantes de 4º grado tendrán una excursión de campo emocionante la próxima semana,false,
+bulletin-01,2018/01/23 16:45,Ejercicios Aprendizaje Automático,Ejercicios para mejorar el rendimiento en el tema de Aprendizaje Automático,true,https://www.billboard.com/
+bulletin-02,2020/12/18 17:56,Ejercicios Resueltos Tema 5,Boletín de con la solución de los ejercicios del Tema 4,false,https://www.nationalgeographic.com/
+bulletin_03,2020/03/27 12:54,Reunión de padres y maestros,Los padres y tutores están invitados a reunirse con los maestros para discutir el progreso académico,true,https://www.bbc.com/
+bulletin-04,2021/08/15 11:34,Día de la ciencia,¡Prepárate para una tarde llena de diversión y experimentos científicos emocionantes!,false,https://www.netflix.com/
+bulletin-05,2019/11/01 19:18,Actualización de la biblioteca,La biblioteca escolar acaba de agregar nuevos libros para los estudiantes de todas las edades,true,https://www.nytimes.com/
+bulletin-06,2009/10/13 14:28,Asamblea escolar,Los estudiantes están invitados a la asamblea escolar para conocer las últimas noticias y eventos,true,null
+bulletin-07,2014/02/12 21:51,Excursión de campo,Los estudiantes de 4º grado tendrán una excursión de campo emocionante la próxima semana,false,
