@@ -25,7 +25,7 @@ public class CompanySessionListService extends AbstractService<Company, Session>
 	public void check() {
 		boolean status;
 
-		status = super.getRequest().hasData("id", int.class);
+		status = super.getRequest().hasData("masterId", int.class);
 
 		super.getResponse().setChecked(status);
 	}
@@ -33,12 +33,12 @@ public class CompanySessionListService extends AbstractService<Company, Session>
 	@Override
 	public void authorise() {
 		boolean status;
-		int practicumId;
-		Practicum object;
+		int masterId;
+		Practicum practicum;
 
-		practicumId = super.getRequest().getData("masterId", int.class);
-		object = this.repository.findOneSessionByPracticumId(practicumId);
-		status = object != null && super.getRequest().getPrincipal().hasRole(object.getCompany()) && super.getRequest().getPrincipal().getUsername().equals(object.getCompany().getUserAccount().getUsername());
+		masterId = super.getRequest().getData("masterId", int.class);
+		practicum = this.repository.findOnePracticumById(masterId);
+		status = practicum != null && super.getRequest().getPrincipal().hasRole(practicum.getCompany()) && super.getRequest().getPrincipal().getUsername().equals(practicum.getCompany().getUserAccount().getUsername());
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -64,7 +64,7 @@ public class CompanySessionListService extends AbstractService<Company, Session>
 		duration = MomentHelper.computeDuration(object.getStartTime(), object.getEndTime());
 
 		tuple = super.unbind(object, "title", "recap", "link");
-		tuple.put("duration", duration.toMinutes());
+		tuple.put("duration", duration.toHours());
 
 		super.getResponse().setData(tuple);
 	}
@@ -84,4 +84,5 @@ public class CompanySessionListService extends AbstractService<Company, Session>
 		super.getResponse().setGlobal("masterId", masterId);
 		super.getResponse().setGlobal("showCreate", showCreate);
 	}
+
 }

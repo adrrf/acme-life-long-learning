@@ -15,3 +15,5 @@ assistant.tutorial.form.button.update = Actualizar
 assistant.tutorial.form.button.delete = Eliminar
 assistant.tutorial.form.button.publish = Publicar
 assistant.tutorial.form.button.create = Crear
+
+assistant.tutorial.error.spam = Contiene spam

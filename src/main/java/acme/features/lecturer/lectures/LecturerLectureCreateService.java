@@ -38,6 +38,7 @@ public class LecturerLectureCreateService extends AbstractService<Lecturer, Lect
 		object = new Lecture();
 		object.setLecturer(lecturer);
 		object.setIsTheory(false);
+		object.setDraftMode(true);
 
 		super.getBuffer().setData(object);
 	}
@@ -50,8 +51,9 @@ public class LecturerLectureCreateService extends AbstractService<Lecturer, Lect
 
 		lecturer = this.repository.findOneLecturerById(super.getRequest().getPrincipal().getActiveRoleId());
 
-		super.bind(object, "title", "recap", "learningTime", "body", "isTheory", "link");
+		super.bind(object, "title", "recap", "learningTime", "body", "isTheory", "link", "draftMode");
 		object.setLecturer(lecturer);
+		object.setDraftMode(true);
 	}
 
 	@Override
@@ -78,7 +80,7 @@ public class LecturerLectureCreateService extends AbstractService<Lecturer, Lect
 
 		lecturer = this.repository.findOneLecturerById(super.getRequest().getPrincipal().getActiveRoleId());
 
-		tuple = super.unbind(object, "title", "recap", "learningTime", "body", "isTheory", "link");
+		tuple = super.unbind(object, "title", "recap", "learningTime", "body", "isTheory", "link", "draftMode");
 		tuple.put("lecturer", lecturer);
 
 		super.getResponse().setData(tuple);
