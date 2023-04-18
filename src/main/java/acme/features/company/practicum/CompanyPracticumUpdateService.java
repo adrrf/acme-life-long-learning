@@ -4,6 +4,7 @@ package acme.features.company.practicum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.ConfigurationRepository;
 import acme.entities.practicum.Practicum;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
@@ -13,7 +14,10 @@ import acme.roles.Company;
 public class CompanyPracticumUpdateService extends AbstractService<Company, Practicum> {
 
 	@Autowired
-	protected CompanyPracticumRepository repository;
+	protected CompanyPracticumRepository	repository;
+
+	@Autowired
+	protected ConfigurationRepository		configuration;
 
 
 	@Override
@@ -60,6 +64,36 @@ public class CompanyPracticumUpdateService extends AbstractService<Company, Prac
 	@Override
 	public void validate(final Practicum object) {
 		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("title")) {
+			boolean status;
+			String message;
+
+			message = object.getTitle();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "title", "company.practicum.error.spam");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("recap")) {
+			boolean status;
+			String message;
+
+			message = object.getRecap();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "recap", "company.practicum.error.spam");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("goals")) {
+			boolean status;
+			String message;
+
+			message = object.getGoals();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "goals", "company.practicum.error.spam");
+		}
 
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			Practicum practicum;
