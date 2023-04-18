@@ -1,6 +1,8 @@
 
 package acme.features.lecturer.lectures;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +12,7 @@ import acme.framework.services.AbstractService;
 import acme.roles.Lecturer;
 
 @Service
-public class LecturerLectureShowService extends AbstractService<Lecturer, Lecture> {
+public class LecturerLectureListMineService extends AbstractService<Lecturer, Lecture> {
 
 	@Autowired
 	protected LecturerLectureRepository repository;
@@ -18,36 +20,27 @@ public class LecturerLectureShowService extends AbstractService<Lecturer, Lectur
 
 	@Override
 	public void check() {
-		boolean status;
-
-		status = super.getRequest().hasData("id", int.class);
-
-		super.getResponse().setChecked(status);
+		super.getResponse().setChecked(true);
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
-		int id;
-		Lecture lecture;
 
-		id = super.getRequest().getData("id", int.class);
-		lecture = this.repository.findOneLectureById(id);
-		status = lecture != null && super.getRequest().getPrincipal().hasRole(lecture.getLecturer());
+		status = super.getRequest().getPrincipal().hasRole(Lecturer.class);
 
 		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		Lecture object;
-		int id;
-		final int courseId;
+		Collection<Lecture> objects;
+		int lecturerId;
 
-		id = super.getRequest().getData("id", int.class);
-		object = this.repository.findOneLectureById(id);
+		lecturerId = super.getRequest().getPrincipal().getActiveRoleId();
+		objects = this.repository.findManyLectureByLecturerId(lecturerId);
 
-		super.getBuffer().setData(object);
+		super.getBuffer().setData(objects);
 	}
 
 	@Override
@@ -57,7 +50,6 @@ public class LecturerLectureShowService extends AbstractService<Lecturer, Lectur
 		Tuple tuple;
 
 		tuple = super.unbind(object, "title", "recap", "learningTime", "body", "isTheory", "link", "draftMode");
-		tuple.put("lectureId", object.getId());
 
 		super.getResponse().setData(tuple);
 	}

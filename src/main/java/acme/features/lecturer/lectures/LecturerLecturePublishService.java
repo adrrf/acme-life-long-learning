@@ -11,7 +11,7 @@ import acme.framework.services.AbstractService;
 import acme.roles.Lecturer;
 
 @Service
-public class LecturerLectureUpdateService extends AbstractService<Lecturer, Lecture> {
+public class LecturerLecturePublishService extends AbstractService<Lecturer, Lecture> {
 
 	@Autowired
 	protected LecturerLectureRepository	repository;
@@ -57,8 +57,7 @@ public class LecturerLectureUpdateService extends AbstractService<Lecturer, Lect
 	public void bind(final Lecture object) {
 		assert object != null;
 
-		super.bind(object, "title", "recap", "learningTime", "body", "isTheory", "link", "draftMode");
-		object.setDraftMode(true);
+		object.setDraftMode(false);
 
 	}
 
@@ -117,5 +116,4 @@ public class LecturerLectureUpdateService extends AbstractService<Lecturer, Lect
 
 		super.getResponse().setData(tuple);
 	}
-
 }

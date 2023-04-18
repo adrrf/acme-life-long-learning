@@ -1,18 +1,21 @@
 
 package acme.features.lecturer.course;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.components.ConfigurationRepository;
 import acme.entities.configuration.Configuration;
 import acme.entities.course.Course;
+import acme.entities.course.Lecture;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Lecturer;
 
 @Service
-public class LecturerCourseUpdateService extends AbstractService<Lecturer, Course> {
+public class LecturerCoursePublishService extends AbstractService<Lecturer, Course> {
 
 	@Autowired
 	protected LecturerCourseRepository	repository;
@@ -58,13 +61,23 @@ public class LecturerCourseUpdateService extends AbstractService<Lecturer, Cours
 	public void bind(final Course object) {
 		assert object != null;
 
-		super.bind(object, "code", "title", "recap", "retailPrice", "link", "draftMode");
-		object.setDraftMode(true);
 	}
 
 	@Override
 	public void validate(final Course object) {
 		assert object != null;
+
+		Collection<Lecture> lectures;
+		boolean publish;
+
+		lectures = this.repository.findManyLecturesByCourseId(object.getId());
+		publish = lectures.stream().anyMatch(l -> l.getDraftMode() == true);
+
+		if (lectures.isEmpty())
+			super.state(false, "*", "lecturer.course.form.error.empty");
+
+		if (publish)
+			super.state(!publish, "*", "lecturer.course.form.error.publish");
 
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			Course existing;
@@ -103,11 +116,37 @@ public class LecturerCourseUpdateService extends AbstractService<Lecturer, Cours
 
 			super.state(!status, "recap", "lecturer.course.form.error.spam");
 		}
+
+		if (!super.getBuffer().getErrors().hasErrors("isTheory")) {
+			boolean status;
+
+			lectures = this.repository.findManyLecturesByCourseId(object.getId());
+			status = !lectures.stream().anyMatch(l -> l.getIsTheory() == false);
+
+			super.state(!status, "isTheory", "lecturer.course.form.error-isTheory");
+
+		}
 	}
 
 	@Override
 	public void perform(final Course object) {
 		assert object != null;
+		int theoryLectures;
+		int handsOnLectures;
+		int id;
+		boolean isTheory = true;
+		Collection<Lecture> lectures;
+
+		id = super.getRequest().getData("id", int.class);
+		lectures = this.repository.findManyLecturesByCourseId(id);
+
+		object.setDraftMode(false);
+
+		theoryLectures = (int) lectures.stream().filter(l -> l.getIsTheory()).count();
+		handsOnLectures = lectures.size() - theoryLectures;
+		if (handsOnLectures >= theoryLectures)
+			isTheory = false;
+		object.setIsTheory(isTheory);
 
 		this.repository.save(object);
 	}
@@ -122,5 +161,4 @@ public class LecturerCourseUpdateService extends AbstractService<Lecturer, Cours
 
 		super.getResponse().setData(tuple);
 	}
-
 }
