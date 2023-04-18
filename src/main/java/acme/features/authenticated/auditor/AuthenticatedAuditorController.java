@@ -13,21 +13,21 @@ import acme.roles.Auditor;
 @Controller
 public class AuthenticatedAuditorController extends AbstractController<Authenticated, Auditor> {
 
-	//	@Autowired
-	//	protected AuthenticatedAuditorCreateService	createService;
-	//
-	//	@Autowired
-	//	protected AuthenticatedAuditorUpdateService	updateService;
+	@Autowired
+	protected AuthenticatedAuditorCreateService	createService;
 
 	@Autowired
-	protected AuthenticatedAuditorShowService showService;
+	protected AuthenticatedAuditorUpdateService	updateService;
+
+	@Autowired
+	protected AuthenticatedAuditorShowService	showService;
 
 
 	@PostConstruct
 	protected void initialise() {
 		super.addBasicCommand("show", this.showService);
-		//		super.addBasicCommand("create", this.createService);
-		//		super.addBasicCommand("update", this.updateService);
+		super.addBasicCommand("create", this.createService);
+		super.addBasicCommand("update", this.updateService);
 	}
 
 }

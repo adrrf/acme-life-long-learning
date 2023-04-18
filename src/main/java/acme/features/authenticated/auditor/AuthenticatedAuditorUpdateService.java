@@ -7,15 +7,15 @@ import org.springframework.stereotype.Service;
 import acme.components.ConfigurationRepository;
 import acme.framework.components.accounts.Authenticated;
 import acme.framework.components.accounts.Principal;
-import acme.framework.components.accounts.UserAccount;
 import acme.framework.components.models.Tuple;
 import acme.framework.controllers.HttpMethod;
+import acme.framework.helpers.BinderHelper;
 import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Auditor;
 
 @Service
-public class AuthenticatedAuditorCreateService extends AbstractService<Authenticated, Auditor> {
+public class AuthenticatedAuditorUpdateService extends AbstractService<Authenticated, Auditor> {
 
 	@Autowired
 	protected AuthenticatedAuditorRepository	repository;
@@ -28,7 +28,7 @@ public class AuthenticatedAuditorCreateService extends AbstractService<Authentic
 	public void authorise() {
 		boolean status;
 
-		status = !super.getRequest().getPrincipal().hasRole(Auditor.class);
+		status = super.getRequest().getPrincipal().hasRole(Auditor.class);
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -43,14 +43,10 @@ public class AuthenticatedAuditorCreateService extends AbstractService<Authentic
 		Auditor object;
 		Principal principal;
 		int userAccountId;
-		UserAccount userAccount;
 
 		principal = super.getRequest().getPrincipal();
 		userAccountId = principal.getAccountId();
-		userAccount = this.repository.findOneUserAccountById(userAccountId);
-
-		object = new Auditor();
-		object.setUserAccount(userAccount);
+		object = this.repository.findOneAuditorByUserAccountId(userAccountId);
 
 		super.getBuffer().setData(object);
 	}
@@ -95,7 +91,6 @@ public class AuthenticatedAuditorCreateService extends AbstractService<Authentic
 
 			super.state(!status, "certifications", "authenticated.auditor.error.spam");
 		}
-
 	}
 
 	@Override
@@ -109,7 +104,7 @@ public class AuthenticatedAuditorCreateService extends AbstractService<Authentic
 	public void unbind(final Auditor object) {
 		Tuple tuple;
 
-		tuple = super.unbind(object, "firm", "professionalID", "certifications", "link");
+		tuple = BinderHelper.unbind(object, "firm", "professionalID", "certifications", "link");
 
 		super.getResponse().setData(tuple);
 	}
