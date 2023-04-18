@@ -1,4 +1,4 @@
-authenticated.company.form.label.name = Company Name
+authenticated.company.form.label.name = Name
 authenticated.company.form.label.VATnumber = VAT Number
 authenticated.company.form.label.sumary = Sumary
 authenticated.company.form.label.link = Link
