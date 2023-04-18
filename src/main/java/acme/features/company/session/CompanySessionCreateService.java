@@ -4,6 +4,7 @@ package acme.features.company.session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.ConfigurationRepository;
 import acme.entities.practicum.Practicum;
 import acme.entities.practicum.Session;
 import acme.framework.components.models.Tuple;
@@ -15,7 +16,10 @@ import acme.roles.Company;
 public class CompanySessionCreateService extends AbstractService<Company, Session> {
 
 	@Autowired
-	protected CompanySessionRepository repository;
+	protected CompanySessionRepository	repository;
+
+	@Autowired
+	protected ConfigurationRepository	configuration;
 
 
 	@Override
@@ -73,16 +77,36 @@ public class CompanySessionCreateService extends AbstractService<Company, Sessio
 	public void validate(final Session object) {
 		assert object != null;
 
+		if (!super.getBuffer().getErrors().hasErrors("title")) {
+			boolean status;
+			String message;
+
+			message = object.getTitle();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "title", "company.session.error.spam");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("recap")) {
+			boolean status;
+			String message;
+
+			message = object.getRecap();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "recap", "company.session.error.spam");
+		}
+
 		if (!super.getBuffer().getErrors().hasErrors("startTime") && !super.getBuffer().getErrors().hasErrors("endTime"))
 			if (!MomentHelper.isBefore(object.getStartTime(), object.getEndTime()))
 				super.state(false, "endTime", "company.session.form.error.end-before-start");
 			else {
-				final int days = (int) MomentHelper.computeDuration(MomentHelper.getCurrentMoment(), object.getStartTime()).toDays();
-				if (days < 1)
+				final int days = (int) MomentHelper.computeDuration(object.getStartTime(), MomentHelper.getCurrentMoment()).toDays();
+				if (days < 7)
 					super.state(false, "startTime", "company.session.form.error.day-ahead");
 				else {
-					final int hours = (int) MomentHelper.computeDuration(object.getStartTime(), object.getEndTime()).toHours();
-					if (!(1 <= hours && hours <= 5))
+					final int dias = (int) MomentHelper.computeDuration(object.getStartTime(), object.getEndTime()).toDays();
+					if (!(7 <= dias))
 						super.state(false, "endTime", "company.session.form.error.duration");
 				}
 			}

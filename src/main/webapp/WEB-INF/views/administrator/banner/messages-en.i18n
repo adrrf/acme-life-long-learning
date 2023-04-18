@@ -16,3 +16,9 @@ administrator.banner.list.button.create = Create
 administrator.banner.form.button.create = Create
 administrator.banner.form.button.update = Update
 administrator.banner.form.button.delete = Delete
+
+administrator.banner.form.error.end-before-start = It cannot have finished before having started
+administrator.banner.form.error.start-before-instation = It must start after the instation moment
+administrator.banner.form.error.day-ahead = It cannot have started in the future
+administrator.banner.form.error.duration = It must last for at least one week
+administrator.banner.error.spam = It does contain spam

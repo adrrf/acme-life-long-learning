@@ -18,4 +18,15 @@
 	<acme:button code="assistant.course.tutorial.button.create" action="/assistant/tutorial/create?courseId=${id}"/>
 </jstl:if>
 
-<acme:button code="student.course.enrolment.button.create" action="/student/enrolment/create?courseId=${id}"/>
+<jstl:if test="hasRole('Company')">
+	<acme:button code="company.course.practicum.button.create" action="/company/practicum/create?courseId=${id}"/>
+</jstl:if>
+
+<jstl:if test="hasRole('Student')">
+	<acme:button code="student.course.enrolment.button.create" action="/student/enrolment/create?courseId=${id}"/>
+</jstl:if>
+
+<acme:button code="company.course.practicum.button.create" action="/company/practicum/create?courseId=${id}"/>
+<acme:button code="company.course.practicum.button.list" action="/company/practicum/list?masterId=${id}"/>
+
+

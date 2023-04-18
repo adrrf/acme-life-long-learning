@@ -15,3 +15,6 @@ company.practicum.form.button.update = Actualizar
 company.practicum.form.button.delete = Borrar
 company.practicum.form.button.publish = Publicar
 company.practicum.form.button.create = Crear
+
+company.practicum.form.error.duplicated-code = Código Duplicado
+company.practicum.error.spam = Contiene spam
