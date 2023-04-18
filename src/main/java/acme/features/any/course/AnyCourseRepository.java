@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.course;
+package acme.features.any.course;
 
 import java.util.Collection;
 
@@ -10,7 +10,7 @@ import acme.entities.course.Course;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface AuthenticatedCourseRepository extends AbstractRepository {
+public interface AnyCourseRepository extends AbstractRepository {
 
 	@Query("select c from Course c where c.draftMode = false")
 	Collection<Course> findManyCourse();

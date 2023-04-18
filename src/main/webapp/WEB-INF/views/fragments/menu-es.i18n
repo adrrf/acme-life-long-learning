@@ -93,7 +93,7 @@ master.menu.authenticated.courses = Lista todos los cursos disponibles
 
 master.menu.lecturer = Profesor
 master.menu.lecturer.courses = Lista mis cursos
-master.menu.lecturer.lectures = Crear asignatura
+master.menu.lecturer.lectures = Lista mis asignaturas
 
 # master.menu.student ####################################################
 
