@@ -9,3 +9,4 @@
 	<acme:list-column code="company.practicum.list.label.course.code" path="course.code" width="10%"/>
 	<acme:list-column code="company.practicum.list.label.course.title" path="course.title" width="40%"/>
 </acme:list>
+

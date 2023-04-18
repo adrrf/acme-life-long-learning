@@ -4,6 +4,7 @@ package acme.features.administrator.banner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.ConfigurationRepository;
 import acme.entities.messages.Banner;
 import acme.framework.components.accounts.Administrator;
 import acme.framework.components.models.Tuple;
@@ -14,7 +15,10 @@ import acme.framework.services.AbstractService;
 public class AdministratorBannerUpdateService extends AbstractService<Administrator, Banner> {
 
 	@Autowired
-	protected AdministratorBannerRepository repository;
+	protected AdministratorBannerRepository	repository;
+
+	@Autowired
+	protected ConfigurationRepository		configuration;
 
 
 	@Override
@@ -49,16 +53,28 @@ public class AdministratorBannerUpdateService extends AbstractService<Administra
 	public void validate(final Banner object) {
 		assert object != null;
 
+		if (!super.getBuffer().getErrors().hasErrors("slogan")) {
+			boolean status;
+			String message;
+
+			message = object.getSlogan();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "slogan", "administrator.banner.error.spam");
+		}
+
 		if (!super.getBuffer().getErrors().hasErrors("startTime") && !super.getBuffer().getErrors().hasErrors("finishTime"))
 			if (!MomentHelper.isBefore(object.getStartTime(), object.getFinishTime()))
 				super.state(false, "finishTime", "administrator.banner.form.error.end-before-start");
+			else if (!MomentHelper.isBefore(object.getInstationUpdateMoment(), object.getStartTime()))
+				super.state(false, "startTime", "administrator.banner.form.error.start-before-instation");
 			else {
 				final int days = (int) MomentHelper.computeDuration(MomentHelper.getCurrentMoment(), object.getStartTime()).toDays();
 				if (days < 1)
 					super.state(false, "startTime", "administrator.banner.form.error.day-ahead");
 				else {
-					final int hours = (int) MomentHelper.computeDuration(object.getStartTime(), object.getFinishTime()).toHours();
-					if (!(1 <= hours && hours <= 5))
+					final int duration = (int) MomentHelper.computeDuration(object.getStartTime(), object.getFinishTime()).toDays();
+					if (!(7 <= duration))
 						super.state(false, "finishTime", "administrator.banner.form.error.duration");
 				}
 			}
