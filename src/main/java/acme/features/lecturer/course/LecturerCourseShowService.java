@@ -64,10 +64,13 @@ public class LecturerCourseShowService extends AbstractService<Lecturer, Course>
 
 		id = super.getRequest().getData("id", int.class);
 		lectures = this.repository.findManyLecturesByCourseId(id);
-		theoryLectures = (int) lectures.stream().filter(l -> l.getIsTheory()).count();
-		handsOnLectures = lectures.size() - theoryLectures;
-		if (handsOnLectures >= theoryLectures)
-			isTheory = false;
+		if (object.getDraftMode()) {
+			theoryLectures = (int) lectures.stream().filter(l -> l.getIsTheory()).count();
+			handsOnLectures = lectures.size() - theoryLectures;
+			if (handsOnLectures >= theoryLectures)
+				isTheory = false;
+		} else
+			isTheory = object.getIsTheory();
 
 		tuple = super.unbind(object, "code", "title", "recap", "retailPrice", "link", "draftMode");
 		tuple.put("id", object.getId());

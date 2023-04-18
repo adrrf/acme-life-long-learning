@@ -14,7 +14,11 @@
 
 
 <jstl:if test="${courseDraftMode == true }">
-	<acme:button code="lecturer.course.list.button.create" action="/lecturer/course-lecture/create?masterId=${masterId}"/>
+	<acme:button code="lecturer.course-lecture.list.button.create" action="/lecturer/course-lecture/create?masterId=${masterId}"/>
+	<acme:button code="lecturer.course-lecture.list.button.delete" action="/lecturer/course-lecture/delete-lecture?masterId=${masterId}"/>
+</jstl:if>
+<jstl:if test="${_command == 'list-mine' }">
+	<acme:button code="lecturer.lecture.list.button.create" action="/lecturer/lecture/create"/>
 </jstl:if>
 
 

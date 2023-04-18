@@ -1,10 +1,10 @@
-key,code,title,recap,retail-price,link,draft-mode,key:lecturer
-course-01,A103,Curso primaria,Curso del lecturer-01,"EUR 20.00",https://es.wikipedia.org/wiki/Wikipedia:Portada,false,lecturer-01
-course-02,A113,E,C,"USD 10,000.00",,true,lecturer-02
-course-03,A123,##########,()()()()()()()(),"GBP 50,000.90",https://www.twitch.tv/,true,lecturer-01
-course-04,A133,@#~~€€¬7,Curso del lecturer-02Curso del lecturer-02Curso del lecturer-02Curso del lecturer-02Curso del lectur,"THB 10,000,000.00",,false,lecturer-02
-course-05,A143,largolargolargolargolargolargolargolargolargolargolargolargolargolargolargo,karatun firamare,"CAD 1,234,567.00",https://wuolah.com/etsii-giiis-13639,false,lecturer-01
-course-06,A153,Curso formacion profesional,Curso del lecturer-02,"THB 00.01",https://www.google.com/search?q=enlace+largo&rlz=1C1RXQR_esES968ES968&oq=enlace+largo&aqs=chrome..69i57j0i512j0i22i30l3j0i15i22i30.4826j0j7&sourceid=chrome&ie=UTF-8,true,lecturer-02
-course-07,A163,;;;;;;;;;;,G,"BGP 20,000,000.00",https://www.amazon.es/,false,lecturer-01
-course-08,A173,<<<<<<<<<<<<,Curso del lecturer-02,"EUR 2.99",,false,lecturer-02
-course-09,A183,¬¬¬¬¬¬¬¬¬¬,Curso del lecturer-01,"EUR 00.00",https://www.google.com/search?q=enlace+largo&rlz=1C1RXQR_esES968ES968&oq=&aqs=chrome.0.35i39i362l8.1222955434j0j15&sourceid=chrome&ie=UTF-8,true,lecturer-01
+key,code,title,recap,retail-price,link,draft-mode,key:lecturer,is-theory
+course-01,A103,Curso primaria,Curso del lecturer-01,EUR 20.00,https://es.wikipedia.org/wiki/Wikipedia:Portada,false,lecturer-01,true
+course-02,A113,E,C,"USD 10,000.00",,true,lecturer-02,true
+course-03,A123,##########,()()()()()()()(),"GBP 50,000.90",https://www.twitch.tv/,true,lecturer-01,true
+course-04,A133,@#~~€€¬7,Curso del lecturer-02Curso del lecturer-02Curso del lecturer-02Curso del lecturer-02Curso del lectur,"GBP 10,000,000.00",,false,lecturer-02,false
+course-05,A143,largolargolargolargolargolargolargolargolargolargolargolargolargolargolargo,karatun firamare,"EUR 1,234,567.00",https://wuolah.com/etsii-giiis-13639,false,lecturer-01,false
+course-06,A153,Curso formacion profesional,Curso del lecturer-02,USD 00.01,https://www.google.com/search?q=enlace+largo&rlz=1C1RXQR_esES968ES968&oq=enlace+largo&aqs=chrome..69i57j0i512j0i22i30l3j0i15i22i30.4826j0j7&sourceid=chrome&ie=UTF-8,true,lecturer-02,true
+course-07,A163,;;;;;;;;;;,G,"GBP 20,000,000.00",https://www.amazon.es/,false,lecturer-01,false
+course-08,A173,<<<<<<<<<<<<,Curso del lecturer-02,EUR 2.99,,false,lecturer-02,true
+course-09,A183,¬¬¬¬¬¬¬¬¬¬,Curso del lecturer-01,EUR 00.00,https://www.google.com/search?q=enlace+largo&rlz=1C1RXQR_esES968ES968&oq=&aqs=chrome.0.35i39i362l8.1222955434j0j15&sourceid=chrome&ie=UTF-8,true,lecturer-01,true

@@ -89,8 +89,7 @@ master.menu.authenticated.courses = List all available courses
 
 master.menu.lecturer = Lecturer
 master.menu.lecturer.courses = List my courses
-
-master.menu.lecturer.lectures = Create a lecture
+master.menu.lecturer.lectures = List my lectures
 
 # master.menu.student ####################################################
 
