@@ -11,6 +11,7 @@ auditor.audit.form.label.strongPoints = Puntos Fuertes
 auditor.audit.form.label.weakPoints = Puntos Debiles
 auditor.audit.form.label.mark = Nota
 auditor.audit.form.button.auditing-record = Registro de Auditorias
+auditor.audit.form.button.create = 	Crear
 auditor.audit.form.button.update = Actualizar
 auditor.audit.form.button.delete = Borrar
 auditor.audit.form.button.publish = Publicar

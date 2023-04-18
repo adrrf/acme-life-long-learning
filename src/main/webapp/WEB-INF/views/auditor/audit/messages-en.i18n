@@ -11,6 +11,7 @@ auditor.audit.form.label.strongPoints = Strong Points
 auditor.audit.form.label.weakPoints = Weak Points
 auditor.audit.form.label.mark = Mark
 auditor.audit.form.buttton.auditing-record = Auditing Record
+auditor.audit.form.button.create = Create
 auditor.audit.form.button.update = Update
 auditor.audit.form.button.delete = Delete
 auditor.audit.form.button.publish = Publish
