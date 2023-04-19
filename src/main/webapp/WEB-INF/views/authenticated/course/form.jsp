@@ -27,6 +27,6 @@
 </jstl:if>
 
 <acme:button code="company.course.practicum.button.create" action="/company/practicum/create?courseId=${id}"/>
-<acme:button code="company.course.practicum.button.list" action="/company/practicum/list?masterId=${id}"/>
+<acme:button code="company.course.practicum.button.list" action="/company/practicum/list?id=${id}"/>
 
 
