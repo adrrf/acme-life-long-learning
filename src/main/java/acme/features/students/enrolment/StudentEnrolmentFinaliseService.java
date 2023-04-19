@@ -4,6 +4,7 @@ package acme.features.students.enrolment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.ConfigurationRepository;
 import acme.entities.enrolment.Enrolment;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
@@ -16,7 +17,10 @@ public class StudentEnrolmentFinaliseService extends AbstractService<Student, En
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected StudentEnrolmentRepository repository;
+	protected StudentEnrolmentRepository	repository;
+
+	@Autowired
+	protected ConfigurationRepository		configuration;
 
 	// AbstractService interface ----------------------------------------------
 
@@ -87,10 +91,46 @@ public class StudentEnrolmentFinaliseService extends AbstractService<Student, En
 			super.state(existing == null || object.equals(existing), "code", "student.enrolment.form.error.duplicated");
 		}
 
+		if (!super.getBuffer().getErrors().hasErrors("motivation")) {
+
+			boolean status;
+			String message;
+
+			message = object.getMotivation();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "motivation", "student.enrolment.error.spam");
+
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("goals")) {
+
+			boolean status;
+			String message;
+
+			message = object.getGoals();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "goals", "student.enrolment.error.spam");
+
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("holder")) {
+
+			boolean status;
+			String message;
+
+			message = object.getHolder();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "holder", "student.enrolment.error.spam");
+
+		}
+
 		super.state(creditCardNumber != null && !creditCardNumber.isEmpty(), "card", "student.enrolment.form.error.nullCard");
 		super.state(!(creditCardNumber != null && !creditCardNumber.isEmpty()) || CreditCardHelper.hasCorrectCardNumberFormat(creditCardNumber), "card", "student.enrolment.form.error.invalidFormatCard");
-		super.state(!(creditCardNumber != null && !creditCardNumber.isEmpty() && CreditCardHelper.hasCorrectCardNumberFormat(creditCardNumber)) || CreditCardHelper.hasValidCreditNumber(creditCardNumber), "card",
-			"student.enrolment.form.error.invalidCardNumber");
+		super.state(!(creditCardNumber != null && !creditCardNumber.isEmpty() && CreditCardHelper.hasCorrectCardNumberFormat(creditCardNumber) && (object.getNibble() == null ? true : creditCardNumber.substring(0, 5) == object.getNibble()))
+			|| CreditCardHelper.hasValidCreditNumber(creditCardNumber), "card", "student.enrolment.form.error.invalidCardNumber");
 
 		if (!super.getBuffer().getErrors().hasErrors("holderName"))
 			super.state(object.getHolder() != null && !object.getHolder().isEmpty(), "holderName", "student.enrolment.form.error.nullHolder");

@@ -4,8 +4,10 @@ package acme.features.students.activity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.ConfigurationRepository;
 import acme.entities.enrolment.Activity;
 import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Student;
 
@@ -13,7 +15,10 @@ import acme.roles.Student;
 public class StudentActivityUpdateService extends AbstractService<Student, Activity> {
 
 	@Autowired
-	protected StudentActivityRepository repository;
+	protected StudentActivityRepository	repository;
+
+	@Autowired
+	protected ConfigurationRepository	configuration;
 
 
 	@Override
@@ -58,15 +63,61 @@ public class StudentActivityUpdateService extends AbstractService<Student, Activ
 	}
 
 	@Override
+	@SuppressWarnings("deprecation")
 	public void validate(final Activity object) {
 		assert object != null;
+
+		/*
+		 * Date initialDateSystem;
+		 * Date endDateSystem;
+		 * 
+		 * initialDateSystem = new Date(2000, 1, 1, 0, 0);
+		 * endDateSystem = new Date(2100, 12, 31, 23, 59);
+		 */
+
+		if (!super.getBuffer().getErrors().hasErrors("startDate") && !super.getBuffer().getErrors().hasErrors("endDate"))
+			if (!MomentHelper.isBefore(object.getStartDate(), object.getEndDate()))
+				super.state(false, "endDate", "student.enrolment-session.form.error.end-before-start");
+
+		/*
+		 * if (!super.getBuffer().getErrors().hasErrors("startDate"))
+		 * if (!MomentHelper.isBefore(initialDateSystem, object.getStartDate()))
+		 * super.state(false, "startDate", "student.enrolment-session.form.error.startDateNotvalid");
+		 * 
+		 * if (!super.getBuffer().getErrors().hasErrors("endDate"))
+		 * if (!MomentHelper.isBefore(object.getEndDate(), endDateSystem))
+		 * super.state(false, "endDate", "student.enrolment-session.form.error.endDateNotvalid");
+		 */
+
+		if (!super.getBuffer().getErrors().hasErrors("recap")) {
+
+			boolean status;
+			String message;
+
+			message = object.getRecap();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "recap", "student.activity.error.spam");
+
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("title")) {
+
+			boolean status;
+			String message;
+
+			message = object.getTitle();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "title", "student.activity.error.spam");
+
+		}
 
 	}
 
 	@Override
 	public void perform(final Activity object) {
 		assert object != null;
-
 		this.repository.save(object);
 	}
 

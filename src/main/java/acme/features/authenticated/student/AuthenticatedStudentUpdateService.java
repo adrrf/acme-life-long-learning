@@ -4,6 +4,7 @@ package acme.features.authenticated.student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.ConfigurationRepository;
 import acme.framework.components.accounts.Authenticated;
 import acme.framework.components.accounts.Principal;
 import acme.framework.components.models.Tuple;
@@ -17,7 +18,10 @@ import acme.roles.Student;
 public class AuthenticatedStudentUpdateService extends AbstractService<Authenticated, Student> {
 
 	@Autowired
-	protected AuthenticatedStudentRepository repository;
+	protected AuthenticatedStudentRepository	repository;
+
+	@Autowired
+	protected ConfigurationRepository			configuration;
 
 
 	@Override
@@ -57,6 +61,42 @@ public class AuthenticatedStudentUpdateService extends AbstractService<Authentic
 	@Override
 	public void validate(final Student object) {
 		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("statement")) {
+
+			boolean status;
+			String message;
+
+			message = object.getStatement();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "statement", "authenticated.student.error.spam");
+
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("strongFeatures")) {
+
+			boolean status;
+			String message;
+
+			message = object.getStrongFeatures();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "strongFeatures", "authenticated.student.error.spam");
+
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("weakFeatures")) {
+
+			boolean status;
+			String message;
+
+			message = object.getWeakFeatures();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "weakFeatures", "authenticated.student.error.spam");
+
+		}
 	}
 
 	@Override

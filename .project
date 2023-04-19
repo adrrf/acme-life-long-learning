@@ -43,7 +43,7 @@
 		<link>
 			<name>watchdog</name>
 			<type>2</type>
-			<locationURI>WORKSPACE_LOC/Projects/adrf-watchdog/target/classes</locationURI>
+			<locationURI>WORKSPACE_LOC/Projects/watchdog/target/classes</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>

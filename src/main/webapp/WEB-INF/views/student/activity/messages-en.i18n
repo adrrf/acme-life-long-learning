@@ -14,6 +14,10 @@ student.activity.form.label.endDate: End date
 student.activity.form.label.link: Link
 
 
+student.activity.error.spam = Contains Spam
+student.enrolment-session.form.error.startDateNotvalid = Start Date must be after 01/01/2000 00:00
+student.enrolment-session.form.error.endDateNotvalid = End Date must be before 31/12/2100 23:59
+student.enrolment-session.form.error.end-before-start = End Date can´t be before Start Date
 student.activity.form.button.update: Update
 student.activity.form.button.delete: Delete
 student.activity.form.button.create: Create

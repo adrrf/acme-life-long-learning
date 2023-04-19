@@ -1,9 +1,9 @@
 key,code,motivation,goals,holder,nibble,draft-mode,key:course,key:student
-enrolment-01,A2003,Astronauta,Pisar la luna,holder,nibble,false,course-01,student-01
-enrolment-02,B1003,Abogado Abogado Abogado Abogado Abogado AbogadoAbogado Abogado Abogado,Sacar a mi padre de la cárcel Sacar a mi padre de la cárcel Sacar a mi padre de la cárcel Sacar a mi,holder,nibble,true,course-02,student-02
-enrolment-03,D1503,Sexado de pollos,Conectar con la naturaleza,holder,nibble,false,course-09,student-01
-enrolment-04,Y1013,Policia,Defender la ciudad,holder,nibble,false,course-04,student-02
-enrolment-05,V1003,Electricista!!!,Trabajar por favor,holder,nibble,true,course-05,student-01
-enrolment-06,T3073,Profesor,Enseñar,holder,nibble,false,course-06,student-02
-enrolment-07,U1653,C,Superar mis traumas,holder,nibble,false,course-07,student-01
-enrolment-08,N0003,Futbolista,M,holder,nibble,true,course-08,student-02
+enrolment-01,A2003,Astronauta,Pisar la luna,Agustin,1234,true,course-01,student-01
+enrolment-02,B1003,Abogado Abogado Abogado Abogado Abogado AbogadoAbogado Abogado Abogado,Sacar a mi padre de la cárcel Sacar a mi padre de la cárcel Sacar a mi padre de la cárcel Sacar a mi,Tomas,7654,true,course-02,student-02
+enrolment-03,D1503,Sexado de pollos,Conectar con la naturaleza,Agustin,9823,false,course-09,student-01
+enrolment-04,Y1013,Policia,Defender la ciudad,Tomas,1527,false,course-04,student-02
+enrolment-05,V1003,Electricista!!!,Trabajar por favor,Agustin,9887,true,course-05,student-01
+enrolment-06,T3073,Profesor,Enseñar,Tomas,6453,false,course-06,student-02
+enrolment-07,U1653,C,Superar mis traumas,Agustin,2453,false,course-07,student-01
+enrolment-08,N0003,Futbolista,M,Tomas,1234,true,course-08,student-02

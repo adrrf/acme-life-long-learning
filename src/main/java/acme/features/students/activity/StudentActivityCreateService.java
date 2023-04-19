@@ -4,6 +4,7 @@ package acme.features.students.activity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.ConfigurationRepository;
 import acme.entities.enrolment.Activity;
 import acme.entities.enrolment.Enrolment;
 import acme.framework.components.models.Tuple;
@@ -15,7 +16,10 @@ import acme.roles.Student;
 public class StudentActivityCreateService extends AbstractService<Student, Activity> {
 
 	@Autowired
-	protected StudentActivityRepository repository;
+	protected StudentActivityRepository	repository;
+
+	@Autowired
+	protected ConfigurationRepository	configuration;
 
 
 	@Override
@@ -70,24 +74,56 @@ public class StudentActivityCreateService extends AbstractService<Student, Activ
 	}
 
 	@Override
+	@SuppressWarnings("deprecation")
 	public void validate(final Activity object) {
 		assert object != null;
 
+		/*
+		 * Date initialDateSystem;
+		 * Date endDateSystem;
+		 * 
+		 * initialDateSystem = new Date(2000, 01, 01, 00, 00);
+		 * endDateSystem = new Date(2100, 12, 31, 23, 59);
+		 */
+
 		if (!super.getBuffer().getErrors().hasErrors("startDate") && !super.getBuffer().getErrors().hasErrors("endDate"))
 			if (!MomentHelper.isBefore(object.getStartDate(), object.getEndDate()))
-				super.state(false, "endDate", "Student.Enrolment-session.form.error.end-before-start");
+				super.state(false, "endDate", "student.enrolment-session.form.error.end-before-start");
+
 		/*
-		 * else {
-		 * final int days = (int) MomentHelper.computeDuration(MomentHelper.getCurrentMoment(), object.getStartDate()).toDays();
-		 * if (days < 1)
-		 * super.state(false, "startDate", "Student.Enrolment-session.form.error.day-ahead");
-		 * else {
-		 * final int hours = (int) MomentHelper.computeDuration(object.getStartDate(), object.getEndDate()).toHours();
-		 * if (!(1 <= hours && hours <= 5))
-		 * super.state(false, "endDate", "Student.Enrolment-session.form.error.duration");
-		 * }
-		 * }
+		 * if (!super.getBuffer().getErrors().hasErrors("startDate"))
+		 * if (!MomentHelper.isBefore(initialDateSystem, object.getStartDate()))
+		 * super.state(false, "startDate", "student.enrolment-session.form.error.startDateNotvalid");
+		 * 
+		 * if (!super.getBuffer().getErrors().hasErrors("endDate"))
+		 * if (!MomentHelper.isBefore(object.getEndDate(), endDateSystem))
+		 * super.state(false, "endDate", "student.enrolment-session.form.error.endDateNotvalid");
 		 */
+
+		if (!super.getBuffer().getErrors().hasErrors("recap")) {
+
+			boolean status;
+			String message;
+
+			message = object.getRecap();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "recap", "student.activity.error.spam");
+
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("title")) {
+
+			boolean status;
+			String message;
+
+			message = object.getTitle();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "title", "student.activity.error.spam");
+
+		}
+
 	}
 
 	@Override
