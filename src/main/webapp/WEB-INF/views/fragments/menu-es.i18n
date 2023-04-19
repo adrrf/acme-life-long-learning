@@ -107,4 +107,5 @@ master.menu.auditor = Auditor
 
 master.menu.auditor.audit = Listar mis auditorias
 
-
+# master.menu.note ####################################################
+master.menu.messages.note.list = Listar comentarios
