@@ -60,6 +60,7 @@ public class AuthenticatedNoteCreateService extends AbstractService<Authenticate
 		boolean confirmation;
 
 		confirmation = super.getRequest().getData("confirmation", boolean.class);
+		super.state(confirmation, "confirmation", "authenticated.note.form.error.confirmation");
 
 		if (!super.getBuffer().getErrors().hasErrors("title")) {
 			boolean status;
@@ -88,9 +89,6 @@ public class AuthenticatedNoteCreateService extends AbstractService<Authenticate
 
 			super.state(!status, "message", "authenticated.note.form.error.spam");
 		}
-
-		if (confirmation)
-			super.state(confirmation, "confirmation", "authenticated.note.form.error.confirmation");
 	}
 
 	@Override
