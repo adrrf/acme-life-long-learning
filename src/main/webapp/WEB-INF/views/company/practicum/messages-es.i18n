@@ -18,3 +18,4 @@ company.practicum.form.button.create = Crear
 
 company.practicum.form.error.duplicated-code = Código Duplicado
 company.practicum.error.spam = Contiene spam
+company.practicum.error.no-sessions = Debes añadir al menos una sesión

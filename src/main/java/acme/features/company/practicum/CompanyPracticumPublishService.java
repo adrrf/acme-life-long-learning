@@ -60,13 +60,17 @@ public class CompanyPracticumPublishService extends AbstractService<Company, Pra
 	@Override
 	public void bind(final Practicum object) {
 		assert object != null;
-
-		object.setDraftMode(false);
 	}
 
 	@Override
 	public void validate(final Practicum object) {
 		assert object != null;
+
+		Collection<Session> sessions;
+		sessions = this.repository.findManySessionsByPracticumId(object.getId());
+
+		if (sessions.isEmpty())
+			super.state(false, "code", "company.practicum.error.no-sessions");
 
 		if (!super.getBuffer().getErrors().hasErrors("title")) {
 			boolean status;
