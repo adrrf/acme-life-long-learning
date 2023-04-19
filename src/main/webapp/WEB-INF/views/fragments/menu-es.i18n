@@ -61,6 +61,10 @@ master.menu.user-account.lecturer = Datos de profesor
 master.menu.user-account.become-lecturer = Hazte profesor
 master.menu.user-account.student = Datos del estudiante
 master.menu.user-account.become-student = Hazte estudiante
+master.menu.user-account.auditor = Datos de auditor
+master.menu.user-account.become-auditor = Hazte auditor
+master.menu.user-account.company = Datos de companía
+master.menu.user-account.become-company = Hazte compañía
 
 # master.menu.configuration ####################################################
 
@@ -91,12 +95,22 @@ master.menu.authenticated.courses = Lista todos los cursos disponibles
 
 master.menu.lecturer = Profesor
 master.menu.lecturer.courses = Lista mis cursos
-master.menu.lecturer.lectures = Crear asignatura
+master.menu.lecturer.lectures = Lista mis asignaturas
 
 # master.menu.student ####################################################
 
 master.menu.student = Estudiantes
 
 master.menu.student.enrolment = Lista mis inscripciones
+<<<<<<< HEAD
 master.menu.student.course = Lista todos los cursos disponibles
+=======
+
+# master.menu.student ####################################################
+
+master.menu.auditor = Auditor
+
+master.menu.auditor.audit = Listar mis auditorias
+
+>>>>>>> origin/develop
 

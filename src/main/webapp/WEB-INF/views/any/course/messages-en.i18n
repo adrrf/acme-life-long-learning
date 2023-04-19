@@ -18,3 +18,8 @@ authenticated.course.tutorial.button.list = Tutorials
 
 student.course.enrolment.button.create = Create enrolment
 
+auditor.course.audit.button.create = Create audit
+authenticated.course.audit.button.list = Audits
+
+company.course.practicum.button.create = Create practicum
+company.course.practicum.button.list = My Practicums

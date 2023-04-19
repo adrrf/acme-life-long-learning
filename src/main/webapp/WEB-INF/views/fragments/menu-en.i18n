@@ -61,6 +61,10 @@ master.menu.user-account.lecturer = Lecturer data
 master.menu.user-account.become-lecturer = Become a lecturer
 master.menu.user-account.student = Student data
 master.menu.user-account.become-student = Become a student
+master.menu.user-account.auditor = Auditor data
+master.menu.user-account.become-auditor = Become a auditor
+master.menu.user-account.company = Company data
+master.menu.user-account.become-company = Become a company
 
 # master.menu.configuration ####################################################
 
@@ -91,8 +95,7 @@ master.menu.authenticated.courses = List all available courses
 
 master.menu.lecturer = Lecturer
 master.menu.lecturer.courses = List my courses
-
-master.menu.lecturer.lectures = Create a lecture
+master.menu.lecturer.lectures = List my lectures
 
 # master.menu.student ####################################################
 
@@ -100,5 +103,12 @@ master.menu.student = Students
 
 master.menu.student.enrolment = List my enrolments
 master.menu.student.course = List all available courses
+
+
+# master.menu.student ####################################################
+
+master.menu.auditor = Auditor
+
+master.menu.auditor.audit = List my audits
 
 
