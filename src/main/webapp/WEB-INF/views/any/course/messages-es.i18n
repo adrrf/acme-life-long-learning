@@ -22,8 +22,4 @@ auditor.course.audit.button.create = Crear auditoria
 authenticated.course.audit.button.list = Auditorias
 
 company.course.practicum.button.create = Crear Práctica
-<<<<<<< HEAD:src/main/webapp/WEB-INF/views/authenticated/course/messages-es.i18n
-company.course.practicum.button.list = Prácticas del Curso
-=======
-company.course.practicum.button.list = Mis Prácticas
->>>>>>> origin/develop:src/main/webapp/WEB-INF/views/any/course/messages-es.i18n
+authenticated.course.practicum.button.list = Prácticas del Curso
