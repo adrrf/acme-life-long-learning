@@ -1,2 +1,3 @@
-lecturer.courseLecture.form.label.lecture = Asignaturas
-lecturer.courseLecture.form.button.create = Añadir asignatura
+lecturer.course-lecture.form.label.lecture = Asignaturas
+lecturer.course-lecture.form.button.create = Añadir asignatura
+lecturer.course-lecture.form.button.delete = Eliminar asignatura

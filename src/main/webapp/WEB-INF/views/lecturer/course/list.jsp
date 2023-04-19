@@ -9,6 +9,7 @@
 	<acme:list-column code="lecturer.course.list.label.recap" path="recap" width="40%"/>
 	<acme:list-column code="lecturer.course.list.retailPrice" path="retailPrice" width="40%"/>
 	<acme:list-column code="lecturer.course.list.label.link" path="link" width="40%"/>
+	<acme:list-column code="lecturer.course.list.label.isTheory" path="isTheory" width="40%"/>
 </acme:list>
 
 <acme:button code="lecturer.course.list.button.create" action="/lecturer/course/create"/>

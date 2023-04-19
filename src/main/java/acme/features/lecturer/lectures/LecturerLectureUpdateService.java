@@ -4,6 +4,7 @@ package acme.features.lecturer.lectures;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.ConfigurationRepository;
 import acme.entities.course.Lecture;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
@@ -13,7 +14,10 @@ import acme.roles.Lecturer;
 public class LecturerLectureUpdateService extends AbstractService<Lecturer, Lecture> {
 
 	@Autowired
-	protected LecturerLectureRepository repository;
+	protected LecturerLectureRepository	repository;
+
+	@Autowired
+	protected ConfigurationRepository	configuration;
 
 
 	@Override
@@ -64,6 +68,36 @@ public class LecturerLectureUpdateService extends AbstractService<Lecturer, Lect
 
 		if (!super.getBuffer().getErrors().hasErrors("learningTime"))
 			super.state(object.getLearningTime() > 0, "learningTime", "lecturer.lecture.form.error.negative-learningTime");
+
+		if (!super.getBuffer().getErrors().hasErrors("title")) {
+			boolean status;
+			String message;
+
+			message = object.getTitle();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "title", "lecturer.course.form.error.spam");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("recap")) {
+			boolean status;
+			String message;
+
+			message = object.getRecap();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "recap", "lecturer.course.form.error.spam");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("body")) {
+			boolean status;
+			String message;
+
+			message = object.getBody();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "body", "lecturer.course.form.error.spam");
+		}
 	}
 
 	@Override

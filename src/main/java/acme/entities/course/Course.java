@@ -52,4 +52,6 @@ public class Course extends AbstractEntity {
 	@NotNull
 	protected Lecturer			lecturer;
 
+	protected Boolean			isTheory;
+
 }

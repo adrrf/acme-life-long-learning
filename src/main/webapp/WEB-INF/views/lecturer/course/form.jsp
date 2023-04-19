@@ -16,6 +16,7 @@
 	<acme:input-textarea code="lecturer.course.form.label.recap" path="recap"/>
 	<acme:input-money code="lecturer.course.form.label.retailPrice" path="retailPrice"/>
 	<acme:input-url code="lecturer.course.form.label.link" path="link"/>
+	<acme:input-checkbox readonly="true" code="lecturer.course.form.label.isTheory" path="isTheory"/>
 	
 	<jstl:choose>
 		<jstl:when test="${_command == 'show' && draftMode == false}">
