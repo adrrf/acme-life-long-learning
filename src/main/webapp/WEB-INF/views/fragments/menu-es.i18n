@@ -104,9 +104,8 @@ master.menu.lecturer.lectures = Lista mis asignaturas
 master.menu.student = Estudiantes
 
 master.menu.student.enrolment = Lista mis inscripciones
-<<<<<<< HEAD
+
 master.menu.student.course = Lista todos los cursos disponibles
-=======
 
 # master.menu.student ####################################################
 
@@ -114,5 +113,6 @@ master.menu.auditor = Auditor
 
 master.menu.auditor.audit = Listar mis auditorias
 
->>>>>>> origin/develop
+# master.menu.note ####################################################
+master.menu.messages.note.list = Listar comentarios
 

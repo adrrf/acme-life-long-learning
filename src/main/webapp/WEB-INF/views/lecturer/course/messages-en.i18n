@@ -10,6 +10,7 @@ lecturer.course.form.label.code = Code
 lecturer.course.form.label.title = Title
 lecturer.course.form.label.recap = Abstract
 lecturer.course.form.label.retailPrice = Retail Price
+lecturer.course.form.label.exchange = Money exchange
 lecturer.course.form.label.link = Link
 lecturer.course.form.label.isTheory = Theory
 lecturer.course.form.buttton.lectures = Lectures

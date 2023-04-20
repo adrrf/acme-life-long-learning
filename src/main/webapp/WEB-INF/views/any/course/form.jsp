@@ -8,7 +8,10 @@
 	<acme:input-textbox code="authenticated.course.form.label.title" path="title"/>
 	<acme:input-textarea code="authenticated.course.form.label.recap" path="recap"/>
 	<acme:input-money code="authenticated.course.form.label.retailPrice" path="retailPrice"/>
+	<acme:input-money readonly="true" code="authenticated.course.form.label.exchange" path="exchange"/>
 	<acme:input-url code="authenticated.course.form.label.link" path="link"/>
+	<acme:input-checkbox readonly="true" code="authenticated.course.form.label.isTheory" path="isTheory"/>
+	
 	
 </acme:form>
 

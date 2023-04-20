@@ -114,3 +114,5 @@ master.menu.auditor = Auditor
 master.menu.auditor.audit = List my audits
 
 
+# master.menu.note ####################################################
+master.menu.messages.note.list = List notes

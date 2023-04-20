@@ -6,6 +6,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.MoneyExchangeRepository;
 import acme.entities.course.Course;
 import acme.entities.course.Lecture;
 import acme.framework.components.models.Tuple;
@@ -16,7 +17,10 @@ import acme.roles.Lecturer;
 public class LecturerCourseListService extends AbstractService<Lecturer, Course> {
 
 	@Autowired
-	protected LecturerCourseRepository repository;
+	protected LecturerCourseRepository	repository;
+
+	@Autowired
+	protected MoneyExchangeRepository	moneyRepository;
 
 
 	@Override
