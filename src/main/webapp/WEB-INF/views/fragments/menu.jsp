@@ -29,6 +29,8 @@
 		<acme:menu-option code="master.menu.messages">
 			<acme:menu-suboption code="master.menu.messages.peep.list" action="/any/peep/list"/>
 			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.messages.offer.list" action="/any/offer/list"/>
+			<acme:menu-separator/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.authenticated">
@@ -46,6 +48,9 @@
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.banner" action="/administrator/banner/list"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.offer.list" action="/administrator/offer/list"/>
+			<acme:menu-separator/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.assistant" access="hasRole('Assistant')">
