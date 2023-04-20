@@ -1,5 +1,6 @@
 <%@page language="java"%>
 
+
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="http://www.the-acme-framework.org/"%>
 
@@ -8,7 +9,7 @@
 	<acme:input-textarea code="auditor.auditing-record.form.label.assessment" path="assessment"/>
 	<acme:input-moment code="auditor.auditing-record.form.label.startPeriod" path="startPeriod"/>
 	<acme:input-moment code="auditor.auditing-record.form.label.finishPeriod" path="finishPeriod"/>
-	<acme:input-textarea code="auditor.auditing-record.form.label.mark" path="mark"/>
+	<acme:input-select path="mark" code="auditor.auditing-record.form.label.mark" choices="${markes}" />
 	<acme:input-url code="auditor.auditing-record.form.label.link" path="link"/>
 
 	<jstl:choose>	 
