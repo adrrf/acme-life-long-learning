@@ -71,7 +71,7 @@ public class StudentEnrolmentDeleteService extends AbstractService<Student, Enro
 
 		Collection<Activity> activities;
 
-		activities = this.repository.findManyActivityByEnrolmentId(object.getId());
+		activities = this.repository.findManyActivitiesByEnrolmentId(object.getId());
 		this.repository.deleteAll(activities);
 		this.repository.delete(object);
 	}

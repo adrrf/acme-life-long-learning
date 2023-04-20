@@ -1,0 +1,13 @@
+student.lecture.list.label.title = Titulo
+student.lecture.list.label.recap = Resumen
+student.lecture.list.label.learningTime = Tiempo de enseñanza
+student.lecture.list.label.body = Cuerpo
+student.lecture.list.label.isThoery = Teoria
+student.lecture.list.label.link = Link
+
+student.lecture.form.label.title = Titulo
+student.lecture.form.label.recap = Resumen
+student.lecture.form.label.learningTime = Tiempo de enseñanza
+student.lecture.form.label.body = Cuerpo
+student.lecture.form.label.isTheory = Teoria
+student.lecture.form.label.link = Link
