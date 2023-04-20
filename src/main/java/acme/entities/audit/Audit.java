@@ -47,6 +47,8 @@ public class Audit extends AbstractEntity {
 
 	// Derived attributes -----------------------------------------------------
 
+	protected Mark				mark;
+
 	// Relationships ----------------------------------------------------------
 
 	@ManyToOne
