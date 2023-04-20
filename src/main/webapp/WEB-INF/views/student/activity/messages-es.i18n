@@ -1,0 +1,23 @@
+student.activity.list.label.title: Título
+student.activity.list.label.recap: Resumen
+student.activity.list.label.duration: Duración (en horas)
+student.activity.list.label.theory: Teórico
+student.activity.list.label.link: Link
+student.activity.list.button.create: Crear
+
+student.activity.form.label.title: Título
+student.activity.form.label.recap: Resumen
+student.activity.form.label.isTheory: Teórico
+student.activity.form.label.startDate: Fecha de inicio
+student.activity.form.label.endDate: Fecha de fin
+student.activity.form.label.link: Link
+
+
+student.enrolment-session.form.error.startDateNotvalid = La fecha de comienzo debe ser despues de 01/01/2000 00:00
+student.enrolment-session.form.error.endDateNotvalid = La fecha de fin debe ser antes del 31/12/2100 23:59
+student.enrolment-session.form.error.end-before-start = La fecha de inicio no puede ser posterior
+student.activity.error.spam = Contiene Spam
+
+student.activity.form.button.update: Actualizar
+student.activity.form.button.delete: Eliminar
+student.activity.form.button.create: Crear

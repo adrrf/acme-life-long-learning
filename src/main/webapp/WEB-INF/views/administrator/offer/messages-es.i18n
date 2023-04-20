@@ -1,0 +1,18 @@
+administrator.offer.list.label.instantiationMoment = Fecha
+administrator.offer.list.label.heading = Titulo
+administrator.offer.list.label.price = Precio
+
+administrator.offer.form.label.instantiationMoment = Fecha
+administrator.offer.form.label.heading = Titulo
+administrator.offer.form.label.summary = Resumen
+administrator.offer.form.label.price = Precio
+administrator.offer.form.label.startDate = Comienzo de Oferta
+administrator.offer.form.label.endDate = Fin de Oferta
+administrator.offer.form.label.link = Link
+
+administrator.offer.list.button.create = Crear
+administrator.offer.form.button.create = Crear
+administrator.offer.form.button.update = Actualizar
+administrator.offer.form.button.delete = Eliminar
+
+administrator.offer.error.spam = Contiene spam

@@ -4,6 +4,7 @@ package acme.features.auditor.auditingRecord;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.ConfigurationRepository;
 import acme.entities.audit.AuditingRecord;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
@@ -13,7 +14,10 @@ import acme.roles.Auditor;
 public class AuditorAuditingRecordUpdateService extends AbstractService<Auditor, AuditingRecord> {
 
 	@Autowired
-	protected AuditorAuditingRecordRepository repository;
+	protected AuditorAuditingRecordRepository	repository;
+
+	@Autowired
+	protected ConfigurationRepository			configuration;
 
 
 	@Override
@@ -60,6 +64,26 @@ public class AuditorAuditingRecordUpdateService extends AbstractService<Auditor,
 	@Override
 	public void validate(final AuditingRecord object) {
 		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("subject")) {
+			boolean status;
+			String message;
+
+			message = object.getSubject();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "subject", "auditor.auditing-record.error.spam");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("assessment")) {
+			boolean status;
+			String message;
+
+			message = object.getAssessment();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "assessment", "auditor.auditing-record.error.spam");
+		}
 
 	}
 

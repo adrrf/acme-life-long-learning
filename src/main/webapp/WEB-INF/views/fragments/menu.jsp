@@ -30,6 +30,7 @@
 			<acme:menu-suboption code="master.menu.messages.peep.list" action="/any/peep/list"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.messages.note.list" access="isAuthenticated()" action="/authenticated/note/list"/>
+			<acme:menu-suboption code="master.menu.messages.offer.list" action="/any/offer/list"/>
 			<acme:menu-separator/>
 		</acme:menu-option>
 
@@ -48,6 +49,9 @@
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.banner" action="/administrator/banner/list"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.offer.list" action="/administrator/offer/list"/>
+			<acme:menu-separator/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.assistant" access="hasRole('Assistant')">
@@ -56,6 +60,7 @@
 		
 		<acme:menu-option code="master.menu.student" access="hasRole('Student')">
 			<acme:menu-suboption code="master.menu.student.enrolment" action="/student/enrolment/list"/>
+			<acme:menu-suboption code="master.menu.student.course" action="/student/course/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.company" access="hasRole('Company')">
@@ -85,6 +90,8 @@
 			<acme:menu-suboption code="master.menu.user-account.lecturer" action="/authenticated/lecturer/update" access="hasRole('Lecturer')"/>
 			<acme:menu-suboption code="master.menu.user-account.become-consumer" action="/authenticated/consumer/create" access="!hasRole('Consumer')"/>
 			<acme:menu-suboption code="master.menu.user-account.consumer" action="/authenticated/consumer/update" access="hasRole('Consumer')"/>
+			<acme:menu-suboption code="master.menu.user-account.become-student" action="/authenticated/student/create" access="!hasRole('Student')"/>
+			<acme:menu-suboption code="master.menu.user-account.student" action="/authenticated/student/update" access="hasRole('Student')"/>
 			<acme:menu-suboption code="master.menu.user-account.become-auditor" action="/authenticated/auditor/create" access="!hasRole('Auditor')"/>
 			<acme:menu-suboption code="master.menu.user-account.auditor" action="/authenticated/auditor/update" access="hasRole('Auditor')"/>
 			<acme:menu-suboption code="master.menu.user-account.become-company" action="/authenticated/company/create" access="!hasRole('Company')"/>

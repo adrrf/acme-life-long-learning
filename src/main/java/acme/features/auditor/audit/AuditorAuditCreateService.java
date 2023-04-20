@@ -4,6 +4,7 @@ package acme.features.auditor.audit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.ConfigurationRepository;
 import acme.entities.audit.Audit;
 import acme.entities.course.Course;
 import acme.framework.components.models.Tuple;
@@ -14,7 +15,10 @@ import acme.roles.Auditor;
 public class AuditorAuditCreateService extends AbstractService<Auditor, Audit> {
 
 	@Autowired
-	protected AuditorAuditRepository repository;
+	protected AuditorAuditRepository	repository;
+
+	@Autowired
+	protected ConfigurationRepository	configuration;
 
 
 	@Override
@@ -90,7 +94,39 @@ public class AuditorAuditCreateService extends AbstractService<Auditor, Audit> {
 			code = object.getCode();
 			audit = this.repository.findOneAuditByCode(code);
 			super.state(audit == null, "code", "auditor.audit.form.error.duplicated-code");
+
 		}
+
+		if (!super.getBuffer().getErrors().hasErrors("conclusion")) {
+			boolean status;
+			String message;
+
+			message = object.getConclusion();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "conclusion", "auditor.audit.error.spam");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("strongPoints")) {
+			boolean status;
+			String message;
+
+			message = object.getStrongPoints();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "strongPoints", "auditor.audit.error.spam");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("weakPoints")) {
+			boolean status;
+			String message;
+
+			message = object.getConclusion();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "weakPoints", "auditor.audit.error.spam");
+		}
+
 	}
 
 	@Override
