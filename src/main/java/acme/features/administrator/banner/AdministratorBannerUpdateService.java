@@ -79,6 +79,7 @@ public class AdministratorBannerUpdateService extends AbstractService<Administra
 	public void perform(final Banner object) {
 		assert object != null;
 
+		object.setInstationUpdateMoment(MomentHelper.getCurrentMoment());
 		this.repository.save(object);
 	}
 
