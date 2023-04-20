@@ -31,5 +31,5 @@
 <acme:button code="auditor.course.audit.button.create" action="/auditor/audit/create?courseId=${id}"/>
 
 <acme:button code="company.course.practicum.button.create" action="/company/practicum/create?courseId=${id}"/>
-<acme:button code="company.course.practicum.button.list" action="/company/practicum/list?masterId=${id}"/>
+<acme:button code="authenticated.course.practicum.button.list" action="/authenticated/practicum/list?masterId=${id}"/>
 

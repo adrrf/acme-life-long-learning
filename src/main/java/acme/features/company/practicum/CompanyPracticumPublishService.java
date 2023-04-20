@@ -1,12 +1,16 @@
 
 package acme.features.company.practicum;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.components.ConfigurationRepository;
 import acme.entities.practicum.Practicum;
+import acme.entities.practicum.Session;
 import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Company;
 
@@ -56,13 +60,17 @@ public class CompanyPracticumPublishService extends AbstractService<Company, Pra
 	@Override
 	public void bind(final Practicum object) {
 		assert object != null;
-
-		object.setDraftMode(false);
 	}
 
 	@Override
 	public void validate(final Practicum object) {
 		assert object != null;
+
+		Collection<Session> sessions;
+		sessions = this.repository.findManySessionsByPracticumId(object.getId());
+
+		if (sessions.isEmpty())
+			super.state(false, "code", "company.practicum.error.no-sessions");
 
 		if (!super.getBuffer().getErrors().hasErrors("title")) {
 			boolean status;
@@ -108,6 +116,16 @@ public class CompanyPracticumPublishService extends AbstractService<Company, Pra
 	public void perform(final Practicum object) {
 		assert object != null;
 
+		int id;
+		Collection<Session> sessions;
+		int nHours;
+
+		id = super.getRequest().getData("id", int.class);
+
+		sessions = this.repository.findManySessionsByPracticumId(id);
+
+		nHours = sessions.stream().mapToInt(s -> (int) MomentHelper.computeDuration(s.getStartTime(), s.getEndTime()).toHours()).sum();
+		object.setTotalTime(nHours);
 		object.setDraftMode(false);
 		this.repository.save(object);
 	}

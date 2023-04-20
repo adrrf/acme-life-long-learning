@@ -7,5 +7,6 @@ authenticated.practicum.form.label.code = Code
 authenticated.practicum.form.label.title = Conclusion
 authenticated.practicum.form.label.recap = Abstract
 authenticated.practicum.form.label.goals = Goals
+authenticated.practicum.form.label.totalTime = Total time
 
 authenticated.practicum.form.button.company = Company Data
