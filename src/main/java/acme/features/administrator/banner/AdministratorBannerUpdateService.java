@@ -69,14 +69,9 @@ public class AdministratorBannerUpdateService extends AbstractService<Administra
 			else if (!MomentHelper.isBefore(object.getInstationUpdateMoment(), object.getStartTime()))
 				super.state(false, "startTime", "administrator.banner.form.error.start-before-instation");
 			else {
-				final int days = (int) MomentHelper.computeDuration(MomentHelper.getCurrentMoment(), object.getStartTime()).toDays();
-				if (days < 1)
-					super.state(false, "startTime", "administrator.banner.form.error.day-ahead");
-				else {
-					final int duration = (int) MomentHelper.computeDuration(object.getStartTime(), object.getFinishTime()).toDays();
-					if (!(7 <= duration))
-						super.state(false, "finishTime", "administrator.banner.form.error.duration");
-				}
+				final int duration = (int) MomentHelper.computeDuration(object.getStartTime(), object.getFinishTime()).toDays();
+				if (!(7 <= duration))
+					super.state(false, "finishTime", "administrator.banner.form.error.duration");
 			}
 	}
 
