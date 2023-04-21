@@ -71,7 +71,7 @@ public class AssistantTutorialPublishService extends AbstractService<Assistant, 
 		sessions = this.repository.findManyTutorialSessionsByTutorialId(object.getId());
 
 		if (sessions.isEmpty())
-			super.state(false, "code", "assistant.tutorial.error.no-sessions");
+			super.state(false, "*", "assistant.tutorial.error.no-sessions");
 
 		if (!super.getBuffer().getErrors().hasErrors("title")) {
 			boolean status;
