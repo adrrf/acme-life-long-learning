@@ -42,6 +42,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry combineaccessrules="false" kind="src" path="/Acme-Framework-23.3.1"/>
-	<classpathentry kind="lib" path="C:/Users/adrián romero/Escritorio/3 isw/2do cuatrimestre/dp2/Workspace-23/Projects/watchdog.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jrlim/Documents/3ro/DP 2/Workspace-23/Frameworks/watchdog.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
