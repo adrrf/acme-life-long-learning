@@ -88,6 +88,18 @@ public class LecturerCourseLectureDeleteService extends AbstractService<Lecturer
 	@Override
 	public void validate(final CourseLecture object) {
 		assert object != null;
+
+		int courseId, lectureId;
+		boolean status;
+		Collection<CourseLecture> courseLectures;
+
+		courseId = super.getRequest().getData("masterId", int.class);
+		lectureId = super.getRequest().getData("lecture", int.class);
+		courseLectures = this.repository.findCourseLectureByIds(courseId, lectureId);
+		status = courseLectures.size() == 1;
+
+		super.state(status, "*", "lecturer.course-lecture.form.empty");
+
 	}
 
 	@Override
