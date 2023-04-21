@@ -21,7 +21,11 @@ public class AssistantDashboard extends AbstractForm {
 
 	@Min(0)
 	@NotNull
-	Integer						nTutorials;
+	Integer						nTutorialsTheoricalCourse;
+
+	@Min(0)
+	@NotNull
+	Integer						nTutorialsHandsOnCourse;
 
 	@NotNull
 	Map<String, Integer>		statsSessionTime;

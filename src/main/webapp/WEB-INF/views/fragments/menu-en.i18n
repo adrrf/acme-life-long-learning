@@ -75,6 +75,7 @@ master.menu.administrator.configuration = Configuration
 # master.menu.assistant ####################################################
 
 master.menu.assistant = Assistant
+master.menu.asisstant.dashboard = My dashboard
 
 # master.menu.asisstant.tutorial ####################################################
 
