@@ -89,6 +89,11 @@ master.menu.company.practicum = List my practicums
 master.menu.authenticated = Courses
 master.menu.authenticated.courses = List all available courses
 
+# master.menu.autheticated.bulletin ####################################################
+
+master.menu.authenticated.bulletin = Bulletins
+master.menu.authenticated.list.bulletin = List all available bulletins
+
 # master.menu.lecturer ####################################################
 
 master.menu.lecturer = Lecturer
