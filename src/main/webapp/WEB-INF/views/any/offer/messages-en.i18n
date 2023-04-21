@@ -1,0 +1,11 @@
+any.offer.list.label.instantiationMoment = Date
+any.offer.list.label.heading = Heading
+any.offer.list.label.price = Price
+
+any.offer.form.label.instantiationMoment = Date
+any.offer.form.label.heading = Heading
+any.offer.form.label.summary = Summary
+any.offer.form.label.price = Price
+any.offer.form.label.startDate = Start Date
+any.offer.form.label.endDate = End Date
+any.offer.form.label.link = Link

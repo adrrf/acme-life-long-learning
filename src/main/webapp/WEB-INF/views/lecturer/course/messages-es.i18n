@@ -10,6 +10,7 @@ lecturer.course.form.label.code = Codigo
 lecturer.course.form.label.title = Titulo
 lecturer.course.form.label.recap = Resumen
 lecturer.course.form.label.retailPrice = Precio
+lecturer.course.form.label.exchange = Cambio de moneda
 lecturer.course.form.label.link = Link
 lecturer.course.form.label.isTheory = Teoria
 lecturer.course.form.buttton.lectures = Asignaturas

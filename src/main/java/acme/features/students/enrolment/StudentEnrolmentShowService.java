@@ -1,11 +1,15 @@
 
 package acme.features.students.enrolment;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.enrolment.Activity;
 import acme.entities.enrolment.Enrolment;
 import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Student;
 
@@ -50,11 +54,20 @@ public class StudentEnrolmentShowService extends AbstractService<Student, Enrolm
 
 	@Override
 	public void unbind(final Enrolment object) {
+
 		assert object != null;
-		Tuple tuple;
+		final Tuple tuple;
+		int id;
+		final int nHours;
+		Collection<Activity> activities;
 
-		tuple = super.unbind(object, "code", "motivation", "goals", "draftMode");
+		id = super.getRequest().getData("id", int.class);
+		activities = this.repository.findManyActivitiesByEnrolmentId(id);
+		nHours = activities.stream().mapToInt(a -> (int) MomentHelper.computeDuration(a.getStartDate(), a.getEndDate()).toHours()).sum();
 
+		tuple = super.unbind(object, "code", "motivation", "goals", "draftMode", "holder");
+		tuple.put("card", object.getNibble());
+		tuple.put("estimatedTime", nHours);
 		super.getResponse().setData(tuple);
 	}
 

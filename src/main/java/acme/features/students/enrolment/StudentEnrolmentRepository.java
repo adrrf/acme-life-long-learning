@@ -31,6 +31,6 @@ public interface StudentEnrolmentRepository extends AbstractRepository {
 	Student findOneStudentById(int id);
 
 	@Query("select a from Activity a where a.enrolment.id = :id")
-	Collection<Activity> findManyActivityByEnrolmentId(int id);
+	Collection<Activity> findManyActivitiesByEnrolmentId(int id);
 
 }

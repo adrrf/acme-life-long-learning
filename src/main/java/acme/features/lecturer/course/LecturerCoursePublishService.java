@@ -7,9 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.components.ConfigurationRepository;
+import acme.components.MoneyExchangeRepository;
 import acme.entities.configuration.Configuration;
 import acme.entities.course.Course;
 import acme.entities.course.Lecture;
+import acme.forms.MoneyExchange;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Lecturer;
@@ -156,8 +158,35 @@ public class LecturerCoursePublishService extends AbstractService<Lecturer, Cour
 		assert object != null;
 
 		Tuple tuple;
+		int id;
+		Collection<Lecture> lectures;
+		boolean isTheory = true;
+		int theoryLectures;
+		int handsOnLectures;
+		MoneyExchange exchange;
+		Configuration config;
+		String moneda;
+
+		config = this.configuration.getSystemConfiguration().iterator().next();
+		moneda = config.getCurrency();
+
+		id = super.getRequest().getData("id", int.class);
+		lectures = this.repository.findManyLecturesByCourseId(id);
+		if (object.getDraftMode()) {
+			theoryLectures = (int) lectures.stream().filter(l -> l.getIsTheory()).count();
+			handsOnLectures = lectures.size() - theoryLectures;
+			if (handsOnLectures >= theoryLectures)
+				isTheory = false;
+		} else
+			isTheory = object.getIsTheory();
+
+		exchange = MoneyExchangeRepository.computeMoneyExchange(object.getRetailPrice(), moneda);
 
 		tuple = super.unbind(object, "code", "title", "recap", "retailPrice", "link", "draftMode");
+
+		tuple.put("id", object.getId());
+		tuple.put("isTheory", isTheory);
+		tuple.put("exchange", exchange.getTarget());
 
 		super.getResponse().setData(tuple);
 	}

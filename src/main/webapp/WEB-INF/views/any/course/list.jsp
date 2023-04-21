@@ -9,4 +9,6 @@
 	<acme:list-column code="authenticated.course.list.label.recap" path="recap" width="40%"/>
 	<acme:list-column code="authenticated.course.list.retailPrice" path="retailPrice" width="40%"/>
 	<acme:list-column code="authenticated.course.list.label.link" path="link" width="40%"/>
+	<acme:list-column code="authenticated.course.list.label.isTheory" path="isTheory" width="40%"/>
+	
 </acme:list>

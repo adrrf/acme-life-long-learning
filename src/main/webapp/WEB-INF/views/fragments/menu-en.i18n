@@ -28,6 +28,7 @@ master.menu.anonymous.alematcap = 77863310K: Mateo Capilla, Alejandro
 # master.menu.messages #######################################################
 master.menu.messages = Messages
 master.menu.messages.peep.list = List peeps
+master.menu.messages.offer.list = List offers
 
 # master.menu.administrator ###################################################
 
@@ -38,6 +39,7 @@ master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.shut-down = Shut down
 master.menu.administrator.banner = Banner Listing
+master.menu.administrator.offer.list = Offer Listing
 
 # master.menu.provider ########################################################
 
@@ -59,6 +61,8 @@ master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
 master.menu.user-account.lecturer = Lecturer data
 master.menu.user-account.become-lecturer = Become a lecturer
+master.menu.user-account.student = Student data
+master.menu.user-account.become-student = Become a student
 master.menu.user-account.auditor = Auditor data
 master.menu.user-account.become-auditor = Become a auditor
 master.menu.user-account.company = Company data
@@ -71,6 +75,7 @@ master.menu.administrator.configuration = Configuration
 # master.menu.assistant ####################################################
 
 master.menu.assistant = Assistant
+master.menu.asisstant.dashboard = My dashboard
 
 # master.menu.asisstant.tutorial ####################################################
 
@@ -100,6 +105,8 @@ master.menu.lecturer.lectures = List my lectures
 master.menu.student = Students
 
 master.menu.student.enrolment = List my enrolments
+master.menu.student.course = List all available courses
+
 
 # master.menu.student ####################################################
 
@@ -108,3 +115,5 @@ master.menu.auditor = Auditor
 master.menu.auditor.audit = List my audits
 
 
+# master.menu.note ####################################################
+master.menu.messages.note.list = List notes

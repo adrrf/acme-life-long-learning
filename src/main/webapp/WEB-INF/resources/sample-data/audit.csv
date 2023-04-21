@@ -1,8 +1,8 @@
 key,code,conclusion,strong-points,weak-points,draft-mode,key:auditor,key:course
-audit-01,J1543,Mejora la calidad educativa,Evalúa eficacia de programas,No considera necesidades individuales,true,auditor-01,course-03
+audit-01,J1543,Mejora la calidad educativa,Evalúa eficacia de programas,No considera necesidades individuales,true,auditor-01,course-04
 audit-02,T3843,Mejora condiciones físicas,Evalúa seguridad y accesibilidad,No considera aspectos pedagógicos,true,auditor-02,course-05
 audit-03,K1593,Mejora la gestión de personal,Evalúa políticas de recursos humanos,No considera la calidad pedagógica del personal,false,auditor-02,course-01
 audit-04,H3383,Optimiza uso de tecnología,Evalúa recursos y uso pedagógico,No evalúa la accesibilidad de tecnología,false,auditor-02,course-04
-audit-05,A1733,Garantiza transparencia financiera,Verifica cumplimiento normativo,No considera eficacia de gastos educativos,true,auditor-01,course-09
+audit-05,A1733,Garantiza transparencia financiera,Verifica cumplimiento normativo,No considera eficacia de gastos educativos,true,auditor-01,course-01
 audit-06,D1193,Protege a estudiantes y personal,Identifica riesgos de seguridad,No considera aspectos pedagógicos,false,auditor-01,course-07
-audit-07,R3683,Optimiza la gestión escolar,Evalúa procesos y políticas,No considera la satisfacción estudiantil y del personal,true,auditor-02,course-02
+audit-07,R3683,Optimiza la gestión escolar,Evalúa procesos y políticas,No considera la satisfacción estudiantil y del personal,true,auditor-02,course-08
