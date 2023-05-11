@@ -15,6 +15,7 @@ package acme.entities.practicum;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -23,6 +24,7 @@ import org.hibernate.validator.constraints.Length;
 
 import acme.entities.course.Course;
 import acme.framework.data.AbstractEntity;
+import acme.roles.Company;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -54,11 +56,19 @@ public class Practicum extends AbstractEntity {
 	@Length(max = 101)
 	protected String			goals;
 
+	@NotNull
+	protected Boolean			draftMode;
+
 	// Derived attributes -----------------------------------------------------
 
 	protected Integer			totalTime;
 
 	// Relationships ----------------------------------------------------------
+
+	@NotNull
+	@Valid
+	@ManyToOne
+	protected Company			company;
 
 	@NotNull
 	@ManyToOne(optional = false)

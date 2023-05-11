@@ -38,6 +38,7 @@ public class Course extends AbstractEntity {
 	@NotBlank
 	protected String			recap;
 
+	@NotNull
 	protected Money				retailPrice;
 
 	@URL
@@ -50,5 +51,7 @@ public class Course extends AbstractEntity {
 	@ManyToOne(optional = false)
 	@NotNull
 	protected Lecturer			lecturer;
+
+	protected Boolean			isTheory;
 
 }

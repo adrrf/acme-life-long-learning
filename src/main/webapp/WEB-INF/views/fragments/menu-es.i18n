@@ -25,6 +25,11 @@ master.menu.anonymous.manvazmar3 = 80103831Y: Vazquez Martin, Manuel
 master.menu.anonymous.angmunpri = 78135554T: Muñoz Prieto, Ángel
 master.menu.anonymous.alematcap = 77863310K: Mateo Capilla, Alejandro
 
+# master.menu.messages #######################################################
+master.menu.messages = Mensajes
+master.menu.messages.peep.list = Listar peeps
+master.menu.messages.offer.list = Listar ofertas
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
@@ -33,6 +38,8 @@ master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
+master.menu.administrator.banner = Listado de Banners
+master.menu.administrator.offer.list = Listado de Ofertas
 
 # master.menu.provider ########################################################
 
@@ -48,7 +55,70 @@ master.menu.consumer.favourite-link = Enlace favorito
 
 master.menu.user-account = Cuenta
 master.menu.user-account.general-data = Datos generales
-master.menu.user-account.provider = Datos de proveedor
-master.menu.user-account.become-provider = Hazte proveedor
+master.menu.user-account.assistant = Datos de asistente
+master.menu.user-account.become-assistant = Hazte asistente
 master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
+master.menu.user-account.lecturer = Datos de profesor
+master.menu.user-account.become-lecturer = Hazte profesor
+master.menu.user-account.student = Datos del estudiante
+master.menu.user-account.become-student = Hazte estudiante
+master.menu.user-account.auditor = Datos de auditor
+master.menu.user-account.become-auditor = Hazte auditor
+master.menu.user-account.company = Datos de companía
+master.menu.user-account.become-company = Hazte compañía
+
+# master.menu.configuration ####################################################
+
+master.menu.administrator.configuration = Configuración
+
+# master.menu.assistant ####################################################
+
+master.menu.assistant = Asistente
+master.menu.asisstant.dashboard = Mi dashboard
+
+# master.menu.asisstant.tutorial ####################################################
+
+master.menu.asisstant.tutorial = Lista mis tutoriales
+
+# master.menu.company ####################################################
+
+master.menu.company = Prácticas
+
+# master.menu.company.practicum ####################################################
+
+master.menu.company.practicum = Lista mis prácticas
+
+# master.menu.autheticated ####################################################
+
+master.menu.authenticated = Cursos
+master.menu.authenticated.courses = Lista todos los cursos disponibles
+
+# master.menu.autheticated.bulletin ####################################################
+
+master.menu.authenticated.bulletin = Boletines
+master.menu.authenticated.list.bulletin = Lista todos los boletines disponibles
+
+# master.menu.lecturer ####################################################
+
+master.menu.lecturer = Profesor
+master.menu.lecturer.courses = Lista mis cursos
+master.menu.lecturer.lectures = Lista mis asignaturas
+
+# master.menu.student ####################################################
+
+master.menu.student = Estudiantes
+
+master.menu.student.enrolment = Lista mis inscripciones
+
+master.menu.student.course = Lista todos los cursos disponibles
+
+# master.menu.student ####################################################
+
+master.menu.auditor = Auditor
+
+master.menu.auditor.audit = Listar mis auditorias
+
+# master.menu.note ####################################################
+master.menu.messages.note.list = Listar comentarios
+

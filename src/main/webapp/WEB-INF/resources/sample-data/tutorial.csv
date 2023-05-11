@@ -1,10 +1,10 @@
-key,code,title,recap,goals,draft-mode,key:course,key:assistant
-tutorial-01,A0001,Tutorial de estadística avanzada,Domina la estadística con este tutorial,analisis de datos;regresión; ciencia de datos,false,course-01,assistant-01
-tutorial-02,A0002,ª,ª,ª,false,course-02,assistant-02
-tutorial-03,A0003,Tutorial de matemáticas avanzadas,Amplia tu conocimiento sobre matemáticas,integrales;calculo;geometria analítica,true,course-03,assistant-01
-tutorial-04,A0004,this has to be a very very big title and now i will type randomly !º\'`*´´{},Tú me rompes las entrañas Me trepas como una araña Bebes del sudor que empaña El cristal de mi habita,estopa;estopa;estopa;estopa;estopa;estopa;estopa;estopa;estopa;estopa;estopa;estopa;estopa;estopaporr,true,course-04,assistant-02
-tutorial-05,A0005,Tutorial de historia de las ciencias,Conoce algo de historia sobre las ciencias más importantes,física;biología;historia científica,true,course-05,assistant-01
-tutorial-06,A0006,. ... - --- / .--. .- .-. .- / .--. --- .-. .-. --- ...,-- ..- -.-. .... .. ... .. -- --- ... / .--. --- .-. .-. --- ...,.-. ..- -- -... .- / -.-. .- - .- .-.. .- -. .-;-.-. . .-. ...- . --.. .-;. ... - --- .--. .,false,course-06,assistant-02
-tutorial-07,A0007,Tutorial de arte,Conoce en profundidad la historia de estas obras,mona lisa;noche estrellada;historia,false,course-07,assistant-01
-tutorial-08,A0008,Tutorial de educación física,Profundiza en la educación física,futbol;boxeo;entrenamiento,true,course-08,assistant-02
-tutorial-09,A0009,33? no creo no?,3l n4n0 35 un4 b4l4 4zul qu3 51n c4ñón di5p4r4 3n un circu170 dir3c70 4l cor4zn el n4n0 n0 35 hum4n0,14?;100?;33?;nanosexo?;am23cocheilegal?,true,course-09,assistant-01
+key,code,title,recap,goals,estimated-time,draft-mode,key:course,key:assistant
+tutorial-01,A001,Tutorial de estadística avanzada,Domina la estadística con este tutorial,analisis de datos;regresión; ciencia de datos,0,false,course-01,assistant-01
+tutorial-02,A002,ª,ª,ª,0,false,course-04,assistant-02
+tutorial-03,A003,Tutorial de matemáticas avanzadas,Amplia tu conocimiento sobre matemáticas,integrales;calculo;geometria analítica,0,true,course-05,assistant-01
+tutorial-04,A004,this has to be a very very big title and now i will type randomly !º\'`*´´{},Tú me rompes las entrañas Me trepas como una araña Bebes del sudor que empaña El cristal de mi habita,estopa;estopa;estopa;estopa;estopa;estopa;estopa;estopa;estopa;estopa;estopa;estopa;estopa;estopaporr,0,true,course-04,assistant-02
+tutorial-05,A005,Tutorial de historia de las ciencias,Conoce algo de historia sobre las ciencias más importantes,física;biología;historia científica,0,true,course-07,assistant-01
+tutorial-06,A006,. ... - --- / .--. .- .-. .- / .--. --- .-. .-. --- ...,-- ..- -.-. .... .. ... .. -- --- ... / .--. --- .-. .-. --- ...,.-. ..- -- -... .- / -.-. .- - .- .-.. .- -. .-;-.-. . .-. ...- . --.. .-;. ... - --- .--. .,0,false,course-08,assistant-02
+tutorial-07,A007,Tutorial de arte,Conoce en profundidad la historia de estas obras,mona lisa;noche estrellada;historia,0,false,course-01,assistant-01
+tutorial-08,A008,Tutorial de educación física,Profundiza en la educación física,futbol;boxeo;entrenamiento,0,true,course-08,assistant-02
+tutorial-09,A009,33? no creo no?,3l n4n0 35 un4 b4l4 4zul qu3 51n c4ñón di5p4r4 3n un circu170 dir3c70 4l cor4zn el n4n0 n0 35 hum4n0,14?;100?;33?;nanosexo?;am23cocheilegal?,0,true,course-05,assistant-01

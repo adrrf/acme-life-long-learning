@@ -62,7 +62,7 @@ public class Offer extends AbstractEntity {
 
 
 	@Transient
-	private Period getAvaliabilityPeriod() {
+	public Period getAvaliabilityPeriod() {
 		final Period avaliabilityPeriod = Period.between(this.startDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(), this.endDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
 
 		return avaliabilityPeriod;

@@ -13,6 +13,7 @@ import org.hibernate.validator.constraints.Length;
 
 import acme.entities.course.Course;
 import acme.framework.data.AbstractEntity;
+import acme.roles.Student;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -43,6 +44,11 @@ public class Enrolment extends AbstractEntity {
 	@NotNull
 	protected Boolean			draftMode;
 
+	protected String			nibble;
+
+	@Length(max = 75)
+	protected String			holder;
+
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
@@ -50,5 +56,10 @@ public class Enrolment extends AbstractEntity {
 	@NotNull
 	@Valid
 	protected Course			course;
+
+	@ManyToOne(optional = false)
+	@NotNull
+	@Valid
+	protected Student			student;
 
 }

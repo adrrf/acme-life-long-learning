@@ -3,6 +3,7 @@ package acme.roles;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -22,6 +23,7 @@ public class Assistant extends AbstractRole {
 	@Length(max = 76)
 	protected String			supervisor;
 
+	@Pattern(regexp = ".+(;.+)*")
 	@NotBlank
 	@Length(max = 101)
 	protected String			fields;
