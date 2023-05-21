@@ -1,0 +1,20 @@
+assistant.tutorial.list.label.code = Code
+assistant.tutorial.list.label.title = Title
+assistant.tutorial.list.label.course.code = Course code
+assistant.tutorial.list.label.course.title = Course title
+assistant.tutorial.list.button.create = Create
+
+assistant.tutorial.form.label.code = Code
+assistant.tutorial.form.label.title = Title
+assistant.tutorial.form.label.recap = Abstract
+assistant.tutorial.form.label.goals = Goals
+assistant.tutorial.form.label.time = Estimated time (in hours)
+assistant.tutorial.form.button.sessions = Sessions
+assistant.tutorial.form.button.create.session = Create session
+assistant.tutorial.form.button.update = Update
+assistant.tutorial.form.button.delete = Delete
+assistant.tutorial.form.button.publish = Publish
+assistant.tutorial.form.button.create = Create
+
+assistant.tutorial.error.spam = Contains spam
+assistant.tutorial.error.no-sessions = You must have to add one session

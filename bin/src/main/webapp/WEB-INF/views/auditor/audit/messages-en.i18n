@@ -1,0 +1,20 @@
+auditor.audit.list.label.code = Code
+auditor.audit.list.label.conclusion = Conclusion
+auditor.audit.list.label.strongPoints = Strong Points
+auditor.audit.list.weakPoints = Weak Points
+auditor.audit.list.mark = Mark
+auditor.audit.list.button.create = Create
+
+auditor.audit.form.label.code = Code
+auditor.audit.form.label.conclusion = Conclusion
+auditor.audit.form.label.strongPoints = Strong Points
+auditor.audit.form.label.weakPoints = Weak Points
+auditor.audit.form.label.mark = Mark
+auditor.audit.form.button.auditing-record = Auditing Record
+auditor.audit.form.button.create = Create
+auditor.audit.form.button.update = Update
+auditor.audit.form.button.delete = Delete
+auditor.audit.form.button.publish = Publish
+auditor.audit.form.button.create.auditing-record = Create Auditing Record
+
+auditor.audit.form.error.duplicated = Duplicated code

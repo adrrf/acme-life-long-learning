@@ -41,7 +41,7 @@ public class AuditorAuditingRecordCreateService extends AbstractService<Auditor,
 
 		auditId = super.getRequest().getData("masterId", int.class);
 		audit = this.repository.findOneAuditById(auditId);
-		status = audit != null && audit.getDraftMode() && super.getRequest().getPrincipal().hasRole(audit.getAuditor()) && super.getRequest().getPrincipal().getUsername().equals(audit.getAuditor().getUserAccount().getUsername());
+		status = audit != null && super.getRequest().getPrincipal().hasRole(audit.getAuditor()) && super.getRequest().getPrincipal().getUsername().equals(audit.getAuditor().getUserAccount().getUsername());
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -56,6 +56,7 @@ public class AuditorAuditingRecordCreateService extends AbstractService<Auditor,
 		audit = this.repository.findOneAuditById(auditId);
 		object = new AuditingRecord();
 		object.setAudit(audit);
+		object.setCorrection(!audit.getDraftMode());
 
 		super.getBuffer().setData(object);
 	}
@@ -78,6 +79,8 @@ public class AuditorAuditingRecordCreateService extends AbstractService<Auditor,
 	@Override
 	public void validate(final AuditingRecord object) {
 		assert object != null;
+
+		boolean confirmation;
 
 		if (!super.getBuffer().getErrors().hasErrors("startPeriod") && !super.getBuffer().getErrors().hasErrors("finishPeriod"))
 			if (!MomentHelper.isBefore(object.getStartPeriod(), object.getFinishPeriod()))
@@ -109,6 +112,11 @@ public class AuditorAuditingRecordCreateService extends AbstractService<Auditor,
 			super.state(!status, "assessment", "auditor.auditing-record.error.spam");
 		}
 
+		if (object.isCorrection()) {
+			confirmation = super.getRequest().getData("confirmation", boolean.class);
+			super.state(confirmation, "confirmation", "javax.validation.constraints.AssertTrue.message");
+		}
+
 	}
 
 	@Override
@@ -136,7 +144,12 @@ public class AuditorAuditingRecordCreateService extends AbstractService<Auditor,
 		tuple.put("audit", audit);
 		tuple.put("masterId", super.getRequest().getData("masterId", int.class));
 		tuple.put("markes", choices);
+		tuple.put("correction", object.isCorrection());
 		tuple.put("draftMode", object.getAudit().getDraftMode());
+		if (object.isCorrection())
+			tuple.put("confirmation", false);
+
+		super.getResponse().setData(tuple);
 
 		super.getResponse().setData(tuple);
 	}

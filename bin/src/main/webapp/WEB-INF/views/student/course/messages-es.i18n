@@ -1,0 +1,16 @@
+student.course.list.label.code = Codigo
+student.course.list.label.title = Titulo
+student.course.list.label.recap = Resumen
+student.course.list.retailPrice = Precio
+student.course.list.label.link = Link
+
+student.course.form.label.code = Codigo
+student.course.form.label.title = Titulo
+student.course.form.label.recap = Resumen
+student.course.form.label.retailPrice = Precio
+student.course.form.label.link = Link
+student.course.form.label.lecturerId = Id del Profesor
+
+
+student.course.form.button.lectures = Asignaturas
+student.course.enrolment.button.create = Crear inscripcion
