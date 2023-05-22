@@ -12,7 +12,10 @@ auditor.auditing-record.form.label.startPeriod: Periodo de inicio
 auditor.auditing-record.form.label.finishPeriod: Periodo de fin
 auditor.auditing-record.form.label.mark: Nota
 auditor.auditing-record.form.label.link: Vinculo
+auditor.auditing-record.form.label.confirmation: Confirmación
+
 
 auditor.auditing-record.form.button.update: Actualizar
 auditor.auditing-record.form.button.delete: Borrar
 auditor.auditing-record.form.button.create: Crear
+auditor.auditing-record.form.info.correction: Confirmado
