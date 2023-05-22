@@ -1,5 +1,5 @@
 
-package acme.testing.course;
+package acme.testing.lecturer.course;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

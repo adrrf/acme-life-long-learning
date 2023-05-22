@@ -1,5 +1,5 @@
 
-package acme.testing.course;
+package acme.testing.lecturer.course;
 
 import java.util.Collection;
 

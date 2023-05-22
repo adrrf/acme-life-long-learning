@@ -1,5 +1,5 @@
 
-package acme.testing.course;
+package acme.testing.lecturer.course;
 
 import java.util.Collection;
 
@@ -93,7 +93,7 @@ public class LecturerCoursePublishTest extends TestHarness {
 		for (final Course course : courses)
 			if (!course.getDraftMode()) {
 				params = String.format("id=%d", course.getId());
-				super.request("/employer/job/publish", params);
+				super.request("/lecturer/course/publish", params);
 			}
 		super.signOut();
 	}
@@ -108,7 +108,7 @@ public class LecturerCoursePublishTest extends TestHarness {
 		courses = this.repository.findManyCoursesByLecturerUsername("lecturer01");
 		for (final Course course : courses) {
 			params = String.format("id=%d", course.getId());
-			super.request("/employer/job/publish", params);
+			super.request("/lecturer/course/publish", params);
 		}
 		super.signOut();
 	}
