@@ -1,2 +1,5 @@
-recordIndex,code,title,recap,retail-price,link,draft-mode,key:lecturer,is-theory
-1,A123,,,"EUR 50,000.90",,true,lecturer-01,true
+recordIndex,code,title,recap,retail-price,link,is-theory
+1,A123,,,"EUR 50,000.90",,true
+1,A123,changed,changed,"EUR -50,000.90",,true
+1,A123,changed,changed,"X 50,000.90",,true
+1,A123,changed,changed,,,true

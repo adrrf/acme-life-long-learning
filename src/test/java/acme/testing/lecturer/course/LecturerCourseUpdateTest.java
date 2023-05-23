@@ -19,7 +19,7 @@ public class LecturerCourseUpdateTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/lecturer/course/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test100Positive(final int recordIndex, final String code, final String title, final String recap, final String retailPrice, final String link, final String draftMode, final String isTheory) {
+	public void test100Positive(final int recordIndex, final String code, final String title, final String recap, final String retailPrice, final String link, final String isTheory) {
 
 		super.signIn("lecturer01", "lecturer01");
 
@@ -55,7 +55,7 @@ public class LecturerCourseUpdateTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/lecturer/course/update-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test200Negative(final int recordIndex, final String code, final String title, final String recap, final String retailPrice, final String link, final String draftMode, final String isTheory) {
+	public void test200Negative(final int recordIndex, final String code, final String title, final String recap, final String retailPrice, final String link, final String isTheory) {
 
 		super.signIn("lecturer01", "lecturer01");
 
