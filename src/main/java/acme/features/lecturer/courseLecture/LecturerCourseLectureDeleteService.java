@@ -46,12 +46,11 @@ public class LecturerCourseLectureDeleteService extends AbstractService<Lecturer
 	@Override
 	public void load() {
 		final int lecturerId, courseId;
-		final Lecturer lecturer;
 		CourseLecture object;
 		final Course course;
 
 		lecturerId = super.getRequest().getPrincipal().getActiveRoleId();
-		lecturer = this.repository.findOneLecturerById(lecturerId);
+		this.repository.findOneLecturerById(lecturerId);
 		courseId = super.getRequest().getData("masterId", int.class);
 		course = this.repository.findOneCourseById(courseId);
 
@@ -67,13 +66,10 @@ public class LecturerCourseLectureDeleteService extends AbstractService<Lecturer
 		assert object != null;
 
 		int lecturerId, courseId, lectureId;
-		Lecturer lecturer;
 		Course course;
 		final Lecture lecture;
-		final CourseLecture courseLecture;
-
 		lecturerId = super.getRequest().getPrincipal().getActiveRoleId();
-		lecturer = this.repository.findOneLecturerById(lecturerId);
+		this.repository.findOneLecturerById(lecturerId);
 		courseId = super.getRequest().getData("masterId", int.class);
 		course = this.repository.findOneCourseById(courseId);
 		lectureId = super.getRequest().getData("lecture", int.class);
@@ -121,12 +117,11 @@ public class LecturerCourseLectureDeleteService extends AbstractService<Lecturer
 	public void unbind(final CourseLecture object) {
 		assert object != null;
 
-		int lecturerId;
 		Collection<Lecture> courseLectures;
 		final SelectChoices choices;
 		final Tuple tuple;
 
-		lecturerId = super.getRequest().getPrincipal().getActiveRoleId();
+		super.getRequest().getPrincipal().getActiveRoleId();
 		courseLectures = this.repository.findLecturesOfCourseId(object.getCourse().getId());
 		choices = SelectChoices.from(courseLectures, "title", object.getLecture());
 
