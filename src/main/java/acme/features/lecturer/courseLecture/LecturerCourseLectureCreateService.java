@@ -87,6 +87,20 @@ public class LecturerCourseLectureCreateService extends AbstractService<Lecturer
 	@Override
 	public void validate(final CourseLecture object) {
 		assert object != null;
+		//		int id;
+		//		final int id2;
+		//		Lecture lecture;
+		//		boolean res;
+		//		final boolean res2;
+		//
+		//		if (!super.getBuffer().getErrors().hasErrors("courseLecture")) {
+		//			id = super.getRequest().getData("id");
+		//			lecture = this.repository.findOneLectureById(id);
+		//			res = object.getLecture().equals(lecture);
+		//
+		//			super.state(res, "courseLecture", "course2");
+		//		}
+
 	}
 
 	@Override

@@ -32,6 +32,7 @@ public class LecturerLectureUpdateTest extends TestHarness {
 		super.checkFormExists();
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("recap", recap);
+		super.fillInputBoxIn("isTheory", isTheory);
 		super.fillInputBoxIn("learningTime", learningTime);
 		super.fillInputBoxIn("body", body);
 		super.fillInputBoxIn("link", link);
@@ -47,9 +48,10 @@ public class LecturerLectureUpdateTest extends TestHarness {
 		super.checkFormExists();
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("recap", recap);
-		super.fillInputBoxIn("learningTime", learningTime);
+		super.checkInputBoxHasValue("learningTime", learningTime);
+		super.checkInputBoxHasValue("isTheory", isTheory);
 		super.checkInputBoxHasValue("body", body);
-		super.fillInputBoxIn("link", link);
+		super.checkInputBoxHasValue("link", link);
 
 		super.signOut();
 	}
@@ -70,6 +72,7 @@ public class LecturerLectureUpdateTest extends TestHarness {
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("recap", recap);
 		super.fillInputBoxIn("learningTime", learningTime);
+		super.fillInputBoxIn("isTheory", isTheory);
 		super.fillInputBoxIn("body", body);
 		super.fillInputBoxIn("link", link);
 		super.clickOnSubmit("Update");

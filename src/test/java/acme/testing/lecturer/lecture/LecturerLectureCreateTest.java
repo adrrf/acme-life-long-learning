@@ -39,6 +39,7 @@ public class LecturerLectureCreateTest extends TestHarness {
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("recap", recap);
 		super.checkInputBoxHasValue("learningTime", learningTime);
+		super.checkInputBoxHasValue("isTheory", isTheory);
 		super.checkInputBoxHasValue("body", body);
 		super.checkInputBoxHasValue("link", link);
 
@@ -73,16 +74,16 @@ public class LecturerLectureCreateTest extends TestHarness {
 	public void test300Hacking() {
 
 		super.checkLinkExists("Sign in");
-		super.request("/lecturer/course/create");
+		super.request("/lecturer/lecture/create");
 		super.checkPanicExists();
 
 		super.signIn("auditor01", "auditor01");
-		super.request("/lecturer/course/create");
+		super.request("/lecturer/lecture/create");
 		super.checkPanicExists();
 		super.signOut();
 
 		super.signIn("student01", "student01");
-		super.request("/lecturer/course/create");
+		super.request("/lecturer/lecture/create");
 		super.checkPanicExists();
 		super.signOut();
 	}

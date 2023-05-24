@@ -35,7 +35,7 @@ public class LecturerLectureListTest extends TestHarness {
 	@Test
 	public void test300Hacking() {
 		super.checkLinkExists("Sign in");
-		super.request("/lecturer/course/list");
+		super.request("/lecturer/course/list-mine");
 		super.checkPanicExists();
 
 		super.signIn("auditor01", "auditor01");
