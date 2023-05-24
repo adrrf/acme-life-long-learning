@@ -1,6 +1,8 @@
 
 package acme.features.lecturer.course;
 
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -78,7 +80,7 @@ public class LecturerCourseUpdateService extends AbstractService<Lecturer, Cours
 
 			configuration = this.repository.findConfiguration();
 
-			super.state(configuration.getAcceptedCurrencies().contains(object.getRetailPrice().getCurrency()), "retailPrice", "lecturer.course.form.error.currency-retailprice" + configuration.getAcceptedCurrencies());
+			super.state(Arrays.asList(configuration.getAcceptedCurrencies().split(";")).contains(object.getRetailPrice().getCurrency()), "retailPrice", configuration.getAcceptedCurrencies());
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("retailPrice"))

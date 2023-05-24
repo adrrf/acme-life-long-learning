@@ -1,6 +1,7 @@
 
 package acme.features.lecturer.course;
 
+import java.util.Arrays;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -93,7 +94,7 @@ public class LecturerCoursePublishService extends AbstractService<Lecturer, Cour
 
 			configuration = this.repository.findConfiguration();
 
-			super.state(configuration.getAcceptedCurrencies().contains(object.getRetailPrice().getCurrency()), "retailPrice", "lecturer.course.form.error.currency-retailprice" + configuration.getAcceptedCurrencies());
+			super.state(Arrays.asList(configuration.getAcceptedCurrencies().split(";")).contains(object.getRetailPrice().getCurrency()), "retailPrice", configuration.getAcceptedCurrencies());
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("retailPrice"))
