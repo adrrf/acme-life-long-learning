@@ -71,7 +71,7 @@ public class AuditorAuditingRecordCreateService extends AbstractService<Auditor,
 		auditId = super.getRequest().getData("masterId", int.class);
 		audit = this.repository.findOneAuditById(auditId);
 
-		super.bind(object, "subject", "assessment", "startPeriod", "finishPeriod", "mark", "url");
+		super.bind(object, "subject", "assessment", "startPeriod", "finishPeriod", "mark", "link");
 		object.setAudit(audit);
 
 	}
