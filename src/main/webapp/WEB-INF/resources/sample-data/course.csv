@@ -8,3 +8,4 @@ course-06,A153,Curso formacion profesional,Curso del lecturer-02,USD 00.01,https
 course-07,A163,;;;;;;;;;;,G,"GBP 20,000,000.00",https://www.amazon.es/,false,lecturer-01,false
 course-08,A173,<<<<<<<<<<<<,Curso del lecturer-02,EUR 2.99,,false,lecturer-02,true
 course-09,A183,¬¬¬¬¬¬¬¬¬¬,Curso del lecturer-01,EUR 1.00,https://www.google.com/search?q=enlace+largo&rlz=1C1RXQR_esES968ES968&oq=&aqs=chrome.0.35i39i362l8.1222955434j0j15&sourceid=chrome&ie=UTF-8,true,lecturer-01,true
+course-10,A193,Curso vacio,Curso vacio de prueba,EUR 2.00,,true,lecturer-01,true

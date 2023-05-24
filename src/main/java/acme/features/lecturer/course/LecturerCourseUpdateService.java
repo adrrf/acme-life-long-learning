@@ -58,7 +58,7 @@ public class LecturerCourseUpdateService extends AbstractService<Lecturer, Cours
 	public void bind(final Course object) {
 		assert object != null;
 
-		super.bind(object, "code", "title", "recap", "retailPrice", "link", "draftMode");
+		super.bind(object, "title", "recap", "retailPrice", "link", "draftMode");
 		object.setDraftMode(true);
 	}
 

@@ -22,3 +22,4 @@ lecturer.lecture.form.button.create = Crear
 
 lecturer.lecture.form.error.negative-learningTime = El valor tiene que ser mayor que cero
 lecturer.course.form.error-isTheory = No se puede publicar un curso que tenga todas sus asignaturas teoricas
+lecturer.lecture.form.error.duplicated = Titulo duplicado

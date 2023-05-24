@@ -2,6 +2,7 @@
 package acme.features.lecturer.courseLecture;
 
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -102,6 +103,7 @@ public class LecturerCourseLectureCreateService extends AbstractService<Lecturer
 		int lecturerId;
 		Collection<Lecture> allLectures;
 		Collection<Lecture> courseLectures;
+		Collection<Lecture> lectures;
 		final SelectChoices choices;
 		final Tuple tuple;
 
@@ -109,7 +111,8 @@ public class LecturerCourseLectureCreateService extends AbstractService<Lecturer
 		allLectures = this.repository.findAllLecturesOfLecturerId(lecturerId);
 		courseLectures = this.repository.findLecturesOfCourseId(object.getCourse().getId());
 		allLectures.removeAll(courseLectures);
-		choices = SelectChoices.from(allLectures, "title", object.getLecture());
+		lectures = allLectures.stream().filter(l -> l.getDraftMode() == false).collect(Collectors.toList());
+		choices = SelectChoices.from(lectures, "title", object.getLecture());
 
 		tuple = super.unbind(object, "course");
 		tuple.put("masterId", object.getCourse().getId());
