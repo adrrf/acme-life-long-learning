@@ -19,7 +19,7 @@ student.enrolment.form.button.finalise = Finalise
 student.enrolment.form.button.create = Create
 
 student.enrolment.error.spam = Contains Spam
-student.enrolment.form.error.duplicated = Already existing code
+student.enrolment.form.error.duplicated-code = Already existing code
 student.enrolment.form.error.nullCard = Card must not be null
 student.enrolment.form.error.invalidFormatCard = Card has an incorrect format
 student.enrolment.form.error.invalidCardNumber = Card number is not valid

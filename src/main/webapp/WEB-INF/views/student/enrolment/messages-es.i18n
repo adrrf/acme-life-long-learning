@@ -19,7 +19,7 @@ student.enrolment.form.button.finalise = Completar
 student.enrolment.form.button.create = Crear
 
 student.enrolment.error.spam = Contiene Spam
-student.enrolment.form.error.duplicated = Codigo ya existente
+student.enrolment.form.error.duplicated-code = Codigo ya existente
 student.enrolment.form.error.nullCard = La tarjeta no debe ser nula
 student.enrolment.form.error.invalidFormatCard = La tarjeta tiene un formato incorrecto
 student.enrolment.form.error.invalidCardNumber = El numero de tarjeta no es valido
