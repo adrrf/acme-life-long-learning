@@ -1,0 +1,18 @@
+authenticated.note.list.label.title = Titulo
+authenticated.note.list.label.author = Autor
+authenticated.note.list.message = Comentario
+authenticated.conoteurse.list.instantionMoment = Fecha
+
+authenticated.note.list.button.create = Crear
+
+authenticated.note.form.label.title = Titulo
+authenticated.note.form.label.author = Autor
+authenticated.note.form.label.message = Mensaje
+authenticated.note.form.label.instantionMoment = Fecha
+authenticated.note.form.label.email = Email
+authenticated.note.form.label.link = Link
+authenticated.note.form.button.confirmation = Confirmacion
+authenticated.note.form.button.create = Crear
+
+authenticated.note.form.error.spam =Contiene Spam
+authenticated.note.form.error.confirmation = Necesita confirmacion

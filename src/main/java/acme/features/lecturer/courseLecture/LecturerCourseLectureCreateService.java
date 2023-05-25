@@ -87,6 +87,9 @@ public class LecturerCourseLectureCreateService extends AbstractService<Lecturer
 	@Override
 	public void validate(final CourseLecture object) {
 		assert object != null;
+
+		final SelectChoices choices;
+		final boolean res;
 		//		int id;
 		//		final int id2;
 		//		Lecture lecture;
@@ -100,7 +103,27 @@ public class LecturerCourseLectureCreateService extends AbstractService<Lecturer
 		//
 		//			super.state(res, "courseLecture", "course2");
 		//		}
+		int courseId, lectureId;
+		boolean status;
+		final Collection<CourseLecture> courseLectures;
+		Lecture lecture;
+		Lecturer lecturer;
 
+		courseId = super.getRequest().getData("masterId", int.class);
+		lectureId = super.getRequest().getData("lecture", int.class);
+		//		courseLectures = this.repository.findCourseLectureByIds(courseId, lectureId);
+		lecture = this.repository.findOneLectureById(lectureId);
+		lecturer = this.repository.findOneLecturerById(super.getRequest().getPrincipal().getActiveRoleId());
+
+		status = lecture.getLecturer().equals(lecturer);
+		super.state(status, "*", "ojala");
+		//
+		//		super.state(status, "*", "lecturer.course-lecture.form.empty");
+
+		//		choices = (SelectChoices) super.getResponse().getData("lectures");
+		//		res = choices.getSelected().equals(object);
+		//
+		//		super.state(res, "*", "ojala");
 	}
 
 	@Override

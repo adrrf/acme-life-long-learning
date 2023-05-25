@@ -1,17 +1,19 @@
 
 package acme.features.lecturer.course;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.components.ConfigurationRepository;
-import acme.components.MoneyExchangeRepository;
+import acme.components.RateRepository;
 import acme.entities.configuration.Configuration;
 import acme.entities.course.Course;
 import acme.entities.course.Lecture;
-import acme.forms.MoneyExchange;
+import acme.framework.components.datatypes.Money;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Lecturer;
@@ -24,6 +26,9 @@ public class LecturerCourseShowService extends AbstractService<Lecturer, Course>
 
 	@Autowired
 	protected ConfigurationRepository	configuration;
+
+	@Autowired
+	protected RateRepository			rateRepository;
 
 
 	@Override
@@ -68,9 +73,12 @@ public class LecturerCourseShowService extends AbstractService<Lecturer, Course>
 		boolean isTheory = true;
 		int theoryLectures;
 		int handsOnLectures;
-		MoneyExchange exchange;
 		Configuration config;
 		String moneda;
+		final List<String> monedas = new ArrayList<>();
+		String[] aux;
+		Double rate;
+		final Money cambio = new Money();
 
 		config = this.configuration.getSystemConfiguration().iterator().next();
 		moneda = config.getCurrency();
@@ -85,12 +93,21 @@ public class LecturerCourseShowService extends AbstractService<Lecturer, Course>
 		} else
 			isTheory = object.getIsTheory();
 
-		exchange = MoneyExchangeRepository.computeMoneyExchange(object.getRetailPrice(), moneda);
+		aux = config.getAcceptedCurrencies().split(";");
+		for (final String s : aux)
+			monedas.add(s);
+
+		this.rateRepository.getRate();
+
+		rate = this.rateRepository.rate(object.getRetailPrice().getCurrency(), moneda);
+
+		cambio.setAmount(rate * object.getRetailPrice().getAmount());
+		cambio.setCurrency(moneda);
 
 		tuple = super.unbind(object, "code", "title", "recap", "retailPrice", "link", "draftMode");
 		tuple.put("id", object.getId());
 		tuple.put("isTheory", isTheory);
-		tuple.put("exchange", exchange.getTarget());
+		tuple.put("exchange", cambio);
 
 		super.getResponse().setData(tuple);
 	}
