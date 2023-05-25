@@ -9,4 +9,3 @@
 	<acme:list-column code="authenticated.bulletin.list.label.message" path="message"/>
 </acme:list>
 
-<acme:button code="administrator.bulletin.button.create" action="/administrator/bulletin/create"/>

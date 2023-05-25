@@ -63,7 +63,7 @@ public class AuditorAuditShowTest extends TestHarness {
 				super.checkPanicExists();
 				super.signOut();
 
-				super.signIn("auditor01", "auditor01");
+				super.signIn("lecturer01", "lecturer01");
 				super.request("/auditor/audit/show", param);
 				super.checkPanicExists();
 				super.signOut();

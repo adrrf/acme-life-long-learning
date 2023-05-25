@@ -11,4 +11,8 @@
 	<acme:list-column code="auditor.auditing-record.list.label.link" path="link" width="20%"/>
 </acme:list>
 
+<acme:message code="auditing-record.after.publish"/>
+
+<acme:menu-separator/>
+
 <acme:button code="auditor.auditing-record.list.button.create" action="/auditor/auditing-record/create?masterId=${masterId}"/>

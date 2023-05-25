@@ -17,11 +17,15 @@ public class AdministratorBulletinController extends AbstractController<Administ
 	@Autowired
 	protected AdministratorBulletinCreateService	createService;
 
+	@Autowired
+	protected AdministratorBulletinListService		listService;
+
 
 	@PostConstruct
 	protected void initialise() {
 		super.addBasicCommand("show", this.showService);
 		super.addBasicCommand("create", this.createService);
+		super.addBasicCommand("list", this.listService);
 	}
 
 }

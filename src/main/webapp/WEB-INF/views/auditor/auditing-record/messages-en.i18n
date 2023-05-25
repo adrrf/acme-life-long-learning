@@ -17,3 +17,8 @@ auditor.auditing-record.form.button.update: Update
 auditor.auditing-record.form.button.delete: Delete
 auditor.auditing-record.form.button.create: Create
 auditor.auditing-record.form.info.correction: Confirmed
+
+auditing-record.after.publish: Auditing Record with "subject*" have been created after published
+auditor.audit.error.spam: Contains spam
+auditor.auditing-record.form.error.end-before-start: Incompatible dates
+auditor.auditing-record.form.error.hour-ahead: Wrong date format
