@@ -1,5 +1,9 @@
-recordIndex,code,title,recap,retail-price,link,is-theory
-1,A123,,,"EUR 50,000.90",,true
-1,A123,changed,changed,"EUR -50,000.90",,true
-1,A123,changed,changed,"X 50,000.90",,true
-1,A123,changed,changed,,,true
+recordIndex,code,title,recap,retail-price,link
+1,A123,,,,
+1,A123,changed,changed,"EUR -50,000.90",
+1,A123,changed,changed,"X 50,000.90",
+1,A123,,changed,"EUR 2.00",
+1,A123,changed,,"EUR 2.00",
+1,A123,changed,changed,"EUR 2.00",not url
+1,A123,sex,changed,"EUR 2.00",
+1,A123,asdf,sex,"EUR 2.00",

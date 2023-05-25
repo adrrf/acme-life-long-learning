@@ -1,2 +1,4 @@
-recordIndex,code,title,recap,retail-price,link,is-theory
-1,A123,changed,changed,"EUR 50,000.90",,true
+recordIndex,code,title,recap,retail-price,link
+1,A123,changed,changed,"EUR 50,000.90",
+1,A123,changed,changed2,"EUR 50,000.90",
+1,A123,changed,changed2,"EUR 2.00",https://es.wikipedia.org/wiki/Wikipedia:Portada

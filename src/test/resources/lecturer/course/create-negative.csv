@@ -1,8 +1,15 @@
 recordIndex,code,title,recap,retailPrice,link
 0,,,,,
-0,A103,,,,
-0,123,1asdfsdf,asdfasdfasdf,"EUR -2.0",http://somewhere.com
+0,A123,1asdfsdf,asdfasdfasdf,"EUR 2.0",http://somewhere.com
+0,123,1asdfsdf,asdfasdfasdf,"EUR 2.0",http://somewhere.com
 0,A203,asdfasdf,asdfasdf,"THB 30.0",
 0,A223,asdf,asdf,"EUR 204.0", not url
 0,B123,1asdfsdf,asdfasdfasdf,"EUR -2.0",http://somewhere.com
-
+0,B123,asñldkfjasñldfkjañsldfjañlsdfjalñksdfjañlsdfjañlsdjfñalsdjfasfasdfasdfasdfasd,asdfasdfasdf,"EUR 2.0",http://somewhere.com
+0,B123,1asdfsdf,asñldkfjasñldfkjañsldfjañlsdfjalñksdfjañlsdfjañlsdjfñalsdjfasfasdfasdfasdfasdasdfasdfasdfasdfasdfasdfasdf,"EUR 2.0",http://somewhere.com
+0,B123,sex,asdfasdfasdf,"EUR 2.0",http://somewhere.com
+0,B123,asdf,sex,"EUR 2.0",http://somewhere.com
+0,B123,,asdfasdfasdf,"EUR 2.0",http://somewhere.com
+0,B123,asdf,,"EUR 2.0",http://somewhere.com
+0,B123,asdf,asdf,,http://somewhere.com
+0,B123,asdf,asdf,"X 2.0",http://somewhere.com
