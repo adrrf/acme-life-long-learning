@@ -1,9 +1,7 @@
 
 package acme.features.lecturer.course;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -75,8 +73,6 @@ public class LecturerCourseShowService extends AbstractService<Lecturer, Course>
 		int handsOnLectures;
 		Configuration config;
 		String moneda;
-		final List<String> monedas = new ArrayList<>();
-		String[] aux;
 		Double rate;
 		final Money cambio = new Money();
 
@@ -92,10 +88,6 @@ public class LecturerCourseShowService extends AbstractService<Lecturer, Course>
 				isTheory = false;
 		} else
 			isTheory = object.getIsTheory();
-
-		aux = config.getAcceptedCurrencies().split(";");
-		for (final String s : aux)
-			monedas.add(s);
 
 		this.rateRepository.getRate();
 
