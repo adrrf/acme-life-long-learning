@@ -1,6 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+<<<<<<< HEAD
+                        
+    
+    
+    
+    
+=======
         
+>>>>>>> refs/remotes/origin/develop
     <wb-module deploy-name="Acme-L3-D04-23.4.1">
+<<<<<<< HEAD
+                                                
+        
+        
+        
+        
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+                                                
+        
+        
+        
+        
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+                                                
+        
+        
+        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+                                                
+        
+        
+        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+                                                
+        
+        
+        
+=======
                 
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
                 
@@ -13,13 +51,36 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/resources"/>
                 
+>>>>>>> refs/remotes/origin/develop
         
         <property name="context-root" value="Acme-L3-D04"/>
+<<<<<<< HEAD
+                                                
+        
+        
+        
+=======
                                                
+>>>>>>> refs/remotes/origin/develop
         
         <property name="java-output-path" value="/Acme-L3-D04/target/classes"/>
+<<<<<<< HEAD
+                                            
+    
+    
+    
+=======
                                           
+>>>>>>> refs/remotes/origin/develop
     
     </wb-module>
+<<<<<<< HEAD
+                    
+
+
+
+
+=======
     
+>>>>>>> refs/remotes/origin/develop
 </project-modules>

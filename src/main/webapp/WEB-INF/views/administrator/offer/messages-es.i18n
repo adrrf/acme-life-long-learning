@@ -9,6 +9,7 @@ administrator.offer.form.label.price = Precio
 administrator.offer.form.label.startDate = Comienzo de Oferta
 administrator.offer.form.label.endDate = Fin de Oferta
 administrator.offer.form.label.link = Link
+administrator.offer.form.label.exchange = Cambio
 
 administrator.offer.list.button.create = Crear
 administrator.offer.form.button.create = Crear

@@ -28,10 +28,10 @@ public class StudentDashboard extends AbstractForm {
 	Integer						nActivities;
 
 	@NotNull
-	Map<String, Integer>		statsActivitiesWorkBook;
+	Map<String, Double>			statsActivitiesWorkBook;
 
 	@NotNull
-	Map<String, Integer>		statsTimeCourses;
+	Map<String, Double>			statsTimeCourses;
 
 	// Derived attributes -----------------------------------------------------
 

@@ -1,10 +1,13 @@
 
 package acme.features.administrator.offer;
 
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.components.ConfigurationRepository;
+import acme.entities.configuration.Configuration;
 import acme.entities.messages.Offer;
 import acme.framework.components.accounts.Administrator;
 import acme.framework.components.models.Tuple;
@@ -87,6 +90,14 @@ public class AdministratorOfferUpdateService extends AbstractService<Administrat
 
 			super.state(!status, "summary", "administrator.Offer.error.spam");
 
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("retailPrice")) {
+			Configuration configuration;
+
+			configuration = this.repository.findConfiguration();
+
+			super.state(Arrays.asList(configuration.getAcceptedCurrencies().trim().split(";")).contains(object.getPrice().getCurrency()), "price", configuration.getAcceptedCurrencies());
 		}
 	}
 

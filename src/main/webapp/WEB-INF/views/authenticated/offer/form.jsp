@@ -11,5 +11,6 @@
 	<acme:input-url code="authenticated.offer.form.label.link" path="link"/>
 	<acme:input-moment code="authenticated.offer.form.label.startDate" path="startDate"/>
 	<acme:input-moment code="authenticated.offer.form.label.endDate" path="endDate"/>
+	<acme:input-money readonly="true" code="authenticated.offer.form.label.exchange" path="exchange"/>
 	
 </acme:form>
