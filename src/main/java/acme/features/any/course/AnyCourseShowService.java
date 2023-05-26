@@ -16,6 +16,7 @@ import acme.framework.components.accounts.Any;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Assistant;
+import acme.roles.Auditor;
 
 @Service
 public class AnyCourseShowService extends AbstractService<Any, Course> {
@@ -93,6 +94,7 @@ public class AnyCourseShowService extends AbstractService<Any, Course> {
 		tuple.put("isTheory", isTheory);
 		tuple.put("exchange", exchange.getTarget());
 		tuple.put("isAssistant", super.getRequest().getPrincipal().hasRole(Assistant.class));
+		tuple.put("isAuditor", super.getRequest().getPrincipal().hasRole(Auditor.class));
 		super.getResponse().setData(tuple);
 	}
 

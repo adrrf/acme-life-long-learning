@@ -33,7 +33,9 @@
 	<acme:button code="student.course.enrolment.button.create" action="/student/enrolment/create?courseId=${id}"/>
 </jstl:if>
 
-<acme:button code="auditor.course.audit.button.create" action="/auditor/audit/create?courseId=${id}"/>
+<jstl:if test="${isAuditor}">
+	<acme:button code="auditor.course.audit.button.create" action="/auditor/audit/create?courseId=${id}"/>
+</jstl:if>
 
 <acme:button code="company.course.practicum.button.create" action="/company/practicum/create?courseId=${id}"/>
 
