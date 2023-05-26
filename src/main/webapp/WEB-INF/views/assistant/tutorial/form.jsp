@@ -4,7 +4,9 @@
 <%@taglib prefix="acme" uri="http://www.the-acme-framework.org/"%>
 
 <acme:form> 
-	<acme:input-textbox code="assistant.tutorial.form.label.code" path="code"/>
+	
+		
+	<acme:input-textbox readonly = "${_command != 'create'}" code="assistant.tutorial.form.label.code" path="code"/>
 	<acme:input-textbox code="assistant.tutorial.form.label.title" path="title"/>
 	<acme:input-textarea code="assistant.tutorial.form.label.recap" path="recap"/>
 	<acme:input-textbox code="assistant.tutorial.form.label.goals" path="goals"/>

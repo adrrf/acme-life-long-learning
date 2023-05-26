@@ -64,6 +64,13 @@ public class LecturerLectureCreateService extends AbstractService<Lecturer, Lect
 	public void validate(final Lecture object) {
 		assert object != null;
 
+		if (!super.getBuffer().getErrors().hasErrors("title")) {
+			Lecture existing;
+
+			existing = this.repository.findOneLectureByTitle(object.getTitle());
+			super.state(existing == null, "title", "lecturer.lecture.form.error.duplicated");
+		}
+
 		if (!super.getBuffer().getErrors().hasErrors("learningTime"))
 			super.state(object.getLearningTime() > 0, "learningTime", "lecturer.lecture.form.error.negative-learningTime");
 

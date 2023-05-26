@@ -1,9 +1,9 @@
-authenticated.assistant.form.label.supervisor = Supervisor
-authenticated.assistant.form.label.fields = Campos
-authenticated.assistant.form.label.resume = Curriculum
-authenticated.assistant.form.label.link = Enlace
+authenticated.company.form.label.name = Nombre
+authenticated.company.form.label.VATnumber = Número VAT
+authenticated.company.form.label.sumary = Resumen
+authenticated.company.form.label.link = Link
 
-authenticated.assistant.form.button.create = Crear
-authenticated.assistant.form.button.update = Actualizar
+authenticated.company.form.button.create = Crear
+authenticated.company.form.button.update = Actualizar
 
-authenticated.assistant.error.spam = Contiene spam
+authenticated.company.error.spam = Contiene spam

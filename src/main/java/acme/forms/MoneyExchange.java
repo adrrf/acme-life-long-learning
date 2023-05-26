@@ -19,6 +19,9 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import acme.components.ConfigurationRepository;
 import acme.framework.components.datatypes.Money;
 import acme.framework.data.AbstractForm;
 import lombok.Getter;
@@ -28,25 +31,28 @@ import lombok.Setter;
 @Setter
 public class MoneyExchange extends AbstractForm {
 
+	@Autowired
+	protected ConfigurationRepository	configuration;
+
 	// Serialisation identifier -----------------------------------------------
 
-	protected static final long	serialVersionUID	= 1L;
+	protected static final long			serialVersionUID	= 1L;
 
 	// Query attributes -------------------------------------------------------
 
 	@NotNull
 	@Valid
-	public Money				source;
+	public Money						source;
 
 	@NotBlank
 	@Pattern(regexp = "[A-Z]{3}")
-	public String				targetCurrency;
+	public String						targetCurrency;
 
 	// Response attributes ----------------------------------------------------
 
 	@Valid
-	public Money				target;
+	public Money						target;
 
-	public Date					date;
+	public Date							date;
 
 }

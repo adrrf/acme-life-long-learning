@@ -1,0 +1,12 @@
+authenticated.offer.list.label.instantiationMoment = Fecha
+authenticated.offer.list.label.heading = Titulo
+authenticated.offer.list.label.price = Precio
+
+authenticated.offer.form.label.instantiationMoment = Fecha
+authenticated.offer.form.label.heading = Titulo
+authenticated.offer.form.label.summary = Resumen
+authenticated.offer.form.label.price = Precio
+authenticated.offer.form.label.startDate = Comienzo de Oferta
+authenticated.offer.form.label.endDate = Fin de Oferta
+authenticated.offer.form.label.link = Link
+authenticated.offer.form.label.exchange = Cambio

@@ -1,0 +1,10 @@
+recordIndexCourse,recordIndex,code,title,recap,goals,courseCode,courseTitle
+0,15,,,,,,
+1,15,ABC1234,esto falla porque el codigo,esta,duplicado,A133,@#~~€€¬7
+2,15,ABC1235,esto falla porque este titulo la verdad es que supera los setentaiseis carácteres,esto no da error,ni esto,A143,largolargolargolargolargolargolargolargolargolargolargolargolargolargolargo
+3,15,ABC1235,esto no da error,el resumen va a ser bastante larguillo esto tiene que tener por lo menos más de ciento un caracteres jeje,:o,A163,;;;;;;;;;;
+4,15,ABC1235,esto no da error,esto no da error,"ahora te pongo un fragmento de la biblia Josué se levantó de mañana, y él y todos los hijos de Israel partieron de Sitim y vinieron hasta el Jordán, y reposaron allí antes de pasarlo.",A173,<<<<<<<<<<<<
+0,15,esto no pasa el regex,esto no da error,esto no da error,ni esto,A173,<<<<<<<<<<<<
+1,15,ABC1235,SPAM RICO,sex,SPAM RICO,A173,<<<<<<<<<<<<
+2,15,ABC1235,one million,SPAM RICO,SPAM RICO,A173,<<<<<<<<<<<<
+3,15,ABC1235,SPAM RICO,SPAM RICO,nigeria,A173,<<<<<<<<<<<<

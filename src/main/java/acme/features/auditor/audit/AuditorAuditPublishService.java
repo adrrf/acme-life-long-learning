@@ -36,10 +36,12 @@ public class AuditorAuditPublishService extends AbstractService<Auditor, Audit> 
 	public void authorise() {
 		boolean status;
 		int auditId;
+		Auditor auditor;
 		Audit audit;
 
 		auditId = super.getRequest().getData("id", int.class);
 		audit = this.repository.findOneAuditById(auditId);
+		auditor = audit == null ? null : audit.getAuditor();
 		status = audit != null && audit.getDraftMode() && super.getRequest().getPrincipal().hasRole(audit.getAuditor());
 
 		super.getResponse().setAuthorised(status);
@@ -60,8 +62,7 @@ public class AuditorAuditPublishService extends AbstractService<Auditor, Audit> 
 	public void bind(final Audit object) {
 		assert object != null;
 
-		super.bind(object, "code", "conclusion", "strongPoints", "weakPoints", "draftMode");
-		object.setDraftMode(false);
+		super.bind(object, "code", "conclusion", "strongPoints", "weakPoints");
 	}
 
 	@Override
@@ -75,7 +76,11 @@ public class AuditorAuditPublishService extends AbstractService<Auditor, Audit> 
 			code = object.getCode();
 			audit = this.repository.findOneAuditByCode(code);
 			super.state(audit == null || audit.equals(object), "code", "auditor.audit.form.error.duplicated-code");
+
 		}
+
+		final boolean res = !this.repository.findManyAuditingRecordByAuditId(object.getId()).isEmpty();
+		super.state(res, "*", "auditor.audit.form.error.auditingRecord");
 	}
 
 	@Override

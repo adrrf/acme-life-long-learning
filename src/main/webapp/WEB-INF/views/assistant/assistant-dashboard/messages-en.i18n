@@ -1,0 +1,9 @@
+assistant.dashboard.form.label.nTheoryTutorials = Number of tutorials of theory courses
+assistant.dashboard.form.label.nHandsonTutorials = Number of tutorials of hands on courses
+assistant.dashboard.form.label.statsTutorials = Statistics of the time of your tutorials
+assistant.dashboard.form.label.statsSessions = Statistics of the time of your tutorials sessions
+
+assistant.dashboard.form.label.average = Average
+assistant.dashboard.form.label.deviation = Deviation
+assistant.dashboard.form.label.min = Min
+assistant.dashboard.form.label.max = Max

@@ -10,11 +10,12 @@ auditor.audit.form.label.conclusion = Conclusion
 auditor.audit.form.label.strongPoints = Strong Points
 auditor.audit.form.label.weakPoints = Weak Points
 auditor.audit.form.label.mark = Mark
-auditor.audit.form.button.auditing-record = Auditing Record
+auditor.audit.form.button.auditing-record = Auditing Records
 auditor.audit.form.button.create = Create
 auditor.audit.form.button.update = Update
 auditor.audit.form.button.delete = Delete
 auditor.audit.form.button.publish = Publish
-auditor.audit.form.button.create.auditing-record = Create Auditing Record
 
-auditor.audit.form.error.duplicated = Duplicated code
+auditor.audit.form.error.duplicated-code = Duplicated code
+auditor.audit.form.error.auditingRecord = You need to have at least one auditing record in this audit to publish
+auditor.audit.error.spam: Contains spam

@@ -6,7 +6,10 @@ import org.springframework.stereotype.Service;
 
 import acme.components.ConfigurationRepository;
 import acme.entities.audit.AuditingRecord;
+import acme.entities.audit.Mark;
+import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Auditor;
 
@@ -85,6 +88,16 @@ public class AuditorAuditingRecordUpdateService extends AbstractService<Auditor,
 			super.state(!status, "assessment", "auditor.auditing-record.error.spam");
 		}
 
+		if (!super.getBuffer().getErrors().hasErrors("startPeriod") && !super.getBuffer().getErrors().hasErrors("finishPeriod"))
+			if (!MomentHelper.isBefore(object.getStartPeriod(), object.getFinishPeriod()))
+				super.state(false, "finishPeriod", "auditor.auditing-record.form.error.end-before-start");
+			else {
+				final int hours = (int) MomentHelper.computeDuration(object.getStartPeriod(), object.getFinishPeriod()).toHours();
+				if (hours < 1)
+					super.state(false, "finishPeriod", "auditor.auditing-record.form.error.duration");
+
+			}
+
 	}
 
 	@Override
@@ -99,10 +112,14 @@ public class AuditorAuditingRecordUpdateService extends AbstractService<Auditor,
 		assert object != null;
 
 		Tuple tuple;
+		SelectChoices choices;
+
+		choices = SelectChoices.from(Mark.class, object.getMark());
 
 		tuple = super.unbind(object, "subject", "assessment", "startPeriod", "finishPeriod", "mark", "link");
 		tuple.put("masterId", object.getAudit().getId());
 		tuple.put("draftMode", object.getAudit().getDraftMode());
+		tuple.put("markes", choices);
 
 		super.getResponse().setData(tuple);
 	}

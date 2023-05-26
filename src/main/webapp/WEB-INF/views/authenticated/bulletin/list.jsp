@@ -8,3 +8,4 @@
 	<acme:list-column code="authenticated.bulletin.list.label.title" path="title"/>
 	<acme:list-column code="authenticated.bulletin.list.label.message" path="message"/>
 </acme:list>
+

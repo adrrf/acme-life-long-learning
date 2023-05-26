@@ -1,0 +1,4 @@
+recordIndex,code,conclusion,strongPoints,weakPoints,draft-mode,mark,key:auditor
+0,A1733,Garantiza transparencia financiera,Verifica cumplimiento normativo,No considera eficacia de gastos educativos,true,F_MINUS,auditor-01
+1,D1193,Protege a estudiantes y personal,Identifica riesgos de seguridad,No considera aspectos pedagógicos,false,A,auditor-01
+2,J1543,Mejora la calidad educativa,Evalúa eficacia de programas,No considera necesidades individuales,true,B,auditor-01
