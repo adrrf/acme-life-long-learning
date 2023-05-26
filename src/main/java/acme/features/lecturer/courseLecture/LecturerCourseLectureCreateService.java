@@ -2,6 +2,7 @@
 package acme.features.lecturer.courseLecture;
 
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -84,6 +85,43 @@ public class LecturerCourseLectureCreateService extends AbstractService<Lecturer
 	@Override
 	public void validate(final CourseLecture object) {
 		assert object != null;
+
+		final SelectChoices choices;
+		final boolean res;
+		//		int id;
+		//		final int id2;
+		//		Lecture lecture;
+		//		boolean res;
+		//		final boolean res2;
+		//
+		//		if (!super.getBuffer().getErrors().hasErrors("courseLecture")) {
+		//			id = super.getRequest().getData("id");
+		//			lecture = this.repository.findOneLectureById(id);
+		//			res = object.getLecture().equals(lecture);
+		//
+		//			super.state(res, "courseLecture", "course2");
+		//		}
+		int courseId, lectureId;
+		boolean status;
+		final Collection<CourseLecture> courseLectures;
+		Lecture lecture;
+		Lecturer lecturer;
+
+		courseId = super.getRequest().getData("masterId", int.class);
+		lectureId = super.getRequest().getData("lecture", int.class);
+		//		courseLectures = this.repository.findCourseLectureByIds(courseId, lectureId);
+		lecture = this.repository.findOneLectureById(lectureId);
+		lecturer = this.repository.findOneLecturerById(super.getRequest().getPrincipal().getActiveRoleId());
+
+		status = lecture.getLecturer().equals(lecturer);
+		super.state(status, "*", "ojala");
+		//
+		//		super.state(status, "*", "lecturer.course-lecture.form.empty");
+
+		//		choices = (SelectChoices) super.getResponse().getData("lectures");
+		//		res = choices.getSelected().equals(object);
+		//
+		//		super.state(res, "*", "ojala");
 	}
 
 	@Override
@@ -100,6 +138,7 @@ public class LecturerCourseLectureCreateService extends AbstractService<Lecturer
 		int lecturerId;
 		Collection<Lecture> allLectures;
 		Collection<Lecture> courseLectures;
+		Collection<Lecture> lectures;
 		final SelectChoices choices;
 		final Tuple tuple;
 
@@ -107,7 +146,8 @@ public class LecturerCourseLectureCreateService extends AbstractService<Lecturer
 		allLectures = this.repository.findAllLecturesOfLecturerId(lecturerId);
 		courseLectures = this.repository.findLecturesOfCourseId(object.getCourse().getId());
 		allLectures.removeAll(courseLectures);
-		choices = SelectChoices.from(allLectures, "title", object.getLecture());
+		lectures = allLectures.stream().filter(l -> l.getDraftMode() == false).collect(Collectors.toList());
+		choices = SelectChoices.from(lectures, "title", object.getLecture());
 
 		tuple = super.unbind(object, "course");
 		tuple.put("masterId", object.getCourse().getId());

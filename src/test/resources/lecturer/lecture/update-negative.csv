@@ -1,0 +1,11 @@
+recordIndex,title,recap,learning-time,body,is-theory,link
+3,,,,,,
+3,@#~€/,changed,-40,changed,false,www.google.com
+3,@#~€/,changed,40,changed,false,not url
+3,,changed,40,changed,false,https://www.amazon.es/
+3,@#~€/,,40,changed,false,https://www.amazon.es/
+3,@#~€/,changed,,changed,false,https://www.amazon.es/
+3,@#~€/,changed,40,,false,https://www.amazon.es/
+3,sex,changed,40,changed,false,https://www.amazon.es/
+3,@#~€/,sex,40,changed,false,https://www.amazon.es/
+3,@#~€/,changed,40,sex,false,https://www.amazon.es/

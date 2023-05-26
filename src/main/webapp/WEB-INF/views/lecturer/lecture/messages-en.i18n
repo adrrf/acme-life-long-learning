@@ -6,6 +6,8 @@ lecturer.lecture.list.label.isTheory = Theory
 lecturer.lecture.list.label.link = Link
 lecturer.course-lecture.list.button.create = Add lecture
 lecturer.course-lecture.list.button.delete = Delete lecture
+lecturer.lecture.list.button.create = Create
+
 
 lecturer.lecture.form.label.title = Title
 lecturer.lecture.form.label.recap = Recap
@@ -20,3 +22,4 @@ lecturer.lecture.form.button.create = Create
 
 lecturer.lecture.form.error.negative-learningTime = Value must be greater than zero
 lecturer.course.form.error-isTheory = Can not publish a course which lectures are all theoretical
+lecturer.lecture.form.error.duplicated = Duplicated title

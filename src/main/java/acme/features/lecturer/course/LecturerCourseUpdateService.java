@@ -1,12 +1,16 @@
 
 package acme.features.lecturer.course;
 
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.components.ConfigurationRepository;
+import acme.components.RateRepository;
 import acme.entities.configuration.Configuration;
 import acme.entities.course.Course;
+import acme.framework.components.datatypes.Money;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Lecturer;
@@ -19,6 +23,9 @@ public class LecturerCourseUpdateService extends AbstractService<Lecturer, Cours
 
 	@Autowired
 	protected ConfigurationRepository	configuration;
+
+	@Autowired
+	protected RateRepository			rateRepository;
 
 
 	@Override
@@ -58,7 +65,7 @@ public class LecturerCourseUpdateService extends AbstractService<Lecturer, Cours
 	public void bind(final Course object) {
 		assert object != null;
 
-		super.bind(object, "code", "title", "recap", "retailPrice", "link", "draftMode");
+		super.bind(object, "title", "recap", "retailPrice", "link", "draftMode", "exchange");
 		object.setDraftMode(true);
 	}
 
@@ -78,7 +85,7 @@ public class LecturerCourseUpdateService extends AbstractService<Lecturer, Cours
 
 			configuration = this.repository.findConfiguration();
 
-			super.state(configuration.getAcceptedCurrencies().contains(object.getRetailPrice().getCurrency()), "retailPrice", "lecturer.course.form.error.currency-retailprice" + configuration.getAcceptedCurrencies());
+			super.state(Arrays.asList(configuration.getAcceptedCurrencies().trim().split(";")).contains(object.getRetailPrice().getCurrency()), "retailPrice", configuration.getAcceptedCurrencies());
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("retailPrice"))
@@ -115,11 +122,21 @@ public class LecturerCourseUpdateService extends AbstractService<Lecturer, Cours
 	@Override
 	public void unbind(final Course object) {
 		assert object != null;
-
 		Tuple tuple;
+		Configuration config;
+		String moneda;
+		Double rate;
+		final Money cambio = new Money();
+
+		config = this.configuration.getSystemConfiguration().iterator().next();
+		moneda = config.getCurrency();
+		this.rateRepository.getRate();
+		rate = this.rateRepository.rate(object.getRetailPrice().getCurrency(), moneda);
+		cambio.setAmount(rate * object.getRetailPrice().getAmount());
+		cambio.setCurrency(moneda);
 
 		tuple = super.unbind(object, "code", "title", "recap", "retailPrice", "link", "draftMode");
-
+		tuple.put("exchange", cambio);
 		super.getResponse().setData(tuple);
 	}
 

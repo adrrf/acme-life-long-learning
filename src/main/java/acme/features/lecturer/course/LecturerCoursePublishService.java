@@ -1,17 +1,18 @@
 
 package acme.features.lecturer.course;
 
+import java.util.Arrays;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.components.ConfigurationRepository;
-import acme.components.MoneyExchangeRepository;
+import acme.components.RateRepository;
 import acme.entities.configuration.Configuration;
 import acme.entities.course.Course;
 import acme.entities.course.Lecture;
-import acme.forms.MoneyExchange;
+import acme.framework.components.datatypes.Money;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Lecturer;
@@ -24,6 +25,9 @@ public class LecturerCoursePublishService extends AbstractService<Lecturer, Cour
 
 	@Autowired
 	protected ConfigurationRepository	configuration;
+
+	@Autowired
+	protected RateRepository			rateRepository;
 
 
 	@Override
@@ -93,7 +97,7 @@ public class LecturerCoursePublishService extends AbstractService<Lecturer, Cour
 
 			configuration = this.repository.findConfiguration();
 
-			super.state(configuration.getAcceptedCurrencies().contains(object.getRetailPrice().getCurrency()), "retailPrice", "lecturer.course.form.error.currency-retailprice" + configuration.getAcceptedCurrencies());
+			super.state(Arrays.asList(configuration.getAcceptedCurrencies().trim().split(";")).contains(object.getRetailPrice().getCurrency()), "retailPrice", configuration.getAcceptedCurrencies());
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("retailPrice"))
@@ -163,12 +167,17 @@ public class LecturerCoursePublishService extends AbstractService<Lecturer, Cour
 		boolean isTheory = true;
 		int theoryLectures;
 		int handsOnLectures;
-		MoneyExchange exchange;
 		Configuration config;
 		String moneda;
+		Double rate;
+		final Money cambio = new Money();
 
 		config = this.configuration.getSystemConfiguration().iterator().next();
 		moneda = config.getCurrency();
+		this.rateRepository.getRate();
+		rate = this.rateRepository.rate(object.getRetailPrice().getCurrency(), moneda);
+		cambio.setAmount(rate * object.getRetailPrice().getAmount());
+		cambio.setCurrency(moneda);
 
 		id = super.getRequest().getData("id", int.class);
 		lectures = this.repository.findManyLecturesByCourseId(id);
@@ -180,13 +189,11 @@ public class LecturerCoursePublishService extends AbstractService<Lecturer, Cour
 		} else
 			isTheory = object.getIsTheory();
 
-		exchange = MoneyExchangeRepository.computeMoneyExchange(object.getRetailPrice(), moneda);
-
 		tuple = super.unbind(object, "code", "title", "recap", "retailPrice", "link", "draftMode");
 
 		tuple.put("id", object.getId());
 		tuple.put("isTheory", isTheory);
-		tuple.put("exchange", exchange.getTarget());
+		tuple.put("exchange", cambio);
 
 		super.getResponse().setData(tuple);
 	}

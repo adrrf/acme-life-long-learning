@@ -6,6 +6,8 @@ lecturer.lecture.list.label.isTheory = Teoria
 lecturer.lecture.list.label.link = Link
 lecturer.course-lecture.list.button.create = Añadir asignatura
 lecturer.course-lecture.list.button.delete = Eliminar asignatura del curso
+lecturer.lecture.list.button.create = Crear
+
 
 lecturer.lecture.form.label.title = Titulo
 lecturer.lecture.form.label.recap = Resumen
@@ -20,3 +22,4 @@ lecturer.lecture.form.button.create = Crear
 
 lecturer.lecture.form.error.negative-learningTime = El valor tiene que ser mayor que cero
 lecturer.course.form.error-isTheory = No se puede publicar un curso que tenga todas sus asignaturas teoricas
+lecturer.lecture.form.error.duplicated = Titulo duplicado
