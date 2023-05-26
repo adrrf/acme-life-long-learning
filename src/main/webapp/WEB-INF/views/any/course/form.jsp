@@ -36,6 +36,11 @@
 		action="/authenticated/practicum/list?masterId=${id}"/>
 </jstl:if>
 
+<jstl:if test="${isCompany}">
+	<acme:button code="company.course.practicum.button.create"
+		action="/company/practicum/create?courseId=${id}"/>
+</jstl:if>
+
 <jstl:if test="${isAuditor}">
 	<acme:button code="auditor.course.audit.button.create" action="/auditor/audit/create?courseId=${id}"/>
 </jstl:if>
