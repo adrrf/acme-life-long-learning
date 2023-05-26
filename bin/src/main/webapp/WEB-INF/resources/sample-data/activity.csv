@@ -1,0 +1,11 @@
+key,title,recap,is-theory,start-date,end-date,link,key:enrolment
+activity-01,Selecciona la respuesta verdadera,Ante la tesitura de tener que elegir entre diversas opciones se solicita que el alumno escoja una de,true,1000/01/31 23:59,1000/02/28 00:01,null,enrolment-01
+activity-02,Guerra de Independencia,Desarrolla que los eventos más importantes de la guerra,true,2022/07/22 17:43,2022/07/23 06:08,https://ferxxop.com/,enrolment-01
+activity-03,Intencion comunicativa Intencion comunicativa Intencion comunicativa dise,"Explica la intención comunicativa del autor en el poema ""Amor más allá de la muerte""",true,2016/04/14 00:32,2016/05/23 09:00,https://www.cs.us.es/docencia/aulavirtual/login/index.php,enrolment-01
+activity-04,Resuelve la derivada,Calcula el resultado de la siguiente derivada,false,2020/05/01 17:17,2020/05/06 12:12,https://www.youtube.com/watch?v=uP0EqM-aKY8&ab_channel=,enrolment-02
+activity-05,Saltar a la comba,Salta 40 segundos a la comba a una pierna,false,2005/11/11 00:00,2005/11/25 11:11,https://github.com/adrrf/acme-life-long-learning,enrolment-06
+activity-06,T,C,false,1492/10/12 15:32,1493/02/10 08:08,https://www.enlace1,enrolment-03
+activity-07,Estoicismo,Desarrolla las bases del pensamiento estoico,true,1/01/01 01:01,2/02/02 02:02,https://twitter.com/pkmn_realidea,enrolment-05
+activity-08,Doblaje de voz,Una actividad sobre imitar a Anuel,false,1945/04/22 18:30,1946/09/10 22:22,,enrolment-04
+activity-09,Paraiso,Describe tu paraiso personal en 500 palabras,true,2021/03/21 14:40,2021/04/23 06:10,https://www.youtube.com/watch?v=uP0EqM-aKY8&ab_channel=YSYA,enrolment-07
+activity-10,Jalon al Pecho,Ejecuta el ejercicio con la tecnica e intensidad correctas,true,2002/01/28 03:24,2002/01/29 12:13,https://clockify.me/,enrolment-08

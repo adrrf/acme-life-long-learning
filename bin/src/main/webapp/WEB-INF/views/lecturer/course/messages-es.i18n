@@ -1,0 +1,27 @@
+lecturer.course.list.label.code = Codigo
+lecturer.course.list.label.title = Titulo
+lecturer.course.list.label.recap = Resumen
+lecturer.course.list.retailPrice = Precio
+lecturer.course.list.label.isTheory = Teoria
+lecturer.course.list.label.link = Link
+lecturer.course.list.button.create = Crear
+
+lecturer.course.form.label.code = Codigo
+lecturer.course.form.label.title = Titulo
+lecturer.course.form.label.recap = Resumen
+lecturer.course.form.label.retailPrice = Precio
+lecturer.course.form.label.exchange = Cambio de moneda
+lecturer.course.form.label.link = Link
+lecturer.course.form.label.isTheory = Teoria
+lecturer.course.form.buttton.lectures = Asignaturas
+lecturer.course.form.button.update = Actualizar
+lecturer.course.form.button.delete = Borrar
+lecturer.course.form.button.publish = Publicar
+lecturer.course.form.button.create = Crear
+
+lecturer.course.form.error.duplicated = Codigo duplicado
+lecturer.course.form.error.negative-retailprice = Cantidad negativa
+lecturer.course.form.error.currency-retailprice = Moneda no aceptada 
+lecturer.course.form.error.spam = Contiene spam
+lecturer.course.form.error.empty = Add lecture to course
+lecturer.course.form.error.publish = Unpublished lectures

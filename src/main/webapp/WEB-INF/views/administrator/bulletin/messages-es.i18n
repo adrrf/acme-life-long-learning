@@ -1,0 +1,16 @@
+administrator.bulletin.list.label.instantiationMoment = Momento de creación
+administrator.bulletin.list.label.title = Titulo
+administrator.bulletin.list.label.message = Mensaje
+administrator.bulletin.list.label.flag = Crítico
+administrator.bulletin.list.label.link = Link
+
+administrator.bulletin.form.label.instantiationMoment = Momento de creación
+administrator.bulletin.form.label.title = Titulo
+administrator.bulletin.form.label.message = Mensaje
+administrator.bulletin.form.label.flag = Crítico
+administrator.bulletin.form.label.link = Link
+
+administrator.bulletin.list.button.create = Crear
+administrator.bulletin.form.button.create = Crear
+
+administrator.bulletin.error.spam = Contiene spam

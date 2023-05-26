@@ -1,0 +1,31 @@
+student.enrolment.list.label.code = Code
+student.enrolment.list.label.motivation = Motivation
+student.enrolment.list.label.goals = Goals
+student.enrolment.form.label.time = Estimated Time (Hours)
+student.enrolment.list.button.create = Create
+
+student.enrolment.form.label.code = Code
+student.enrolment.form.label.motivation = Motivation
+student.enrolment.form.label.goals = Goals
+student.enrolment.form.label.card = Credit Card Number ({0-9}{16}):
+student.enrolment.form.label.holder = Card Holder:
+student.enrolment.form.label.CVV = CVC ({0-9}{3}):
+student.enrolment.form.label.expiryDate = Expiry Date (MM/YY):
+
+student.enrolment.form.buttton.activities = Workbook
+student.enrolment.form.button.update = Update
+student.enrolment.form.button.delete = Delete
+student.enrolment.form.button.finalise = Finalise
+student.enrolment.form.button.create = Create
+
+student.enrolment.error.spam = Contains Spam
+student.enrolment.form.error.duplicated = Already existing code
+student.enrolment.form.error.nullCard = Card must not be null
+student.enrolment.form.error.invalidFormatCard = Card has an incorrect format
+student.enrolment.form.error.invalidCardNumber = Card number is not valid
+student.enrolment.form.error.nullHolder = Card holder must not be null
+student.enrolment.form.error.nullCVV = CVC must not be null
+student.enrolment.form.error.invalidCVV = CVC has an invalid format
+student.enrolment.form.error.nullExpiryDate = Expiry Date must not be null
+student.enrolment.form.error.invalidExpiryDateFormat = Expiry Date has an incorrect format
+student.enrolment.form.error.invalidExpiryDate = Card has expired

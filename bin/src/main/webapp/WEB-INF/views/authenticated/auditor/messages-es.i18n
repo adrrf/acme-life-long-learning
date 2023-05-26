@@ -1,0 +1,9 @@
+authenticated.auditor.form.label.firm = Firma
+authenticated.auditor.form.label.professionalID = Identificacion profesional
+authenticated.auditor.form.label.certifications = Certificaciones
+authenticated.auditor.form.label.link = Enlace
+
+authenticated.auditor.form.button.create = Crear
+authenticated.auditor.form.button.update = Actualizar
+
+authenticated.auditor.error.spam = Contiene spam
