@@ -1,0 +1,11 @@
+recordIndex,code,title,recap,goals,estimatedTime
+0,A001,Tutorial de estadística avanzada,Domina la estadística con este tutorial,analisis de datos;regresión; ciencia de datos,5
+6,A014,Short title,Recap with maximum length: Lorem ipsum dolor sit amet consectetur adipiscing elit. Curabitur mauris.,This is a long goal with special characters: !@£$%^&*,6
+8,A017,Title with special characters: ÄÖÜß,Recap with special characters: ãõ,Goals with special characters: çãõ,7
+4,A009,33? no creo no?,3l n4n0 35 un4 b4l4 4zul qu3 51n c4ñón di5p4r4 3n un circu170 dir3c70 4l cor4zn el n4n0 n0 35 hum4n0,14?;100?;33?;nanosexo?;am23cocheilegal?,6
+1,A003,Tutorial de matemáticas avanzadas,Amplia tu conocimiento sobre matemáticas,integrales;calculo;geometria analítica,6
+2,A005,Tutorial de historia de las ciencias,Conoce algo de historia sobre las ciencias más importantes,física;biología;historia científica,8
+9,A020,Short title,Recap with maximum length: Lorem ipsum dolor sit amet consectetur adipiscing elit. Curabitur mauris.,Goals with maximum length: Lorem ipsum dolor sit amet consectetur adipiscing elit. Curabitur mauris.,0
+7,A016,Title with special characters: çãõ,Recap with special characters: èéìòù,Goals with special characters: àèéíóúñ,8
+3,A007,Tutorial de arte,Conoce en profundidad la historia de estas obras,mona lisa;noche estrellada;historia,2
+5,A012,Title with ñ characters,Recap with maximum length: Lorem ipsum dolor sit amet consectetur adipiscing elit. Curabitur mauris.,This is a long goal with special characters: @#$%^&*(),6

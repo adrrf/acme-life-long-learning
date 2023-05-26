@@ -27,7 +27,7 @@ public class Bulletin extends AbstractEntity {
 	@Temporal(TemporalType.DATE)
 	@NotNull
 	@Past
-	protected Date				instantationMoment;
+	protected Date				instantiationMoment;
 
 	@NotBlank
 	@Length(max = 76)

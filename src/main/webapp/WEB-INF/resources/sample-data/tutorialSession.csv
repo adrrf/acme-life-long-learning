@@ -1,19 +1,39 @@
 key,title,recap,is-theory,start-time,end-time,key:tutorial
 tutorialSession-01,Modelos de Regresión,Sesión avanzado sobre modelos de regresión lineal y no lineal,true,2022/01/01 00:00,2022/01/01 03:00,tutorial-01
-tutorialSession-02,ª,ª,true,2022/01/01 00:00,2022/01/01 03:00,tutorial-01
+tutorialSession-02,ª,ª,true,2022/01/01 00:00,2022/01/01 02:00,tutorial-01
 tutorialSession-03,Conversación en Inglés,Aprende a conversar informalmente en inglés,false,2022/01/01 00:00,2022/01/01 03:00,tutorial-02
 tutorialSession-04,this has to be a very very big title and now i will type randomly !º\'`*´´{},Que yo sé que la sonrisa Que se dibuja en mi cara Tiene que ver con la brisa Que abanica tu mirada...,false,2022/01/01 00:00,2022/01/01 03:00,tutorial-02
-tutorialSession-05,Cálculo de integrales,Cómo calcular integrales básicas utilizando métodos de sustitución y fracciones parciales,false,2022/01/01 00:00,2022/01/01 03:00,tutorial-03
-tutorialSession-06,- . - .- ... / - . - .. - .- ... / - . - --- .-. .-. .- ...,- . - .- --.. .- ... / -... .- -.- ..- --. .- -. ... / -- .- -- . .-.. ..- -. --. .- ...,true,2022/01/01 01:00,2022/01/01 01:15,tutorial-03
-tutorialSession-07,La Guerra de la Independencia Española,Breve descripción de la guerra de la independencia española,true,2022/01/01 00:00,2022/01/01 03:00,tutorial-04
-tutorialSession-08,v1&5O@aMWgm!RMPCrRNMZIQWz!uuGF7u@ur0uAB^FBZZK7NB5&v1&5O@aMWgm!RMPCrRNMZIQWz!,AtENDRaBIniTuChERdLeTINGEohnashAheLiErAghADMIstINAjhHKXeDK#e5%@STxMh3@D13iFEMxrg@uqu9z%NIuC^b%$XsaLi,true,2022/01/01 00:00,2022/01/01 03:00,tutorial-04
-tutorialSession-09,La teoría de la relatividad,Breve resumen de la teoría de la relatividad,true,2022/01/01 00:00,2022/01/01 03:00,tutorial-05
+tutorialSession-05,Cálculo de integrales,Cómo calcular integrales básicas utilizando métodos de sustitución y fracciones parciales,false,2022/01/01 00:00,2022/01/01 05:00,tutorial-03
+tutorialSession-06,- . - .- ... / - . - .. - .- ... / - . - --- .-. .-. .- ...,- . - .- --.. .- ... / -... .- -.- ..- --. .- -. ... / -- .- -- . .-.. ..- -. --. .- ...,true,2022/01/01 00:00,2022/01/01 01:00,tutorial-03
+tutorialSession-07,La Guerra de la Independencia Española,Breve descripción de la guerra de la independencia española,true,2022/01/01 00:00,2022/01/01 01:00,tutorial-04
+tutorialSession-08,v1&5O@aMWgm!RMPCrRNMZIQWz!uuGF7u@ur0uAB^FBZZK7NB5&v1&5O@aMWgm!RMPCrRNMZIQWz!,AtENDRaBIniTuChERdLeTINGEohnashAheLiErAghADMIstINAjhHKXeDK#e5%@STxMh3@D13iFEMxrg@uqu9z%NIuC^b%$XsaLi,true,2022/01/01 00:00,2022/01/01 04:00,tutorial-04
+tutorialSession-09,La teoría de la relatividad,Breve resumen de la teoría de la relatividad,true,2022/01/01 00:00,2022/01/01 05:00,tutorial-05
 tutorialSession-10,.!.!.!.,|.|.|.|.|.|.|.|.|,true,2022/01/01 00:00,2022/01/01 03:00,tutorial-05
-tutorialSession-11,Lorca y su historia,Sesión sobre Federico García Lorca y sus obras,true,2022/01/01 00:00,2022/01/01 03:00,tutorial-06
-tutorialSession-12,<h1>html style title</h1>,<script>const message = fetchMessage()</script>,true,2022/01/01 00:00,2022/01/01 03:00,tutorial-06
-tutorialSession-13,La Gioconda,Pintura al óleo del artista italiano Leonardo da Vinci,true,2022/01/01 00:00,2022/01/01 03:00,tutorial-07
-tutorialSession-14,[general title],[general message,true,2022/01/01 00:00,2022/01/01 03:00,tutorial-07
-tutorialSession-15,Fútbol femenino,Entrenamiento de fútbol solo para mujeres,false,2022/01/01 00:00,2022/01/01 03:00,tutorial-08
-tutorialSession-16,#titulosaburridos,#mensajessinsentido,false,2022/01/01 00:00,2022/01/01 03:00,tutorial-08
+tutorialSession-11,Lorca y su historia,Sesión sobre Federico García Lorca y sus obras,true,2022/01/01 00:00,2022/01/01 01:00,tutorial-06
+tutorialSession-12,<h1>html style title</h1>,<script>const message = fetchMessage()</script>,true,2022/01/01 00:00,2022/01/01 02:00,tutorial-06
+tutorialSession-13,La Gioconda,Pintura al óleo del artista italiano Leonardo da Vinci,true,2022/01/01 00:00,2022/01/01 01:00,tutorial-07
+tutorialSession-14,[general title],[general message,true,2022/01/01 00:00,2022/01/01 01:00,tutorial-07
+tutorialSession-15,Fútbol femenino,Entrenamiento de fútbol solo para mujeres,false,2022/01/01 00:00,2022/01/01 05:00,tutorial-08
+tutorialSession-16,#titulosaburridos,#mensajessinsentido,false,2022/01/01 00:00,2022/01/01 05:00,tutorial-08
 tutorialSession-17,Java para principiantes,Sesión de Java para principiantes,false,2022/01/01 00:00,2022/01/01 03:00,tutorial-09
 tutorialSession-18,1+1=7,¿Quién me lo iba a decir?,false,2022/01/01 00:00,2022/01/01 03:00,tutorial-09
+tutorialSession-19,#$%&()*+-.:;<=>@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_abcdefghijklmnopqrstuvwxyz{|},{#@!~},true,2022/01/01 00:00,2022/01/01 02:00,tutorial-11
+tutorialSession-20,語言學習,學習一門新語言,false,2022/01/01 00:00,2022/01/01 02:00,tutorial-11
+tutorialSession-21,L'influence de la musique dans nos vies,Découvrez l'impact de la musique dans notre quotidien,false,2022/01/01 00:00,2022/01/01 05:00,tutorial-12
+tutorialSession-22,This is a very very long title and now I will type randomly !º\'`*´´{},The quick brown fox jumps over the lazy dog.,false,2022/01/01 00:00,2022/01/01 01:00,tutorial-12
+tutorialSession-23,Aprendiendo sobre la cultura japonesa,Sumérgete en el fascinante mundo de la cultura japonesa,false,2022/01/01 00:00,2022/01/01 02:00,tutorial-13
+tutorialSession-24,Астрономия и космос,Узнайте больше о астрономии и космосе,true,2022/01/01 00:00,2022/01/01 01:00,tutorial-13
+tutorialSession-25,La poésie romantique,Exploration de la poésie romantique et de ses thèmes,true,2022/01/01 00:00,2022/01/01 03:00,tutorial-14
+tutorialSession-26,:v,:v,false,2022/01/01 00:00,2022/01/01 03:00,tutorial-14
+tutorialSession-27,إدارة الوقت,كيفية إدارة وقتك بشكل فعال,true,2022/01/01 00:00,2022/01/01 01:00,tutorial-15
+tutorialSession-28,Балет и танец,Узнайте больше о балете и различных стилях танца,true,2022/01/01 00:00,2022/01/01 05:00,tutorial-15
+tutorialSession-29,Arte abstracto,Exploración del arte abstracto y sus técnicas,true,2022/01/01 00:00,2022/01/01 03:00,tutorial-16
+tutorialSession-30,Esto deberia ser caracteres especiales,pero no va,false,2022/01/01 00:00,2022/01/01 05:00,tutorial-16
+tutorialSession-31,The Renaissance Era,Exploring the art and culture of the Renaissance Era,true,2022/01/01 00:00,2022/01/01 03:00,tutorial-17
+tutorialSession-32,[general title],[general recap],true,2022/01/01 00:00,2022/01/01 04:00,tutorial-17
+tutorialSession-33,El mundo de los dinosaurios,Descubre el fascinante mundo de los dinosaurios,false,2022/01/01 00:00,2022/01/01 01:00,tutorial-18
+tutorialSession-34,Русская классическая литература,Изучение русской классической литературы,false,2022/01/01 00:00,2022/01/01 04:00,tutorial-18
+tutorialSession-35,Introduction to Machine Learning,Learn the basics of machine learning,false,2022/01/01 00:00,2022/01/01 05:00,tutorial-19
+tutorialSession-36,1+1=7,Who would have thought?,false,2022/01/01 00:00,2022/01/01 02:00,tutorial-19
+tutorialSession-39,X,Sesión de ejemplo corta,false,2022/01/01 00:00,2022/01/01 04:00,tutorial-10
+tutorialSession-40,Títulomáximo: Este es un título muy largo con caracteres especiales !@#$%^&*,(),false,2022/01/01 00:00,2022/01/01 02:00,tutorial-10

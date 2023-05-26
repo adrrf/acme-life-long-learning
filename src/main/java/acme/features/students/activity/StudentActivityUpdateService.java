@@ -63,7 +63,6 @@ public class StudentActivityUpdateService extends AbstractService<Student, Activ
 	}
 
 	@Override
-	@SuppressWarnings("deprecation")
 	public void validate(final Activity object) {
 		assert object != null;
 
