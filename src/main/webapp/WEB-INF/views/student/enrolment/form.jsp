@@ -59,8 +59,6 @@
 				path="motivation" />
 			<acme:input-textarea code="student.enrolment.form.label.goals"
 				path="goals" />
-			<acme:input-integer readonly="true"
-				code="student.enrolment.form.label.time" path="estimatedTime" />
 			<acme:submit code="student.enrolment.form.button.create"
 				action="/student/enrolment/create?courseId=${courseId}" />
 		</jstl:when>

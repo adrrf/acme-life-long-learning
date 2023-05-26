@@ -57,7 +57,7 @@ public class StudentEnrolmentUpdateService extends AbstractService<Student, Enro
 	public void bind(final Enrolment object) {
 		assert object != null;
 
-		super.bind(object, "motivation", "goals", "draftMode");
+		super.bind(object, "motivation", "goals", "card", "draftMode");
 		object.setDraftMode(true);
 	}
 

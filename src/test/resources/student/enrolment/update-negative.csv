@@ -1,2 +1,5 @@
 recordIndex,code,motivation,goals,holder,nibble,draft-mode,key:course,key:student
 0,A2003,Cambiado,,Agustin,1234,true,course-01,student-01
+0,A2003,,sdef,Agustin,1234,true,course-01,student-01
+0,A2003,Cambiado,sex,Agustin,1234,true,course-01,student-01
+0,A2003,sex,fowfjwfj,Agustin,1234,true,course-01,student-01

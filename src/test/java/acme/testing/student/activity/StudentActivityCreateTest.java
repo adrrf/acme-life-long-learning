@@ -11,14 +11,14 @@ public class StudentActivityCreateTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/student/activity/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test100Postive(final int recordIndex, final String title, final String recap, final String isTheory, final String startDate, final String endDate, final String link) {
+	public void test100Postive(final int recordIndexEnrolment, final int recordIndexActivity, final String title, final String recap, final String isTheory, final String startDate, final String endDate, final String link) {
 
 		super.signIn("student01", "student01");
 
 		super.clickOnMenu("Students", "List my enrolments");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
-		super.clickOnListingRecord(recordIndex);
+		super.clickOnListingRecord(recordIndexEnrolment);
 		super.checkFormExists();
 		super.clickOnButton("Workbook");
 		super.checkListingExists();
@@ -35,16 +35,16 @@ public class StudentActivityCreateTest extends TestHarness {
 		super.clickOnMenu("Students", "List my enrolments");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
-		super.clickOnListingRecord(recordIndex);
+		super.clickOnListingRecord(recordIndexEnrolment);
 		super.checkFormExists();
 		super.clickOnButton("Workbook");
 		super.checkListingExists();
 
 		super.sortListing(0, "asc");
-		super.checkColumnHasValue(recordIndex, 0, title);
-		super.checkColumnHasValue(recordIndex, 1, recap);
+		super.checkColumnHasValue(recordIndexActivity, 0, title);
+		super.checkColumnHasValue(recordIndexActivity, 1, recap);
 
-		super.clickOnListingRecord(recordIndex);
+		super.clickOnListingRecord(recordIndexActivity);
 		super.checkFormExists();
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("recap", recap);

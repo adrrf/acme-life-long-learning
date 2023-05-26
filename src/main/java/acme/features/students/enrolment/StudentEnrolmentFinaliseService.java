@@ -128,6 +128,7 @@ public class StudentEnrolmentFinaliseService extends AbstractService<Student, En
 		}
 
 		super.state(creditCardNumber != null && !creditCardNumber.isEmpty(), "card", "student.enrolment.form.error.nullCard");
+		super.state(!this.repository.findManyActivitiesByEnrolmentId(object.getId()).isEmpty(), "*", "student.enrolment.form.error.activity");
 		super.state(!(creditCardNumber != null && !creditCardNumber.isEmpty()) || CreditCardHelper.hasCorrectCardNumberFormat(creditCardNumber), "card", "student.enrolment.form.error.invalidFormatCard");
 		super.state(!(creditCardNumber != null && !creditCardNumber.isEmpty() && CreditCardHelper.hasCorrectCardNumberFormat(creditCardNumber) && (object.getNibble() == null ? true : creditCardNumber.substring(0, 5) == object.getNibble()))
 			|| CreditCardHelper.hasValidCreditNumber(creditCardNumber), "card", "student.enrolment.form.error.invalidCardNumber");

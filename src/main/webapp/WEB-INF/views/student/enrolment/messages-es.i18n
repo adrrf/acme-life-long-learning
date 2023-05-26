@@ -29,3 +29,4 @@ student.enrolment.form.error.invalidCVV = CVC tiene un formato incorrecto
 student.enrolment.form.error.nullExpiryDate = La fecha de expiracion no debe ser nula
 student.enrolment.form.error.invalidExpiryDateFormat = La fecha de expiracion tiene un formato incorrecto
 student.enrolment.form.error.invalidExpiryDate = La tarjeta ha expirado
+student.enrolment.form.error.activity = Cannot finalise an enrolment without activity

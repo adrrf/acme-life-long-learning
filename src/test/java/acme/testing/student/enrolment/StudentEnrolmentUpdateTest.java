@@ -19,7 +19,7 @@ public class StudentEnrolmentUpdateTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/student/enrolment/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test100Positive(final int recordIndex, final String code, final String motivation, final String goals, final String holder, final String card, final String draftMode) {
+	public void test100Positive(final int recordIndex, final String code, final String motivation, final String goals, final String draftMode) {
 
 		super.signIn("student01", "student01");
 
@@ -32,8 +32,6 @@ public class StudentEnrolmentUpdateTest extends TestHarness {
 		super.checkFormExists();
 		super.fillInputBoxIn("motivation", motivation);
 		super.fillInputBoxIn("goals", goals);
-		super.fillInputBoxIn("holder", holder);
-		super.fillInputBoxIn("card", card);
 		super.clickOnSubmit("Update");
 
 		super.checkListingExists();
@@ -47,15 +45,13 @@ public class StudentEnrolmentUpdateTest extends TestHarness {
 		super.checkInputBoxHasValue("code", code);
 		super.checkInputBoxHasValue("motivation", motivation);
 		super.checkInputBoxHasValue("goals", goals);
-		super.checkInputBoxHasValue("holder", holder);
-		super.checkInputBoxHasValue("card", card);
 
 		super.signOut();
 	}
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/student/enrolment/update-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test200Negative(final int recordIndex, final String code, final String motivation, final String goals, final String holder, final String card, final String draftMode) {
+	public void test200Negative(final int recordIndex, final String code, final String motivation, final String goals, final String draftMode) {
 
 		super.signIn("student01", "student01");
 
@@ -68,8 +64,6 @@ public class StudentEnrolmentUpdateTest extends TestHarness {
 		super.checkFormExists();
 		super.fillInputBoxIn("motivation", motivation);
 		super.fillInputBoxIn("goals", goals);
-		super.fillInputBoxIn("holder", holder);
-		super.fillInputBoxIn("card", card);
 		super.clickOnSubmit("Update");
 
 		super.checkErrorsExist();
