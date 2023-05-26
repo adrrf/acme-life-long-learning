@@ -1,0 +1,6 @@
+recordIndex,code,title,recap,retail-price,link,draft-mode,key:lecturer,is-theory
+0,A103,Curso primaria,Curso del lecturer-01,EUR 20.00,https://es.wikipedia.org/wiki/Wikipedia:Portada,false,lecturer-01,true
+1,A123,##########,()()()()()()()(),"GBP 50,000.90",https://www.twitch.tv/,true,lecturer-01,true
+2,A143,largolargolargolargolargolargolargolargolargolargolargolargolargolargolargo,karatun firamare,"EUR 1,234,567.00",https://wuolah.com/etsii-giiis-13639,false,lecturer-01,false
+3,A163,;;;;;;;;;;,G,"GBP 20,000,000.00",https://www.amazon.es/,false,lecturer-01,false
+4,A183,¬¬¬¬¬¬¬¬¬¬,Curso del lecturer-01,EUR 1.00,https://www.google.com/search?q=enlace+largo&rlz=1C1RXQR_esES968ES968&oq=&aqs=chrome.0.35i39i362l8.1222955434j0j15&sourceid=chrome&ie=UTF-8,true,lecturer-01,true

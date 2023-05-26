@@ -40,14 +40,36 @@ public class AssistantTutorialSessionCreateTest extends TestHarness {
 		super.clickOnSubmit("Create");
 
 		super.checkListingExists();
-		super.checkListingEmpty();
 
 		super.signOut();
 	}
 
-	@Test
-	public void test200Negative(final int recordIndexTutorial, final int recordIndex, final String title, final String recap, final String startTime, final String endTime, final String isTheory) {
+	@ParameterizedTest
+	@CsvFileSource(resources = "/assistant/tutorialSession/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
+	public void test200Negative(final int recordIndexTutorial, final int recordIndex, final String title, final String recap, final String startTime, final String endTime, final String isTheory, final String duration) {
+		super.signIn("assistant01", "assistant01");
 
+		super.clickOnMenu("Assistant", "List my tutorials");
+		super.checkListingExists();
+		super.sortListing(0, "asc");
+		super.clickOnListingRecord(recordIndexTutorial);
+		super.checkFormExists();
+
+		super.clickOnButton("Sessions");
+		super.checkListingExists();
+		super.clickOnButton("Create");
+
+		super.checkFormExists();
+		super.fillInputBoxIn("title", title);
+		super.fillInputBoxIn("recap", recap);
+		super.fillInputBoxIn("startTime", startTime);
+		super.fillInputBoxIn("endTime", endTime);
+		super.fillInputBoxIn("isTheory", isTheory);
+
+		super.clickOnSubmit("Create");
+
+		super.checkErrorsExist();
+		super.signOut();
 	}
 
 	@Test

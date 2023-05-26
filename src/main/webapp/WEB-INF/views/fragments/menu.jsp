@@ -28,14 +28,14 @@
 		
 		<acme:menu-option code="master.menu.messages">
 			<acme:menu-suboption code="master.menu.messages.peep.list" action="/any/peep/list"/>
-			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.messages.note.list" access="isAuthenticated()" action="/authenticated/note/list"/>
-			<acme:menu-suboption code="master.menu.messages.offer.list" action="/any/offer/list"/>
-			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.messages.offer.list" access="isAuthenticated()" action="/authenticated/offer/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.authenticated">
 			<acme:menu-suboption code="master.menu.authenticated.courses" action="/any/course/list"/>
+			<acme:menu-separator/>
+
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.authenticated.bulletin" access="isAuthenticated()">

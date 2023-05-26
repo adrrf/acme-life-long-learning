@@ -13,7 +13,7 @@ recordIndexTutorial,recordIndex,title,recap,duration,isTheory
 5,1,This is a very very long title and now I will type randomly !º'`*´´{},The quick brown fox jumps over the lazy dog.,1,false
 6,1,La poésie romantique,Exploration de la poésie romantique et de ses thèmes,3,true
 6,0,:v,:v,3,false
-7,1,Arte abstracto,Exploración del arte abstracto y sus técnicas,3,true
-7,0,Esto deberia ser caracteres especiales,pero no va,5,false
+7,0,Arte abstracto,Exploración del arte abstracto y sus técnicas,3,true
+7,1,Esto deberia ser caracteres especiales,pero no va,5,false
 8,0,[general title],[general recap],4,true,
 8,1,The Renaissance Era,Exploring the art and culture of the Renaissance Era,3,true
