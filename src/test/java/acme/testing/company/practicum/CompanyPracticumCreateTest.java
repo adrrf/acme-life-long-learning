@@ -25,7 +25,7 @@ public class CompanyPracticumCreateTest extends TestHarness {
 		super.clickOnListingRecord(recordIndexCourse);
 		super.checkFormExists();
 
-		super.clickOnButton("Create practicum");
+		super.clickOnButton("Create Practicum");
 		super.fillInputBoxIn("code", code);
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("goals", goals);
@@ -66,7 +66,7 @@ public class CompanyPracticumCreateTest extends TestHarness {
 		super.clickOnListingRecord(recordIndexCourse);
 		super.checkFormExists();
 
-		super.clickOnButton("Create practicum");
+		super.clickOnButton("Create Practicum");
 		super.fillInputBoxIn("code", code);
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("goals", goals);

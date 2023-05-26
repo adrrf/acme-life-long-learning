@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>77</x>
+      <x>28</x>
       <y>518</y>
       <w>231</w>
       <h>77</h>
@@ -21,7 +21,7 @@ Assistant
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>434</x>
+      <x>385</x>
       <y>686</y>
       <w>238</w>
       <h>98</h>
@@ -40,7 +40,7 @@ TutorialSession
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>413</x>
+      <x>364</x>
       <y>518</y>
       <w>280</w>
       <h>112</h>
@@ -60,7 +60,7 @@ Tutorial
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>301</x>
+      <x>252</x>
       <y>553</y>
       <w>126</w>
       <h>28</h>
@@ -73,7 +73,7 @@ m2=0..*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>546</x>
+      <x>497</x>
       <y>623</y>
       <w>35</w>
       <h>77</h>
@@ -85,7 +85,7 @@ m2=1..*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>70</x>
+      <x>21</x>
       <y>686</y>
       <w>238</w>
       <h>77</h>
@@ -102,7 +102,7 @@ AssistantDashboard
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>77</x>
+      <x>28</x>
       <y>987</y>
       <w>245</w>
       <h>91</h>
@@ -120,7 +120,7 @@ Bulletin
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>77</x>
+      <x>28</x>
       <y>868</y>
       <w>238</w>
       <h>77</h>
@@ -138,7 +138,7 @@ AdminDashboard
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>343</x>
+      <x>294</x>
       <y>987</y>
       <w>280</w>
       <h>112</h>
@@ -158,7 +158,7 @@ Note
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>77</x>
+      <x>28</x>
       <y>1120</y>
       <w>224</w>
       <h>126</h>
@@ -179,7 +179,7 @@ Offer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>406</x>
+      <x>357</x>
       <y>1120</y>
       <w>231</w>
       <h>105</h>
@@ -199,7 +199,7 @@ Banner
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>784</x>
+      <x>735</x>
       <y>364</y>
       <w>280</w>
       <h>112</h>
@@ -209,8 +209,8 @@ Course
 --
 + code: String {Pattern(^[A-Z]{1,3}[0-9]{4}), NotBlank, Unique}
 + title: String {NotBlank and Lenght(max=76)}
-+ abstract: String {NotBlank and Lenght(max=101)}
-+ retailPrice: Money 
++ recap: String {NotBlank and Lenght(max=101)}
++ retailPrice: Money {NotNull}
 + link: String {URL}
 + draftMode: Boolean {NotNull}
 / isTheory : Boolean</panel_attributes>
@@ -219,26 +219,27 @@ Course
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>658</x>
-      <y>119</y>
+      <x>609</x>
+      <y>105</y>
       <w>280</w>
-      <h>105</h>
+      <h>112</h>
     </coordinates>
     <panel_attributes>&lt;&lt;AbstractEntity&gt;&gt;
 Lecture
 --
-+ title: String {NotBlank and Lenght(max=76)}
++ title: String {NotBlank, Lenght(max=76) and Unique}
 + recap: String {NotBlank and Lenght(max=101)}
 + body: String {NotBlank and Lenght(max=101)}
 + learningTime: Integer {Min(0), NotNull}
 + link: String {URL}
-+ isTheory: Boolean {NotNull}</panel_attributes>
++ isTheory: Boolean {NotNull}
++ draftMode: Boolean {NotNull}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>987</x>
+      <x>938</x>
       <y>196</y>
       <w>168</w>
       <h>182</h>
@@ -251,7 +252,7 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>931</x>
+      <x>882</x>
       <y>161</y>
       <w>91</w>
       <h>28</h>
@@ -264,7 +265,7 @@ m2=0..*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1001</x>
+      <x>952</x>
       <y>0</y>
       <w>266</w>
       <h>77</h>
@@ -272,15 +273,17 @@ m2=0..*</panel_attributes>
     <panel_attributes>&lt;&lt;AbstractForm&gt;&gt;
 LecturerDashboard
 --
-+ nLectures: Integer {NotNull and Min(0)}
-+ statsLearningTimeLectures: Map&lt;String, Float&gt; {NotNull}
-+ statsLearningTimeCourse: Map&lt;String, Float&gt; {NotNull}</panel_attributes>
+/ totalThoeryLectures: Integer
+/ totalHansOndLectures: Integer 
+/ statsLearningTimeLectures: Map&lt;String, Double&gt;
+/ statsLearningTimeCourse: Map&lt;String, Double&gt;
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1008</x>
+      <x>959</x>
       <y>126</y>
       <w>252</w>
       <h>77</h>
@@ -297,7 +300,7 @@ Lecturer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1127</x>
+      <x>1078</x>
       <y>70</y>
       <w>28</w>
       <h>70</h>
@@ -310,7 +313,7 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>686</x>
+      <x>637</x>
       <y>469</y>
       <w>161</w>
       <h>126</h>
@@ -323,7 +326,7 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>385</x>
+      <x>336</x>
       <y>868</y>
       <w>238</w>
       <h>98</h>
@@ -342,7 +345,7 @@ Peep
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>756</x>
+      <x>707</x>
       <y>273</y>
       <w>91</w>
       <h>35</h>
@@ -355,7 +358,7 @@ CourseLecture
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>791</x>
+      <x>742</x>
       <y>301</y>
       <w>77</w>
       <h>77</h>
@@ -368,52 +371,54 @@ m2=1..*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>791</x>
-      <y>217</y>
+      <x>742</x>
+      <y>210</y>
       <w>35</w>
-      <h>70</h>
+      <h>77</h>
     </coordinates>
     <panel_attributes>lt=x-&gt;
 m1=0..*
 m2=1
 </panel_attributes>
-    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>413</x>
+      <x>364</x>
       <y>371</y>
-      <w>280</w>
-      <h>91</h>
+      <w>294</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>&lt;&lt;AbstractEntity&gt;&gt;
 Enrolment
 --
-+ code: String {Partern(^[A-Z]{1,3}[0-9]{4}), NotBlank, Unique}
++ code: String {Partern(^[A-Z]{1,3}[0-9][0-9]{4}), NotBlank, Unique}
 + motivation: String {NotBlank, Lenght(max=76)}
 + goals: String {NotBlank, Lenght(max=101)}
 + draftMode: Boolean {NotNull}
-/workTime : Double</panel_attributes>
++ nibble: String
++ holder: String{Length = 76}
+/workTime : Integer</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>686</x>
+      <x>651</x>
       <y>413</y>
-      <w>112</w>
+      <w>98</w>
       <h>28</h>
     </coordinates>
     <panel_attributes>lt=x-&gt;
 m1=0..*
 m2=1</panel_attributes>
-    <additional_attributes>10.0;10.0;140.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>413</x>
+      <x>364</x>
       <y>224</y>
       <w>280</w>
       <h>112</h>
@@ -432,7 +437,7 @@ Activity
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>546</x>
+      <x>497</x>
       <y>329</y>
       <w>35</w>
       <h>56</h>
@@ -444,7 +449,7 @@ m2=1..*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>49</x>
+      <x>0</x>
       <y>378</y>
       <w>259</w>
       <h>77</h>
@@ -461,7 +466,7 @@ Student
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>301</x>
+      <x>252</x>
       <y>406</y>
       <w>126</w>
       <h>28</h>
@@ -474,7 +479,7 @@ m2=0..*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>63</x>
+      <x>14</x>
       <y>252</y>
       <w>238</w>
       <h>70</h>
@@ -483,14 +488,14 @@ m2=0..*</panel_attributes>
 StudentDashboard
 --
 + nActivities: Integer {NotNull and Min(0)}
-+ statsTimeSessions: Map&lt;String, Float&gt; {NotNull}
-+ statsTimeTutorials: Map&lt;String, Float&gt; {NotNull}</panel_attributes>
++ statsTimeSessions: Map&lt;String, Double&gt; {NotNull}
++ statsTimeTutorials: Map&lt;String, Double&gt; {NotNull}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>182</x>
+      <x>133</x>
       <y>588</y>
       <w>28</w>
       <h>112</h>
@@ -503,7 +508,7 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>175</x>
+      <x>126</x>
       <y>315</y>
       <w>28</w>
       <h>77</h>
@@ -516,7 +521,7 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>854</x>
+      <x>805</x>
       <y>532</y>
       <w>280</w>
       <h>98</h>
@@ -524,17 +529,18 @@ m2=1</panel_attributes>
     <panel_attributes>&lt;&lt;AbstractEntity&gt;&gt;
 Audit
 --
-+ code: String {Partern(^[A-Z]{1,3}[0-9]{4}), NotBlank, Unique}
++ code: String {Partern(^[A-Z]{1,3}[0-9][0-9]{3}), NotBlank, Unique}
 + conclusion: String {NotBlank, Lenght(max=101)}
 + strongPoints: String {NotBlank, Lenght(max=101)}
 + weakPoints: String {NotBlank, Lenght(max=101)}
+/mark: Mark
 + draftMode: Boolean {NotNull}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>987</x>
+      <x>938</x>
       <y>469</y>
       <w>28</w>
       <h>77</h>
@@ -547,7 +553,7 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>868</x>
+      <x>819</x>
       <y>714</y>
       <w>252</w>
       <h>77</h>
@@ -564,7 +570,7 @@ Auditor
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>987</x>
+      <x>938</x>
       <y>623</y>
       <w>35</w>
       <h>105</h>
@@ -577,7 +583,7 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>882</x>
+      <x>833</x>
       <y>840</y>
       <w>238</w>
       <h>70</h>
@@ -593,7 +599,7 @@ AuditorDashboard
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>987</x>
+      <x>938</x>
       <y>784</y>
       <w>28</w>
       <h>70</h>
@@ -606,7 +612,7 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1127</x>
+      <x>1078</x>
       <y>574</y>
       <w>126</w>
       <h>28</h>
@@ -618,7 +624,7 @@ m2=1..*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1239</x>
+      <x>1190</x>
       <y>532</y>
       <w>245</w>
       <h>119</h>
@@ -638,7 +644,7 @@ AuditingRecords
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1239</x>
+      <x>1190</x>
       <y>700</y>
       <w>245</w>
       <h>98</h>
@@ -657,7 +663,7 @@ F_MINUS</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1232</x>
+      <x>1183</x>
       <y>364</y>
       <w>280</w>
       <h>98</h>
@@ -665,17 +671,18 @@ F_MINUS</panel_attributes>
     <panel_attributes>&lt;&lt;AbstractEntity&gt;&gt;
 Practicum
 --
-+ code: String {Partern(^[A-Z]{1,3}[0-9]{4}), NotBlank, Unique}
++ code: String {Partern(^[A-Z]{1,3}[0-9]{3}), NotBlank, Unique}
 + title: String {NotBlank, Lenght(max=76)}
 + recap: String {NotBlank, Lenght(max=101)}
 + goals: String {NotBlank, Lenght(max=101)}
++ draftMode: Boolean {NotNull}
 / totalTime: Integer</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1057</x>
+      <x>1008</x>
       <y>413</y>
       <w>189</w>
       <h>28</h>
@@ -688,7 +695,7 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1253</x>
+      <x>1204</x>
       <y>224</y>
       <w>238</w>
       <h>84</h>
@@ -698,14 +705,15 @@ Session
 --
 + title: String {NotBlank and Lenght(max=76)}
 + recap: String {NotBlank and Lenght(max=101)}
-+ timePeriod: Integer {Min(0), NotNull}
++ startTime: Date {NotNull, Temporal and PastOrPresent}
++ endTime: Date {NotNull, Temporal and PastOrPresent}
 + link: String {URL}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1365</x>
+      <x>1316</x>
       <y>301</y>
       <w>35</w>
       <h>77</h>
@@ -718,7 +726,7 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1582</x>
+      <x>1533</x>
       <y>238</y>
       <w>287</w>
       <h>77</h>
@@ -734,7 +742,7 @@ CompanyDashboard
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1596</x>
+      <x>1547</x>
       <y>378</y>
       <w>252</w>
       <h>77</h>
@@ -751,7 +759,7 @@ Company
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1505</x>
+      <x>1456</x>
       <y>413</y>
       <w>105</w>
       <h>28</h>
@@ -764,7 +772,7 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1715</x>
+      <x>1666</x>
       <y>308</y>
       <w>35</w>
       <h>84</h>
