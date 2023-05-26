@@ -40,7 +40,6 @@ public class AssistantTutorialSessionCreateTest extends TestHarness {
 		super.clickOnSubmit("Create");
 
 		super.checkListingExists();
-		super.checkListingEmpty();
 
 		super.signOut();
 	}

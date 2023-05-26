@@ -19,12 +19,12 @@
 
 <acme:button code="authenticated.course.audit.button.list" action="/authenticated/audit/list?masterId=${id}"/>
 	
-<acme:button code="assistant.course.tutorial.button.create" action="/assistant/tutorial/create?courseId=${id}"/>
-<jstl:if test="hasRole('Assistant')">
+<jstl:if test="${isAssistant}">
 	<acme:button code="assistant.course.tutorial.button.create" action="/assistant/tutorial/create?courseId=${id}"/>
 </jstl:if>
 
 <acme:button code="student.course.enrolment.button.create" action="/student/enrolment/create?courseId=${id}" />
+
 <jstl:if test="hasRole('Company')">
 	<acme:button code="company.course.practicum.button.create" action="/company/practicum/create?courseId=${id}"/>
 </jstl:if>
