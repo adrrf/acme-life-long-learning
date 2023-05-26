@@ -1,0 +1,9 @@
+assistant.dashboard.form.label.nTheoryTutorials = Número de tutoriales de cursos teóricos
+assistant.dashboard.form.label.nHandsonTutorials = Número de tutoriales de cursos prácticos
+assistant.dashboard.form.label.statsTutorials = Estadísticas del tiempo de tus tutoriales
+assistant.dashboard.form.label.statsSessions = Estadísticas del tiempo de las sesiones de tus tutoriales
+
+assistant.dashboard.form.label.average = Media
+assistant.dashboard.form.label.deviation = Desviación
+assistant.dashboard.form.label.min = Min
+assistant.dashboard.form.label.max = Max
