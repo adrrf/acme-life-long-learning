@@ -40,7 +40,7 @@ public class AuditorAuditCreateTest extends TestHarness {
 		super.checkInputBoxHasValue("strongPoints", strongPoints);
 		super.checkInputBoxHasValue("weakPoints", weakPoints);
 
-		super.clickOnButton("Auditing Record");
+		super.clickOnButton("Auditing Records");
 		super.checkListingExists();
 		super.checkListingEmpty();
 
