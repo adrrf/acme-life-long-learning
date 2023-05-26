@@ -15,6 +15,7 @@ import acme.forms.MoneyExchange;
 import acme.framework.components.accounts.Any;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
+import acme.roles.Company;
 
 @Service
 public class AnyCourseShowService extends AbstractService<Any, Course> {
@@ -91,6 +92,7 @@ public class AnyCourseShowService extends AbstractService<Any, Course> {
 		tuple = super.unbind(object, "code", "title", "recap", "retailPrice", "link", "draftMode");
 		tuple.put("isTheory", isTheory);
 		tuple.put("exchange", exchange.getTarget());
+		tuple.put("isCompany", super.getRequest().getPrincipal().hasRole(Company.class));
 
 		super.getResponse().setData(tuple);
 	}
