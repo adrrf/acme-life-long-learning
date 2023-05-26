@@ -75,7 +75,17 @@ public class AdministratorBulletinCreateService extends AbstractService<Administ
 			message = object.getMessage();
 			status = this.configuration.hasSpam(message);
 
-			super.state(!status, "message", "administrator.offer.error.spam");
+			super.state(!status, "message", "administrator.bulletin.error.spam");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("link")) {
+			boolean status;
+			String message;
+
+			message = object.getLink();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "link", "administrator.bulletin.error.spam");
 		}
 
 	}

@@ -4,12 +4,14 @@ package acme.features.administrator.bulletin;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import acme.entities.messages.Bulletin;
 import acme.framework.components.accounts.Administrator;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 
+@Service
 public class AdministratorBulletinListService extends AbstractService<Administrator, Bulletin> {
 
 	@Autowired

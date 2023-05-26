@@ -112,6 +112,16 @@ public class AuditorAuditingRecordCreateService extends AbstractService<Auditor,
 			super.state(!status, "assessment", "auditor.auditing-record.error.spam");
 		}
 
+		if (!super.getBuffer().getErrors().hasErrors("link")) {
+			boolean status;
+			String message;
+
+			message = object.getLink();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "link", "auditor.auditing-record.error.spam");
+		}
+
 		if (object.isCorrection()) {
 			confirmation = super.getRequest().getData("confirmation", boolean.class);
 			super.state(confirmation, "confirmation", "javax.validation.constraints.AssertTrue.message");
