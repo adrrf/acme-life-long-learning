@@ -13,6 +13,7 @@
 		path="summary" />
 	<acme:input-money code="administrator.offer.form.label.price"
 		path="price" />
+		<acme:input-money readonly="true" code="administrator.offer.form.label.exchange" path="exchange"/>
 	<acme:input-url code="administrator.offer.form.label.link" path="link" />
 	<acme:input-moment code="administrator.offer.form.label.startDate"
 		path="startDate" />
