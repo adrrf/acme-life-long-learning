@@ -1,6 +1,6 @@
 company.session.list.label.title = Title
 company.session.list.label.recap = Abstract
-company.session.list.duration = Duration (in hours)
+company.session.list.label.duration = Duration (in hours)
 company.session.list.label.link = Link
 company.session.list.button.create = Create
 
