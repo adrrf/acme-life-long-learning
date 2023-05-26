@@ -1,0 +1,12 @@
+authenticated.practicum.list.label.code = Código
+authenticated.practicum.list.label.title = Conclusión
+authenticated.practicum.list.label.recap = Resumen
+authenticated.practicum.list.label.goals = Objetivos
+
+authenticated.practicum.form.label.code = Código
+authenticated.practicum.form.label.title = Conclusión
+authenticated.practicum.form.label.recap = Resumen
+authenticated.practicum.form.label.goals = Objetivos
+authenticated.practicum.form.label.totalTime = Tiempo Total
+
+authenticated.practicum.form.button.company = Datos de la Compañía

@@ -1,0 +1,20 @@
+assistant.tutorial.list.label.code = Código
+assistant.tutorial.list.label.title = Título
+assistant.tutorial.list.label.course.code = Código del curso
+assistant.tutorial.list.label.course.title = Título del curso
+assistant.tutorial.list.button.create = Crear
+
+assistant.tutorial.form.label.code = Código
+assistant.tutorial.form.label.title = Título
+assistant.tutorial.form.label.recap = Resumen
+assistant.tutorial.form.label.goals = Metas
+assistant.tutorial.form.label.time = Tiempo estimado (en horas)
+assistant.tutorial.form.button.sessions = Sesiones
+assistant.tutorial.form.button.create.session = Crear sesión
+assistant.tutorial.form.button.update = Actualizar
+assistant.tutorial.form.button.delete = Eliminar
+assistant.tutorial.form.button.publish = Publicar
+assistant.tutorial.form.button.create = Crear
+
+assistant.tutorial.error.spam = Contiene spam
+assistant.tutorial.error.no-sessions = Tienes que añadir alguna sesión

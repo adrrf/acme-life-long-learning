@@ -1,0 +1,15 @@
+any.peep.list.label.instantiationMoment = Date
+any.peep.list.label.title = Title
+any.peep.list.label.nick = Nick
+
+any.peep.form.label.instantiationMoment = Date
+any.peep.form.label.title = Title
+any.peep.form.label.nick = Nick
+any.peep.form.label.message = Message
+any.peep.form.label.email = E-mail
+any.peep.form.label.link = Link
+
+any.peep.list.button.create = Create
+any.peep.form.button.create = Create
+
+any.peep.error.spam = Contains spam

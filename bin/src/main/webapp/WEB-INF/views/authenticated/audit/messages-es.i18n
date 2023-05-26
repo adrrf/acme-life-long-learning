@@ -1,0 +1,10 @@
+authenticated.audit.list.label.code = Código
+authenticated.audit.list.label.conclusion = Conclusion
+authenticated.audit.list.label.mark = Nota
+
+authenticated.audit.form.label.code = Código
+authenticated.audit.form.label.conclusion = Conclusion
+authenticated.audit.form.label.strongPoints = Puntos Fuertes
+authenticated.audit.form.label.weakPoints = Puntos Debiles
+authenticated.audit.form.label.mark = Mark
+authenticated.audit.form.button.auditor = Datos auditor

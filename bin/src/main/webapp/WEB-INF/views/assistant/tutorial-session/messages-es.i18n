@@ -1,0 +1,20 @@
+assistant.tutorial-session.list.label.title: Título
+assistant.tutorial-session.list.label.recap: Resumen
+assistant.tutorial-session.list.label.duration: Duración (en horas)
+assistant.tutorial-session.list.label.theory: Teórico
+assistant.tutorial-session.list.button.create: Crear
+
+assistant.tutorial-session.form.label.title: Título
+assistant.tutorial-session.form.label.recap: Resumen
+assistant.tutorial-session.form.label.isTheory: Teórico
+assistant.tutorial-session.form.label.startTime: Tiempo de inicio
+assistant.tutorial-session.form.label.endTime: Tiempo de fin
+
+assistant.tutorial-session.form.button.update: Actualizar
+assistant.tutorial-session.form.button.delete: Eliminar
+assistant.tutorial-session.form.button.create: Crear
+
+assistant.tutorial-session.error.spam = Contiene spam
+assistant.tutorial-session.form.error.end-before-start = La fecha de inicio debe de ser antes de la fecha de fin
+assistant.tutorial-session.form.error.day-ahead = La fecha de inicio debe de ser almenos un día después de hoy
+assistant.tutorial-session.form.error.duration = La duración debe de estar entre 1 y 5 horas
