@@ -57,7 +57,7 @@ public class AuditorAuditUpdateService extends AbstractService<Auditor, Audit> {
 	public void bind(final Audit object) {
 		assert object != null;
 
-		super.bind(object, "code", "conclusion", "strongPoints", "weakPoints", "draftMode");
+		super.bind(object, "conclusion", "strongPoints", "weakPoints", "draftMode");
 		object.setDraftMode(true);
 	}
 

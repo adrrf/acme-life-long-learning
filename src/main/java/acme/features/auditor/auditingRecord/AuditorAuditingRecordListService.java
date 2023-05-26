@@ -62,7 +62,13 @@ public class AuditorAuditingRecordListService extends AbstractService<Auditor, A
 
 		duration = MomentHelper.computeDuration(object.getStartPeriod(), object.getFinishPeriod());
 
-		tuple = super.unbind(object, "subject", "assessment", "mark", "link");
+		tuple = super.unbind(object, "assessment", "mark", "link");
+
+		if (object.isCorrection())
+			tuple.put("subject", object.getSubject() + "*");
+		else
+			tuple.put("subject", object.getSubject());
+
 		tuple.put("duration", duration.toHours());
 
 		super.getResponse().setData(tuple);

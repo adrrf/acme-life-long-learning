@@ -68,7 +68,7 @@ public class StudentEnrolmentFinaliseService extends AbstractService<Student, En
 		cardNumber = super.getRequest().getData("card", String.class).trim();
 		nibble = cardNumber.isEmpty() || !cardNumber.matches("^\\d{16}$") ? "" : cardNumber.substring(cardNumber.length() - 4);
 
-		super.bind(object, "code", "motivation", "goals", "holder");
+		super.bind(object, "motivation", "goals", "holder");
 		object.setNibble(nibble);
 
 	}
@@ -128,12 +128,13 @@ public class StudentEnrolmentFinaliseService extends AbstractService<Student, En
 		}
 
 		super.state(creditCardNumber != null && !creditCardNumber.isEmpty(), "card", "student.enrolment.form.error.nullCard");
+		super.state(!this.repository.findManyActivitiesByEnrolmentId(object.getId()).isEmpty(), "*", "student.enrolment.form.error.activity");
 		super.state(!(creditCardNumber != null && !creditCardNumber.isEmpty()) || CreditCardHelper.hasCorrectCardNumberFormat(creditCardNumber), "card", "student.enrolment.form.error.invalidFormatCard");
 		super.state(!(creditCardNumber != null && !creditCardNumber.isEmpty() && CreditCardHelper.hasCorrectCardNumberFormat(creditCardNumber) && (object.getNibble() == null ? true : creditCardNumber.substring(0, 5) == object.getNibble()))
 			|| CreditCardHelper.hasValidCreditNumber(creditCardNumber), "card", "student.enrolment.form.error.invalidCardNumber");
 
-		if (!super.getBuffer().getErrors().hasErrors("holderName"))
-			super.state(object.getHolder() != null && !object.getHolder().isEmpty(), "holderName", "student.enrolment.form.error.nullHolder");
+		if (!super.getBuffer().getErrors().hasErrors("holder"))
+			super.state(object.getHolder() != null && !object.getHolder().isEmpty(), "holder", "student.enrolment.form.error.nullHolder");
 
 		super.state(CVV != null && !CVV.isEmpty(), "CVV", "student.enrolment.form.error.nullCVV");
 		super.state(!(CVV != null && !CVV.isEmpty()) || CreditCardHelper.hasCorrectCVVFormat(CVV), "CVV", "student.enrolment.form.error.invalidCVV");
