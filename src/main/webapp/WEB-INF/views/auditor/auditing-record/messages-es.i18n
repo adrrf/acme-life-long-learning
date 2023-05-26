@@ -20,7 +20,7 @@ auditor.auditing-record.form.button.delete: Borrar
 auditor.auditing-record.form.button.create: Crear
 auditor.auditing-record.form.info.correction: Confirmado
 
-auditing-record.after.publish: Se ha creado un registro de auditoría con "asunto*" después de su publicación
+auditing-record.after.publish: Los registros de auditoriía con "asunto*" han sido creados después de la publicación de la auditoría
 auditor.audit.error.spam: Contiene spam
 auditor.auditing-record.form.error.end-before-start: Fechas incompatibles
 auditor.auditing-record.form.error.hour-ahead: Formato de fecha incorrecto

@@ -1,0 +1,16 @@
+administrator.bulletin.list.label.instantiationMoment = Creation Moment
+administrator.bulletin.list.label.title = Title
+administrator.bulletin.list.label.message = Message
+administrator.bulletin.list.label.flag = Critical
+administrator.bulletin.list.label.link = Link
+
+administrator.bulletin.form.label.instantiationMoment = Creation Moment
+administrator.bulletin.form.label.title = Title
+administrator.bulletin.form.label.message = Message
+administrator.bulletin.form.label.flag = Flag
+administrator.bulletin.form.label.link = Link
+
+administrator.bulletin.list.button.create = Create
+administrator.bulletin.form.button.create = Create
+
+administrator.bulletin.error.spam = It does contain spam
