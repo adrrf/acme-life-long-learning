@@ -27,8 +27,6 @@ public class StudentCourseListService extends AbstractService<Student, Course> {
 	@Override
 	public void authorise() {
 		boolean status;
-		final Student object;
-
 		status = super.getRequest().getPrincipal().hasRole(Student.class);
 
 		super.getResponse().setAuthorised(status);

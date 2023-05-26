@@ -1,10 +1,9 @@
 
 package acme.features.authenticated.note;
 
-import java.time.Duration;
 import java.time.temporal.ChronoUnit;
 import java.util.Collection;
-import java.util.stream.Collectors;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,22 +28,16 @@ public class AuthenticatedNoteListService extends AbstractService<Authenticated,
 
 	@Override
 	public void authorise() {
-		super.getResponse().setChecked(true);
+		super.getResponse().setAuthorised(true);
 	}
 
 	@Override
 	public void load() {
 		Collection<Note> objects;
+		Date limit;
 
-		objects = this.repository.findAllNotes();
-		objects = objects.stream().filter(n -> {
-			Duration duration;
-			boolean res;
-
-			duration = MomentHelper.computeDuration(n.getInstantionMoment(), MomentHelper.getCurrentMoment());
-			res = duration.get(ChronoUnit.MONTHS) <= 1.0;
-			return res;
-		}).collect(Collectors.toList());
+		limit = MomentHelper.deltaFromCurrentMoment(-30, ChronoUnit.DAYS);
+		objects = this.repository.findNotesByLimit(limit);
 
 		super.getBuffer().setData(objects);
 	}
@@ -55,7 +48,7 @@ public class AuthenticatedNoteListService extends AbstractService<Authenticated,
 
 		Tuple tuple;
 
-		tuple = super.unbind(object, "instantionMoment", "title", "author", "message", "email", "link");
+		tuple = super.unbind(object, "instantionMoment", "title", "author", "message");
 
 		super.getResponse().setData(tuple);
 	}

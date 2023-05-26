@@ -75,6 +75,7 @@ master.menu.administrator.configuration = Configuración
 # master.menu.assistant ####################################################
 
 master.menu.assistant = Asistente
+master.menu.asisstant.dashboard = Mi dashboard
 
 # master.menu.asisstant.tutorial ####################################################
 
@@ -93,6 +94,11 @@ master.menu.company.practicum = Lista mis prácticas
 master.menu.authenticated = Cursos
 master.menu.authenticated.courses = Lista todos los cursos disponibles
 
+# master.menu.autheticated.bulletin ####################################################
+
+master.menu.authenticated.bulletin = Boletines
+master.menu.authenticated.list.bulletin = Lista todos los boletines disponibles
+
 # master.menu.lecturer ####################################################
 
 master.menu.lecturer = Profesor
@@ -104,9 +110,8 @@ master.menu.lecturer.lectures = Lista mis asignaturas
 master.menu.student = Estudiantes
 
 master.menu.student.enrolment = Lista mis inscripciones
-<<<<<<< HEAD
+
 master.menu.student.course = Lista todos los cursos disponibles
-=======
 
 # master.menu.student ####################################################
 
@@ -114,5 +119,6 @@ master.menu.auditor = Auditor
 
 master.menu.auditor.audit = Listar mis auditorias
 
->>>>>>> origin/develop
+# master.menu.note ####################################################
+master.menu.messages.note.list = Listar comentarios
 
