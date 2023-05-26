@@ -69,7 +69,7 @@ public class LecturerLecturePublishService extends AbstractService<Lecturer, Lec
 			Lecture existing;
 
 			existing = this.repository.findOneLectureByTitle(object.getTitle());
-			super.state(existing == null, "title", "lecturer.lecture.form.error.duplicated");
+			super.state(existing == null || existing.equals(object), "title", "lecturer.lecture.form.error.duplicated");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("learningTime"))

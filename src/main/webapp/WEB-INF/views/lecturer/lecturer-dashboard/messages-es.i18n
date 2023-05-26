@@ -1,7 +1,7 @@
 lecturer.dashboard.form.label.totaltlectures = Asignaturas teoricas
 lecturer.dashboard.form.label.totalhlectures = Asignaturas practicas
-lecturer.dashboard.form.label.statslectures = Estadisticas de las asignaturas
-lecturer.dashboard.form.label.statscourses = Estadisticas de los cursos
+lecturer.dashboard.form.label.statslectures = Tiempo de enseñanza de las asignaturas
+lecturer.dashboard.form.label.statscourses = Tiempo de enseñanza de los cursos
 lecturer.dashboard.form.label.averageLecture = Media
 lecturer.dashboard.form.label.deviationLecture = Desviacion
 lecturer.dashboard.form.label.minLecture = Min
