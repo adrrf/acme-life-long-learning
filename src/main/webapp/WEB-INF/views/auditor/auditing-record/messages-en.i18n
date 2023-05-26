@@ -21,4 +21,4 @@ auditor.auditing-record.form.info.correction: Confirmed
 auditing-record.after.publish: Auditing records with "subject*" have been created after the audit was published
 auditor.audit.error.spam: Contains spam
 auditor.auditing-record.form.error.end-before-start: Incompatible dates
-auditor.auditing-record.form.error.hour-ahead: Wrong date format
+auditor.auditing-record.form.error.duration: At least one hour difference between start and finish

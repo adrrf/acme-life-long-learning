@@ -23,4 +23,4 @@ auditor.auditing-record.form.info.correction: Confirmado
 auditing-record.after.publish: Los registros de auditoriía con "asunto*" han sido creados después de la publicación de la auditoría
 auditor.audit.error.spam: Contiene spam
 auditor.auditing-record.form.error.end-before-start: Fechas incompatibles
-auditor.auditing-record.form.error.hour-ahead: Formato de fecha incorrecto
+auditor.auditing-record.form.error.duration: Al menos una hora de diferencia entre el periodo de inicio y el de fin

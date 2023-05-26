@@ -1,8 +1,8 @@
 key,subject,assessment,startPeriod,finishPeriod,mark,link,correction,key:audit
-auditing-record-01,Análisis de estados financieros,Evaluación de precisión y cumplimiento normativo,2022/10/19 23:21,2023/03/22 08:45,A_PLUS,https://www.khanacademy.org/,false,audit-04
-auditing-record-02,Evaluación de seguridad de la red,Identificación de vulnerabilidades y riesgos de seguridad,2022/08/15 12:38,2022/09/14 21:30,B,null,false,audit-01
-auditing-record-03,Análisis de procesos de producción,Identificación de ineficiencias y propuestas de mejora,2022/08/01 20:34,2022/11/09 15:15,C,https://www.edx.org/,false,audit-03
-auditing-record-04,Verificación de cumplimiento normativo,Evaluación de políticas y prácticas empresariales para garantizar el cumplimiento,2023/03/14 14:43,2023/04/13 19:30,C,,false,audit-01
-auditing-record-05,Evaluación de políticas de recursos humanos,Identificación de oportunidades de mejora en la gestión de personal,2022/10/28 18:30,2022/11/09 15:15,F,https://www.memrise.com/https://www.memrise.com/,false,audit-02
-auditing-record-06,Evaluación de la calidad de los productos/servicios,Verificación de cumplimiento de estándares y recomendaciones para mejorar la calidad,2022/12/18 22:45,2023/02/18 09:30,F_MINUS,https://www.duolingo.com/,false,audit-05
-auditing-record-07,Análisis de cumplimiento tributario,Evaluación de políticas fiscales y oportunidades para reducir la carga fiscal,2022/12/23 09:46,2023/04/01 23:59,A,https://www.udemy.com/,false,audit-06
+auditing-record-01,Análisis de estados financieros,Evaluación de precisión y cumplimiento normativo,2019/10/19 23:21,2020/03/22 08:45,A_PLUS,https://www.khanacademy.org/,false,audit-04
+auditing-record-02,Evaluación de seguridad de la red,Identificación de vulnerabilidades y riesgos de seguridad,2007/08/15 12:38,2007/08/15 21:30,B,null,false,audit-01
+auditing-record-03,Análisis de procesos de producción,Identificación de ineficiencias y propuestas de mejora,2020/08/01 20:34,2020/11/09 15:15,C,https://www.edx.org/,false,audit-03
+auditing-record-04,Verificación de cumplimiento normativo,Evaluación de políticas y prácticas empresariales para garantizar el cumplimiento,2020/03/14 14:43,2020/07/30 00:00,C,,false,audit-01
+auditing-record-05,Evaluación de políticas de recursos humanos,Identificación de oportunidades de mejora en la gestión de personal,2018/10/28 18:30,2018/11/09 15:15,F,https://www.memrise.com/https://www.memrise.com/,false,audit-02
+auditing-record-06,Evaluación de la calidad de los productos/servicios,Verificación de cumplimiento de estándares y recomendaciones para mejorar la calidad,2002/12/18 22:45,2003/02/18 09:30,F_MINUS,https://www.duolingo.com/,false,audit-05
+auditing-record-07,Análisis de cumplimiento tributario,Evaluación de políticas fiscales y oportunidades para reducir la carga fiscal,2021/12/23 09:46,2022/04/01 23:59,A,https://www.udemy.com/,false,audit-06

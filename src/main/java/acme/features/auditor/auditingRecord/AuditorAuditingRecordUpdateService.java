@@ -94,7 +94,7 @@ public class AuditorAuditingRecordUpdateService extends AbstractService<Auditor,
 			else {
 				final int hours = (int) MomentHelper.computeDuration(object.getStartPeriod(), object.getFinishPeriod()).toHours();
 				if (hours < 1)
-					super.state(false, "startPeriod", "auditor.auditing-record.form.error.hour-ahead");
+					super.state(false, "finishPeriod", "auditor.auditing-record.form.error.duration");
 
 			}
 

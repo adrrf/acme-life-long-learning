@@ -13,6 +13,7 @@ import javax.persistence.Transient;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -36,10 +37,12 @@ public class AuditingRecord extends AbstractEntity {
 	@Length(max = 101)
 	protected String			assessment;
 
+	@Past
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	protected Date				startPeriod;
 
+	@Past
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	protected Date				finishPeriod;
