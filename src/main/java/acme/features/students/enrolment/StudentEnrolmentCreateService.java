@@ -4,6 +4,7 @@ package acme.features.students.enrolment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.ConfigurationRepository;
 import acme.entities.course.Course;
 import acme.entities.enrolment.Enrolment;
 import acme.framework.components.models.Tuple;
@@ -14,7 +15,10 @@ import acme.roles.Student;
 public class StudentEnrolmentCreateService extends AbstractService<Student, Enrolment> {
 
 	@Autowired
-	protected StudentEnrolmentRepository repository;
+	protected StudentEnrolmentRepository	repository;
+
+	@Autowired
+	protected ConfigurationRepository		configuration;
 
 
 	@Override
@@ -87,7 +91,31 @@ public class StudentEnrolmentCreateService extends AbstractService<Student, Enro
 
 			code = object.getCode();
 			Enrolment = this.repository.findOneEnrolmentByCode(code);
-			super.state(Enrolment == null, "code", "Student.Enrolment.form.error.duplicated-code");
+			super.state(Enrolment == null, "code", "student.enrolment.form.error.duplicated-code");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("motivation")) {
+
+			boolean status;
+			String message;
+
+			message = object.getMotivation();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "motivation", "student.enrolment.error.spam");
+
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("goals")) {
+
+			boolean status;
+			String message;
+
+			message = object.getGoals();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "goals", "student.enrolment.error.spam");
+
 		}
 	}
 

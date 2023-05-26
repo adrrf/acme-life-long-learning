@@ -6,7 +6,9 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.MoneyExchangeRepository;
 import acme.entities.course.Course;
+import acme.entities.course.Lecture;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Lecturer;
@@ -15,7 +17,10 @@ import acme.roles.Lecturer;
 public class LecturerCourseListService extends AbstractService<Lecturer, Course> {
 
 	@Autowired
-	protected LecturerCourseRepository repository;
+	protected LecturerCourseRepository	repository;
+
+	@Autowired
+	protected MoneyExchangeRepository	moneyRepository;
 
 
 	@Override
@@ -48,8 +53,22 @@ public class LecturerCourseListService extends AbstractService<Lecturer, Course>
 		assert object != null;
 
 		Tuple tuple;
+		Collection<Lecture> lectures;
+		boolean isTheory = true;
+		int theoryLectures;
+		int handsOnLectures;
+
+		lectures = this.repository.findManyLecturesByCourseId(object.getId());
+		if (object.getDraftMode()) {
+			theoryLectures = (int) lectures.stream().filter(l -> l.getIsTheory()).count();
+			handsOnLectures = lectures.size() - theoryLectures;
+			if (handsOnLectures >= theoryLectures)
+				isTheory = false;
+		} else
+			isTheory = object.getIsTheory();
 
 		tuple = super.unbind(object, "code", "title", "recap", "retailPrice", "link", "draftMode");
+		tuple.put("isTheory", isTheory);
 
 		super.getResponse().setData(tuple);
 	}

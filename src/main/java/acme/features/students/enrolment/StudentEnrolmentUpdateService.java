@@ -4,6 +4,7 @@ package acme.features.students.enrolment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.ConfigurationRepository;
 import acme.entities.enrolment.Enrolment;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
@@ -13,7 +14,10 @@ import acme.roles.Student;
 public class StudentEnrolmentUpdateService extends AbstractService<Student, Enrolment> {
 
 	@Autowired
-	protected StudentEnrolmentRepository repository;
+	protected StudentEnrolmentRepository	repository;
+
+	@Autowired
+	protected ConfigurationRepository		configuration;
 
 
 	@Override
@@ -53,7 +57,7 @@ public class StudentEnrolmentUpdateService extends AbstractService<Student, Enro
 	public void bind(final Enrolment object) {
 		assert object != null;
 
-		super.bind(object, "code", "motivation", "goals", "draftMode");
+		super.bind(object, "motivation", "goals", "card", "draftMode");
 		object.setDraftMode(true);
 	}
 
@@ -62,12 +66,36 @@ public class StudentEnrolmentUpdateService extends AbstractService<Student, Enro
 		assert object != null;
 
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
-			Enrolment Enrolment;
+			Enrolment enrolment;
 			String code;
 
 			code = object.getCode();
-			Enrolment = this.repository.findOneEnrolmentByCode(code);
-			super.state(Enrolment == null || Enrolment.equals(object), "code", "Student.Enrolment.form.error.duplicated-code");
+			enrolment = this.repository.findOneEnrolmentByCode(code);
+			super.state(enrolment == null || enrolment.equals(object), "code", "student.enrolment.form.error.duplicated-code");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("motivation")) {
+
+			boolean status;
+			String message;
+
+			message = object.getMotivation();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "motivation", "student.enrolment.error.spam");
+
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("goals")) {
+
+			boolean status;
+			String message;
+
+			message = object.getGoals();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "goals", "student.enrolment.error.spam");
+
 		}
 	}
 

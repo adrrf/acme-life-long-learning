@@ -2,6 +2,7 @@ lecturer.course.list.label.code = Code
 lecturer.course.list.label.title = Title
 lecturer.course.list.label.recap = Abstract
 lecturer.course.list.retailPrice = Retail Price
+lecturer.course.list.label.isTheory = Theory
 lecturer.course.list.label.link = Link
 lecturer.course.list.button.create = Create
 
@@ -9,7 +10,9 @@ lecturer.course.form.label.code = Code
 lecturer.course.form.label.title = Title
 lecturer.course.form.label.recap = Abstract
 lecturer.course.form.label.retailPrice = Retail Price
+lecturer.course.form.label.exchange = Money exchange
 lecturer.course.form.label.link = Link
+lecturer.course.form.label.isTheory = Theory
 lecturer.course.form.buttton.lectures = Lectures
 lecturer.course.form.button.update = Update
 lecturer.course.form.button.delete = Delete
@@ -18,3 +21,7 @@ lecturer.course.form.button.create = Create
 
 lecturer.course.form.error.duplicated = Duplicated code
 lecturer.course.form.error.negative-retailprice = Negative amount
+lecturer.course.form.error.currency-retailprice = Currency must be
+lecturer.course.form.error.spam = Contains spam
+lecturer.course.form.error.empty = Añadir asignaturas al curso
+lecturer.course.form.error.publish = Asignaturas sin publicar

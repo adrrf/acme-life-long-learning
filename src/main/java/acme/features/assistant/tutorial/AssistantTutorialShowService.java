@@ -66,7 +66,10 @@ public class AssistantTutorialShowService extends AbstractService<Assistant, Tut
 
 		sessions = this.repository.findManyTutorialSessionsByTutorialId(id);
 
-		nHours = sessions.stream().mapToInt(s -> (int) MomentHelper.computeDuration(s.getStartTime(), s.getEndTime()).toHours()).sum();
+		if (object.getDraftMode())
+			nHours = sessions.stream().mapToInt(s -> (int) MomentHelper.computeDuration(s.getStartTime(), s.getEndTime()).toHours()).sum();
+		else
+			nHours = object.getEstimatedTime();
 
 		tuple = super.unbind(object, "code", "title", "recap", "goals", "draftMode");
 		tuple.put("estimatedTime", nHours);

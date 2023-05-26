@@ -1,12 +1,16 @@
 key,title,recap,learning-time,body,is-theory,link,draft-mode,key:lecturer
-lecture-01,#####))))),Metodos procedimientos y formulas parar recolectar informacion alargamos la descripcion hasta el li,45,I,false,https://ev.us.es/,true,lecturer-01
+lecture-01,#####))))),Metodos procedimientos y formulas parar recolectar informacion alargamos la descripcion hasta el li,45,I,false,https://ev.us.es/,false,lecturer-01
 lecture-02,InglesInglesInglesInglesInglesInglesInglesInglesInglesInglesInglesInglesIn,I,1,##########€€€~¬¬¬¬???==,true,https://es.wikipedia.org/wiki/Wikipedia:Portada,false,lecturer-02
 lecture-03,@#~€/,Estudio de numeros y sus relaciones ¿podríamos poner interrogaciones?,50,A,false,null,true,lecturer-01
-lecture-04,H,Examen de eventos del pasado,4,Curso del lecturer-02Curso del lecturer-02Curso del lecturer-02Curso del lecturer-02Curso del lectur,true,https://www.google.com/search?q=enlace+largo&rlz=1C1RXQR_esES968ES968&oq=&aqs=chrome.0.35i39i362l8.1222955434j0j15&sourceid=chrome&ie=UTF-8,true,lecturer-02
-lecture-05,Nyocha nke,Examen de eventos del pasado seguimos aumentado con ?????? ñññññ %%$%& por si acaso,550,LA VERDADERA VUERTA,false,,true,lecturer-01
+lecture-04,H,Examen de eventos del pasado,4,Curso del lecturer-02Curso del lecturer-02Curso del lecturer-02Curso del lecturer-02Curso del lectur,true,https://www.google.com/search?q=enlace+largo&rlz=1C1RXQR_esES968ES968&oq=&aqs=chrome.0.35i39i362l8.1222955434j0j15&sourceid=chrome&ie=UTF-8,false,lecturer-02
+lecture-05,Nyocha nke,Examen de eventos del pasado seguimos aumentado con ?????? ñññññ %%$%& por si acaso,550,LA VERDADERA VUERTA,false,,false,lecturer-01
 lecture-06,Literatura,Cingales ^^^^^^^[*]#·,35,%%%%%%%SI %%%%%%%,true,https://ev.us.es/,true,lecturer-02
 lecture-07,ARTEARTEARTEARTEARTEARTEAERTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,Ruso Анализ литературных произведений,300,ASR SON DOS EXAMENES,false,https://www.google.com/search?q=enlace+largo&rlz=1C1RXQR_esES968ES968&oq=&aqs=chrome.0.35i39i362l8.1222955434j0j15&sourceid=chrome&ie=UTF-8,false,lecturer-01
-lecture-08,<<<<<<<<<<<<<<<<<<,Igbo Nyocha nke ọrụ edemede,30,¿Si es verdad/////?,false,,true,lecturer-02
+lecture-08,<<<<<<<<<<<<<<<<<<,Igbo Nyocha nke ọrụ edemede,30,¿Si es verdad/////?,true,,false,lecturer-02
 lecture-09,Informatica,Punyabi ======'?¿@#~,40,asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf,false,https://es.wikipedia.org/wiki/Wikipedia:Portada,false,lecturer-01
 lecture-10,????????''''''''''||||,Estudio de la produccion y distribuccion de recursos,3500,o,true,https://www.google.com/search?q=enlace+largo&rlz=1C1RXQR_esES968ES968&oq=&aqs=chrome.0.35i39i362l8.1222955434j0j15&sourceid=chrome&ie=UTF-8,false,lecturer-01
 lecture-11,Filosofia,Exploracion de preguntas fundamentales sobre la existencia y el conocimiento,35,-,true,,false,lecturer-02
+lecture-12,Arquitectura,I,1,##########€€€~¬¬¬¬???==,true,https://es.wikipedia.org/wiki/Wikipedia:Portada,false,lecturer-01
+lecture-13,Matematicas Discretas,Punyabi ======'?¿@#~,40,asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf,false,https://es.wikipedia.org/wiki/Wikipedia:Portada,false,lecturer-02
+lecture-14,&&&&&&&&&&&,"!""·$$%%&&//((&%$·""",9,<<<>>>>>>_____¨¨¨¨,true,,true,lecturer-01
+lecture-15,·,·,9000000,·,false,,true,lecturer-02

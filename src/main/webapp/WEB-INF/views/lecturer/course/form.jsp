@@ -15,7 +15,9 @@
 	<acme:input-textbox code="lecturer.course.form.label.title" path="title"/>
 	<acme:input-textarea code="lecturer.course.form.label.recap" path="recap"/>
 	<acme:input-money code="lecturer.course.form.label.retailPrice" path="retailPrice"/>
+	<acme:input-money readonly="true" code="lecturer.course.form.label.exchange" path="exchange"/>
 	<acme:input-url code="lecturer.course.form.label.link" path="link"/>
+	<acme:input-checkbox readonly="true" code="lecturer.course.form.label.isTheory" path="isTheory"/>
 	
 	<jstl:choose>
 		<jstl:when test="${_command == 'show' && draftMode == false}">
@@ -32,4 +34,4 @@
 		</jstl:when>
 	</jstl:choose>
 
-</acme:form>
+</acme:form> 

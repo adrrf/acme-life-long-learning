@@ -1,14 +1,32 @@
 student.enrolment.list.label.code = Codigo
 student.enrolment.list.label.motivation = Motivacion
 student.enrolment.list.label.goals = Metas
+student.enrolment.form.label.time = Tiempo Estimado
 student.enrolment.list.button.create = Crear
 
 student.enrolment.form.label.code = Codigo
 student.enrolment.form.label.motivation = Motivacion
 student.enrolment.form.label.goals = Metas
+student.enrolment.form.label.card = Numero de tarjeta ({0-9}{16}):
+student.enrolment.form.label.holder = Propietario:
+student.enrolment.form.label.CVV = CVC ({0-9}{3}):
+student.enrolment.form.label.expiryDate = Fecha de expiracion (MM/YY):
 
-student.enrolment.form.buttton.activities = Actividades
+student.enrolment.form.buttton.activities = Cuaderno de Actividades
 student.enrolment.form.button.update = Actualizar
 student.enrolment.form.button.delete = Borrar
-student.enrolment.form.button.publish = Publicar
+student.enrolment.form.button.finalise = Completar
 student.enrolment.form.button.create = Crear
+
+student.enrolment.error.spam = Contiene Spam
+student.enrolment.form.error.duplicated-code = Codigo ya existente
+student.enrolment.form.error.nullCard = La tarjeta no debe ser nula
+student.enrolment.form.error.invalidFormatCard = La tarjeta tiene un formato incorrecto
+student.enrolment.form.error.invalidCardNumber = El numero de tarjeta no es valido
+student.enrolment.form.error.nullHolder = El propietario no debe ser nulo
+student.enrolment.form.error.nullCVV = CVC no debe ser nulo
+student.enrolment.form.error.invalidCVV = CVC tiene un formato incorrecto
+student.enrolment.form.error.nullExpiryDate = La fecha de expiracion no debe ser nula
+student.enrolment.form.error.invalidExpiryDateFormat = La fecha de expiracion tiene un formato incorrecto
+student.enrolment.form.error.invalidExpiryDate = La tarjeta ha expirado
+student.enrolment.form.error.activity = Cannot finalise an enrolment without activity

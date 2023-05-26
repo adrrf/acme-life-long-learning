@@ -17,3 +17,4 @@ assistant.tutorial.form.button.publish = Publicar
 assistant.tutorial.form.button.create = Crear
 
 assistant.tutorial.error.spam = Contiene spam
+assistant.tutorial.error.no-sessions = Tienes que añadir alguna sesión

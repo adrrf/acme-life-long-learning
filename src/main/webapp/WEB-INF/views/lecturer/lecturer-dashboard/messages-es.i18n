@@ -1,0 +1,12 @@
+lecturer.dashboard.form.label.totaltlectures = Asignaturas teoricas
+lecturer.dashboard.form.label.totalhlectures = Asignaturas practicas
+lecturer.dashboard.form.label.statslectures = Estadisticas de las asignaturas
+lecturer.dashboard.form.label.statscourses = Estadisticas de los cursos
+lecturer.dashboard.form.label.averageLecture = Media
+lecturer.dashboard.form.label.deviationLecture = Desviacion
+lecturer.dashboard.form.label.minLecture = Min
+lecturer.dashboard.form.label.maxLecture = Max
+lecturer.dashboard.form.label.averageCourse = Media
+lecturer.dashboard.form.label.deviationCourse = Desviacion
+lecturer.dashboard.form.label.minCourse = Min
+lecturer.dashboard.form.label.maxCourse = Max

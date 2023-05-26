@@ -4,14 +4,17 @@
 <%@taglib prefix="acme" uri="http://www.the-acme-framework.org/"%>
 
 <acme:form>
-	<acme:input-select code="lecturer.courseLecture.form.label.lecture"
-		path="lecture" choices="${lectures}"
-		readonly="${_command != 'create'}" />
+	<acme:input-select code="lecturer.course-lecture.form.label.lecture"
+		path="lecture" choices="${lectures}" />
 
 	<jstl:choose>
 		<jstl:when test="${_command == 'create'}">
-			<acme:submit code="lecturer.courseLecture.form.button.create"
+			<acme:submit code="lecturer.course-lecture.form.button.create"
 				action="/lecturer/course-lecture/create?masterId=${masterId }" />
+		</jstl:when>
+		<jstl:when test="${_command == 'delete-lecture'}">
+			<acme:submit code="lecturer.course-lecture.form.button.delete"
+				action="/lecturer/course-lecture/delete-lecture?masterId=${masterId }" />
 		</jstl:when>
 	</jstl:choose>
 

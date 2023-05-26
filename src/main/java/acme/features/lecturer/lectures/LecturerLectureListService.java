@@ -45,11 +45,15 @@ public class LecturerLectureListService extends AbstractService<Lecturer, Lectur
 	public void load() {
 		int id;
 		Collection<Lecture> objects;
+		Course course;
 
 		id = super.getRequest().getData("masterId", int.class);
 		objects = this.repository.findManyLecturesByCourseId(id);
+		course = this.repository.findOneCourseById(id);
 
 		super.getBuffer().setData(objects);
+		super.getResponse().setGlobal("courseDraftMode", course.getDraftMode());
+		super.getResponse().setGlobal("masterId", id);
 	}
 
 	@Override
@@ -66,7 +70,6 @@ public class LecturerLectureListService extends AbstractService<Lecturer, Lectur
 		tuple = super.unbind(object, "title", "recap", "learningTime", "body", "isTheory", "link", "draftMode");
 		tuple.put("lectureId", object.getId());
 		tuple.put("course", course);
-		tuple.put("courseDraftMode", true);
 		tuple.put("masterId", id);
 
 		super.getResponse().setGlobal("courseDraftMode", course.getDraftMode());

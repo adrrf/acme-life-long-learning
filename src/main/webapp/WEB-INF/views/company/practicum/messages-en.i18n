@@ -1,11 +1,21 @@
-authenticated.practicum.list.label.code = Código
-authenticated.practicum.list.label.title = Conclusión
-authenticated.practicum.list.label.recap = Resumen
-authenticated.practicum.list.label.goals = Objetivos
+company.practicum.list.label.code = Code
+company.practicum.list.label.title = Title
+company.practicum.list.label.course.code = Course Code
+company.practicum.list.label.course.title = Course title
+company.practicum.list.button.create = Create
 
-authenticated.practicum.form.label.code = Código
-authenticated.practicum.form.label.title = Conclusión
-authenticated.practicum.form.label.recap = Resumen
-authenticated.practicum.form.label.goals = Objetivos
+company.practicum.form.label.code = Code
+company.practicum.form.label.title = Title
+company.practicum.form.label.recap = Abstract
+company.practicum.form.label.goals = Goals
+company.practicum.form.label.totalTime = Estimated Time (in hours)
+company.practicum.form.buttton.sessions = Sessions
+company.practicum.form.button.create.session = Create session
+company.practicum.form.button.update = Update
+company.practicum.form.button.delete = Delete
+company.practicum.form.button.publish = Publish
+company.practicum.form.button.create = Create
 
-authenticated.practicum.form.button.company = Datos de la Compañía
+company.practicum.form.error.duplicated-code = Duplicated Code
+company.practicum.error.spam = It does contain spam
+company.practicum.error.no-sessions = You must add at least one session

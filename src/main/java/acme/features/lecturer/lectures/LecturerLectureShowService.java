@@ -42,7 +42,6 @@ public class LecturerLectureShowService extends AbstractService<Lecturer, Lectur
 	public void load() {
 		Lecture object;
 		int id;
-
 		id = super.getRequest().getData("id", int.class);
 		object = this.repository.findOneLectureById(id);
 

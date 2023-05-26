@@ -2,8 +2,12 @@ lecturer.lecture.list.label.title = Titulo
 lecturer.lecture.list.label.recap = Resumen
 lecturer.lecture.list.label.learningTime = Tiempo de enseñanza
 lecturer.lecture.list.label.body = Cuerpo
-lecturer.lecture.list.label.isThoery = Teoria
+lecturer.lecture.list.label.isTheory = Teoria
 lecturer.lecture.list.label.link = Link
+lecturer.course-lecture.list.button.create = Añadir asignatura
+lecturer.course-lecture.list.button.delete = Eliminar asignatura del curso
+lecturer.lecture.list.button.create = Crear
+
 
 lecturer.lecture.form.label.title = Titulo
 lecturer.lecture.form.label.recap = Resumen
@@ -14,6 +18,8 @@ lecturer.lecture.form.label.link = Link
 lecturer.lecture.form.button.update = Actualizar
 lecturer.lecture.form.button.delete = Borrar
 lecturer.lecture.form.button.publish = Publicar
-lecturer.lecture.form.button.create = Añadir asignatura
+lecturer.lecture.form.button.create = Crear
 
 lecturer.lecture.form.error.negative-learningTime = El valor tiene que ser mayor que cero
+lecturer.course.form.error-isTheory = No se puede publicar un curso que tenga todas sus asignaturas teoricas
+lecturer.lecture.form.error.duplicated = Titulo duplicado

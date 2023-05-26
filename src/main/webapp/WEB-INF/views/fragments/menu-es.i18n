@@ -28,6 +28,7 @@ master.menu.anonymous.alematcap = 77863310K: Mateo Capilla, Alejandro
 # master.menu.messages #######################################################
 master.menu.messages = Mensajes
 master.menu.messages.peep.list = Listar peeps
+master.menu.messages.offer.list = Listar ofertas
 
 # master.menu.administrator ###################################################
 
@@ -39,6 +40,7 @@ master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
 master.menu.administrator.banner = Listado de Banners
 master.menu.administrator.bulletin.list = Listado de Boletines
+master.menu.administrator.offer.list = Listado de Ofertas
 
 # master.menu.provider ########################################################
 
@@ -60,6 +62,8 @@ master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
 master.menu.user-account.lecturer = Datos de profesor
 master.menu.user-account.become-lecturer = Hazte profesor
+master.menu.user-account.student = Datos del estudiante
+master.menu.user-account.become-student = Hazte estudiante
 master.menu.user-account.auditor = Datos de auditor
 master.menu.user-account.become-auditor = Hazte auditor
 master.menu.user-account.company = Datos de companía
@@ -72,6 +76,7 @@ master.menu.administrator.configuration = Configuración
 # master.menu.assistant ####################################################
 
 master.menu.assistant = Asistente
+master.menu.asisstant.dashboard = Mi dashboard
 
 # master.menu.asisstant.tutorial ####################################################
 
@@ -98,7 +103,7 @@ master.menu.authenticated.bulletin.list = Lista los boletines
 
 master.menu.lecturer = Profesor
 master.menu.lecturer.courses = Lista mis cursos
-master.menu.lecturer.lectures = Crear asignatura
+master.menu.lecturer.lectures = Lista mis asignaturas
 
 # master.menu.student ####################################################
 
@@ -106,10 +111,14 @@ master.menu.student = Estudiantes
 
 master.menu.student.enrolment = Lista mis inscripciones
 
+master.menu.student.course = Lista todos los cursos disponibles
+
 # master.menu.student ####################################################
 
 master.menu.auditor = Auditor
 
 master.menu.auditor.audit = Listar mis auditorias
 
+# master.menu.note ####################################################
+master.menu.messages.note.list = Listar comentarios
 

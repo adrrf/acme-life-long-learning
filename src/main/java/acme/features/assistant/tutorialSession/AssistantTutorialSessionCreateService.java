@@ -101,7 +101,7 @@ public class AssistantTutorialSessionCreateService extends AbstractService<Assis
 			if (!MomentHelper.isBefore(object.getStartTime(), object.getEndTime()))
 				super.state(false, "endTime", "assistant.tutorial-session.form.error.end-before-start");
 			else {
-				final int days = (int) MomentHelper.computeDuration(MomentHelper.getCurrentMoment(), object.getStartTime()).toDays();
+				final long days = MomentHelper.computeDuration(MomentHelper.getCurrentMoment(), object.getStartTime()).toDays();
 				if (days < 1)
 					super.state(false, "startTime", "assistant.tutorial-session.form.error.day-ahead");
 				else {

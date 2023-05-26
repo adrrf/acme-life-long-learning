@@ -1,12 +1,16 @@
 
 package acme.features.assistant.tutorial;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.components.ConfigurationRepository;
 import acme.entities.tutorial.Tutorial;
+import acme.entities.tutorial.TutorialSession;
 import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Assistant;
 
@@ -56,13 +60,18 @@ public class AssistantTutorialPublishService extends AbstractService<Assistant, 
 	@Override
 	public void bind(final Tutorial object) {
 		assert object != null;
-
-		object.setDraftMode(false);
 	}
 
 	@Override
 	public void validate(final Tutorial object) {
 		assert object != null;
+
+		Collection<TutorialSession> sessions;
+
+		sessions = this.repository.findManyTutorialSessionsByTutorialId(object.getId());
+
+		if (sessions.isEmpty())
+			super.state(false, "*", "assistant.tutorial.error.no-sessions");
 
 		if (!super.getBuffer().getErrors().hasErrors("title")) {
 			boolean status;
@@ -108,6 +117,16 @@ public class AssistantTutorialPublishService extends AbstractService<Assistant, 
 	public void perform(final Tutorial object) {
 		assert object != null;
 
+		int id;
+		Collection<TutorialSession> sessions;
+		int nHours;
+
+		id = super.getRequest().getData("id", int.class);
+
+		sessions = this.repository.findManyTutorialSessionsByTutorialId(id);
+
+		nHours = sessions.stream().mapToInt(s -> (int) MomentHelper.computeDuration(s.getStartTime(), s.getEndTime()).toHours()).sum();
+		object.setEstimatedTime(nHours);
 		object.setDraftMode(false);
 		this.repository.save(object);
 	}
