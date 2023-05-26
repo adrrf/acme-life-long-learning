@@ -41,11 +41,11 @@ public class Activity extends AbstractEntity {
 	protected Boolean			isTheory;
 
 	@NotNull
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	protected Date				startDate;
 
 	@NotNull
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	protected Date				endDate;
 
 	@URL

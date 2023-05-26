@@ -15,3 +15,6 @@ assistant.tutorial-session.form.button.delete: Delete
 assistant.tutorial-session.form.button.create: Create
 
 assistant.tutorial-session.error.spam = Contains spam
+assistant.tutorial-session.form.error.end-before-start = The start date must be before the end date
+assistant.tutorial-session.form.error.day-ahead = The start date must be a day ahead
+assistant.tutorial-session.form.error.duration = The duration must be between 1 and 5 hours

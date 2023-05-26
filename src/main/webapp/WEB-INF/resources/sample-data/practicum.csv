@@ -1,4 +1,6 @@
 key,code,title,recap,goals,draftMode,key:company,key:course
-practicum01,KLM4567,Quimica de nuevos materiales,Quimica de materiales avanzados para aplicaciones industriales,Aprender a utilizar herramientas de inteligencia artificial,false,company01,course-05
+practicum01,KLM4567,Quimica de nuevos materiales,Quimica de materiales avanzados para aplicaciones industriales,Aprender a utilizar herramientas de inteligencia artificial,true,company01,course-05
 practicum02,ABC1234,Red social por intereses,Red social para intereses comunes,Participar en proyectos de investigacion en equipo,true,company01,course-07
 practicum03,ADB9898,Real Betis,Red de seguidores del Betis,Ganar y ganar,true,company02,course-01
+practicum04,DEF1234,. ... - --- / .--. .- .-. .- / .--. --- .-. .-. --- ...,-- ..- -.-. .... .. ... .. -- --- ... / .--. --- .-. .-. --- ...,.-. ..- -- -... .- / -.-. .- - .- .-.. .- -. .-;-.-. . .-. ...- . --.. .-;. ... - --- .--. .,true,company02,course-05
+practicum05,GHI1234,Title with ñ characters,Recap with special characters: !@£$%^&*(),Goals with special characters: γεια κόσμε,true,company01,course-01
