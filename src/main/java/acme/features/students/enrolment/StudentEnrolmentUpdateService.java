@@ -57,7 +57,7 @@ public class StudentEnrolmentUpdateService extends AbstractService<Student, Enro
 	public void bind(final Enrolment object) {
 		assert object != null;
 
-		super.bind(object, "code", "motivation", "goals", "draftMode");
+		super.bind(object, "motivation", "goals", "card", "draftMode");
 		object.setDraftMode(true);
 	}
 
@@ -66,12 +66,12 @@ public class StudentEnrolmentUpdateService extends AbstractService<Student, Enro
 		assert object != null;
 
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
-			Enrolment Enrolment;
+			Enrolment enrolment;
 			String code;
 
 			code = object.getCode();
-			Enrolment = this.repository.findOneEnrolmentByCode(code);
-			super.state(Enrolment == null || Enrolment.equals(object), "code", "student.enrolment.form.error.duplicated-code");
+			enrolment = this.repository.findOneEnrolmentByCode(code);
+			super.state(enrolment == null || enrolment.equals(object), "code", "student.enrolment.form.error.duplicated-code");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("motivation")) {
