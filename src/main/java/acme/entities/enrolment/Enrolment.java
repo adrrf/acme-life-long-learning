@@ -46,7 +46,7 @@ public class Enrolment extends AbstractEntity {
 
 	protected String			nibble;
 
-	@Length(max = 75)
+	@Length(max = 76)
 	protected String			holder;
 
 	// Derived attributes -----------------------------------------------------
