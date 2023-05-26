@@ -4,8 +4,12 @@ package acme.features.authenticated.offer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.ConfigurationRepository;
+import acme.components.RateRepository;
+import acme.entities.configuration.Configuration;
 import acme.entities.messages.Offer;
 import acme.framework.components.accounts.Authenticated;
+import acme.framework.components.datatypes.Money;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 
@@ -13,7 +17,13 @@ import acme.framework.services.AbstractService;
 public class AuthenticatedOfferShowService extends AbstractService<Authenticated, Offer> {
 
 	@Autowired
-	protected AuthenticatedOfferRepository repository;
+	protected AuthenticatedOfferRepository	repository;
+
+	@Autowired
+	protected ConfigurationRepository		configuration;
+
+	@Autowired
+	protected RateRepository				rateRepository;
 
 
 	@Override
@@ -55,7 +65,22 @@ public class AuthenticatedOfferShowService extends AbstractService<Authenticated
 
 		Tuple tuple;
 
+		final Configuration config;
+		final String moneda;
+		final Double rate;
+		final Money cambio = new Money();
+
+		config = this.configuration.getSystemConfiguration().iterator().next();
+		moneda = config.getCurrency();
+		this.rateRepository.getRate();
+
+		rate = this.rateRepository.rate(object.getPrice().getCurrency(), moneda);
+
+		cambio.setAmount(rate * object.getPrice().getAmount());
+		cambio.setCurrency(moneda);
+
 		tuple = super.unbind(object, "instantiationMoment", "heading", "summary", "startDate", "endDate", "price", "link");
+		tuple.put("exchange", cambio);
 
 		super.getResponse().setData(tuple);
 	}

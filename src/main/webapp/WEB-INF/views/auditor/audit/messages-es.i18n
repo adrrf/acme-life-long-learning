@@ -15,6 +15,7 @@ auditor.audit.form.button.create = 	Crear
 auditor.audit.form.button.update = Actualizar
 auditor.audit.form.button.delete = Borrar
 auditor.audit.form.button.publish = Publicar
-auditor.audit.form.button.create.auditing-record = Crear registro de auditorias
 
-auditor.audit.form.error.duplicated = Codigo duplicado
+auditor.audit.form.error.duplicated-code = Codigo duplicado
+auditor.audit.form.error.auditingRecord = Necesitas tener al menos un auditing record en esta auditoria para publicar
+auditor.audit.error.spam: Contiene spam

@@ -41,7 +41,7 @@ public class AuditorAuditingRecordCreateService extends AbstractService<Auditor,
 
 		auditId = super.getRequest().getData("masterId", int.class);
 		audit = this.repository.findOneAuditById(auditId);
-		status = audit != null && audit.getDraftMode() && super.getRequest().getPrincipal().hasRole(audit.getAuditor()) && super.getRequest().getPrincipal().getUsername().equals(audit.getAuditor().getUserAccount().getUsername());
+		status = audit != null && super.getRequest().getPrincipal().hasRole(audit.getAuditor()) && super.getRequest().getPrincipal().getUsername().equals(audit.getAuditor().getUserAccount().getUsername());
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -56,6 +56,7 @@ public class AuditorAuditingRecordCreateService extends AbstractService<Auditor,
 		audit = this.repository.findOneAuditById(auditId);
 		object = new AuditingRecord();
 		object.setAudit(audit);
+		object.setCorrection(!audit.getDraftMode());
 
 		super.getBuffer().setData(object);
 	}
@@ -70,7 +71,7 @@ public class AuditorAuditingRecordCreateService extends AbstractService<Auditor,
 		auditId = super.getRequest().getData("masterId", int.class);
 		audit = this.repository.findOneAuditById(auditId);
 
-		super.bind(object, "subject", "assessment", "startPeriod", "finishPeriod", "mark", "url");
+		super.bind(object, "subject", "assessment", "startPeriod", "finishPeriod", "mark", "link");
 		object.setAudit(audit);
 
 	}
@@ -79,13 +80,15 @@ public class AuditorAuditingRecordCreateService extends AbstractService<Auditor,
 	public void validate(final AuditingRecord object) {
 		assert object != null;
 
+		boolean confirmation;
+
 		if (!super.getBuffer().getErrors().hasErrors("startPeriod") && !super.getBuffer().getErrors().hasErrors("finishPeriod"))
 			if (!MomentHelper.isBefore(object.getStartPeriod(), object.getFinishPeriod()))
 				super.state(false, "finishPeriod", "auditor.auditing-record.form.error.end-before-start");
 			else {
 				final int hours = (int) MomentHelper.computeDuration(object.getStartPeriod(), object.getFinishPeriod()).toHours();
 				if (hours < 1)
-					super.state(false, "startPeriod", "auditor.auditing-record.form.error.hour-ahead");
+					super.state(false, "finishPeriod", "auditor.auditing-record.form.error.duration");
 
 			}
 
@@ -107,6 +110,21 @@ public class AuditorAuditingRecordCreateService extends AbstractService<Auditor,
 			status = this.configuration.hasSpam(message);
 
 			super.state(!status, "assessment", "auditor.auditing-record.error.spam");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("link")) {
+			boolean status;
+			String message;
+
+			message = object.getLink();
+			status = this.configuration.hasSpam(message);
+
+			super.state(!status, "link", "auditor.auditing-record.error.spam");
+		}
+
+		if (object.isCorrection()) {
+			confirmation = super.getRequest().getData("confirmation", boolean.class);
+			super.state(confirmation, "confirmation", "javax.validation.constraints.AssertTrue.message");
 		}
 
 	}
@@ -136,7 +154,12 @@ public class AuditorAuditingRecordCreateService extends AbstractService<Auditor,
 		tuple.put("audit", audit);
 		tuple.put("masterId", super.getRequest().getData("masterId", int.class));
 		tuple.put("markes", choices);
+		tuple.put("correction", object.isCorrection());
 		tuple.put("draftMode", object.getAudit().getDraftMode());
+		if (object.isCorrection())
+			tuple.put("confirmation", false);
+
+		super.getResponse().setData(tuple);
 
 		super.getResponse().setData(tuple);
 	}

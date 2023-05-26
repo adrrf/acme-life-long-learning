@@ -1,12 +1,14 @@
 
 package acme.features.administrator.offer;
 
+import java.util.Arrays;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.components.ConfigurationRepository;
+import acme.entities.configuration.Configuration;
 import acme.entities.messages.Offer;
 import acme.framework.components.accounts.Administrator;
 import acme.framework.components.models.Tuple;
@@ -17,10 +19,10 @@ import acme.framework.services.AbstractService;
 public class AdministratorOfferCreateService extends AbstractService<Administrator, Offer> {
 
 	@Autowired
-	protected AdministratorOfferRepository		repository;
+	protected AdministratorOfferRepository	repository;
 
 	@Autowired
-	protected ConfigurationRepository	configuration;
+	protected ConfigurationRepository		configuration;
 
 	// AbstractService interface ----------------------------------------------
 
@@ -76,6 +78,14 @@ public class AdministratorOfferCreateService extends AbstractService<Administrat
 			status = this.configuration.hasSpam(message);
 
 			super.state(!status, "summary", "administrator.offer.error.spam");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("retailPrice")) {
+			Configuration configuration;
+
+			configuration = this.repository.findConfiguration();
+
+			super.state(Arrays.asList(configuration.getAcceptedCurrencies().trim().split(";")).contains(object.getPrice().getCurrency()), "price", configuration.getAcceptedCurrencies());
 		}
 
 	}

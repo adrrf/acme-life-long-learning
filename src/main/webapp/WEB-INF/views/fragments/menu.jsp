@@ -28,8 +28,10 @@
 		
 		<acme:menu-option code="master.menu.messages">
 			<acme:menu-suboption code="master.menu.messages.peep.list" action="/any/peep/list"/>
-			<acme:menu-suboption code="master.menu.messages.note.list" access="isAuthenticated()" action="/authenticated/note/list"/>
+			<acme:menu-suboption code="master.menu.authenticated.bulletin.list" action="/authenticated/bulletin/list"/>
+      <acme:menu-suboption code="master.menu.messages.note.list" access="isAuthenticated()" action="/authenticated/note/list"/>
 			<acme:menu-suboption code="master.menu.messages.offer.list" access="isAuthenticated()" action="/authenticated/offer/list"/>
+
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.authenticated">
@@ -37,11 +39,6 @@
 			<acme:menu-separator/>
 
 		</acme:menu-option>
-		
-		<acme:menu-option code="master.menu.authenticated.bulletin" access="isAuthenticated()">
-			<acme:menu-suboption code="master.menu.authenticated.list.bulletin" action="/authenticated/bulletin/list"/>
-		</acme:menu-option>
-		
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.configuration" action="/administrator/configuration/show"/>
@@ -54,7 +51,7 @@
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.banner" action="/administrator/banner/list"/>
-			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.bulletin.list" action="/administrator/bulletin/list"/>
 			<acme:menu-suboption code="master.menu.administrator.offer.list" action="/administrator/offer/list"/>
 			<acme:menu-separator/>
 		</acme:menu-option>

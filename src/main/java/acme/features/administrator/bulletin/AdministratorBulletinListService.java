@@ -1,21 +1,21 @@
 
-package acme.features.any.offer;
+package acme.features.administrator.bulletin;
 
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.messages.Offer;
-import acme.framework.components.accounts.Any;
+import acme.entities.messages.Bulletin;
+import acme.framework.components.accounts.Administrator;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 
 @Service
-public class AnyOfferListService extends AbstractService<Any, Offer> {
+public class AdministratorBulletinListService extends AbstractService<Administrator, Bulletin> {
 
 	@Autowired
-	protected AnyOfferRepository repository;
+	protected AdministratorBulletinRepository repository;
 
 
 	@Override
@@ -30,20 +30,20 @@ public class AnyOfferListService extends AbstractService<Any, Offer> {
 
 	@Override
 	public void load() {
-		Collection<Offer> objects;
+		Collection<Bulletin> objects;
 
-		objects = this.repository.findOffers();
+		objects = this.repository.findBulletins();
 
 		super.getBuffer().setData(objects);
 	}
 
 	@Override
-	public void unbind(final Offer object) {
+	public void unbind(final Bulletin object) {
 		assert object != null;
 
 		Tuple tuple;
 
-		tuple = super.unbind(object, "instantiationMoment", "heading", "price");
+		tuple = super.unbind(object, "instantiationMoment", "title", "message");
 
 		super.getResponse().setData(tuple);
 	}
