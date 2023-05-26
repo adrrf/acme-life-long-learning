@@ -9,3 +9,4 @@ authenticated.offer.form.label.price = Price
 authenticated.offer.form.label.startDate = Start Date
 authenticated.offer.form.label.endDate = End Date
 authenticated.offer.form.label.link = Link
+authenticated.offer.form.label.exchange = Exchange
