@@ -97,7 +97,7 @@ public class LecturerCoursePublishService extends AbstractService<Lecturer, Cour
 
 			configuration = this.repository.findConfiguration();
 
-			super.state(Arrays.asList(configuration.getAcceptedCurrencies().split(";")).contains(object.getRetailPrice().getCurrency()), "retailPrice", configuration.getAcceptedCurrencies());
+			super.state(Arrays.asList(configuration.getAcceptedCurrencies().trim().split(";")).contains(object.getRetailPrice().getCurrency()), "retailPrice", configuration.getAcceptedCurrencies());
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("retailPrice"))
